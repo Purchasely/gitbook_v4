@@ -287,4 +287,17 @@ Purchasely.setPaywallActionInterceptorCallback(
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.SetPaywallActionInterceptor(OnPaywallActionIntercepted);
+
+private void OnPaywallActionIntercepted(PaywallAction action)
+{
+    Log($"Purchasely Paywall Action Intercepted. Action: {action.action}.");
+}
+```
+{% endtab %}
 {% endtabs %}

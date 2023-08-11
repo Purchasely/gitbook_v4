@@ -68,7 +68,7 @@ Every subsequent purchase or event for this particular user will carry the same 
 
 ### 4. Getting user entitlements & anonymous\_id in the app
 
-Entitlements are managed by the developer backend and directly attached to the `anonymous_user_id`. The app can retrieve the `anonymous_user_id` from the SDK vy  using the following method :
+Entitlements are managed by the developer backend and directly attached to the `anonymous_user_id`. The app can retrieve the `anonymous_user_id` from the SDK using the following method :
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -112,6 +112,14 @@ Purchasely.getAnonymousUserId((anonymousId) => {
 {% tab title="Flutter" %}
 ```dart
 Purchasely.anonymousUserId;
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.GetAnonymousUserId();
 ```
 {% endtab %}
 {% endtabs %}
@@ -195,6 +203,14 @@ Purchasely.userLogin('123456789').then((refresh) => {
     //call your backend to refresh user information
   }
 });
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.UserLogin("userId", OnUserLoginCompleted);
 ```
 {% endtab %}
 {% endtabs %}
@@ -417,6 +433,21 @@ Purchasely.setPaywallActionInterceptorCallback(
       Purchasely.onProcessAction(true);
     }
  });
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+...
+_purchasely.SetPaywallActionInterceptor(OnPaywallActionIntercepted);
+...
+
+private void OnPaywallActionIntercepted(PaywallAction action)
+{
+    Log($"Purchasely Paywall Action Intercepted. Action: {action.action}.");
+}
 ```
 {% endtab %}
 {% endtabs %}

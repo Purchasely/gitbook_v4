@@ -125,6 +125,25 @@ Purchasely.clearUserAttributes()
 ```dart
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+//Set one attribute by key and value
+_purchasely.SetUserAttribute("StringAttribute", "String message");
+_purchasely.SetUserAttribute("IntAttribute", -100);
+_purchasely.SetUserAttribute("FloatAttribute", 147.5f);
+_purchasely.SetUserAttribute("BoolAttribute", true);
+_purchasely.SetUserAttribute("DateAttribute", DateTime.Now);
+
+//Remove one attribute
+_purchasely.ClearUserAttribute("StringAttribute");
+	
+//Remove all attributes
+_purchasely.ClearUserAttributes();
+```
+{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
@@ -185,6 +204,14 @@ console.log(attributes); //returns a PurchaselyUserAttribute object with key and
 const dateAttribute = await Purchasely.userAttribute("subscription_date"); //returns the value
 //for a date you need to parse the iso 8601 string to retrieve the date object
 console.log(new Date(dateAttribute).getFullYear());
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.GetUserAttribute("AttributeID")
 ```
 {% endtab %}
 {% endtabs %}

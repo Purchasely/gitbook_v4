@@ -38,6 +38,7 @@
   * [React Native SDK](quick-start-1/sdk-installation/react-native-sdk.md)
   * [Cordova SDK](quick-start-1/sdk-installation/cordova.md)
   * [Flutter SDK](quick-start-1/sdk-installation/flutter-sdk.md)
+  * [Unity SDK](quick-start-1/sdk-installation/flutter-sdk-1.md)
 * [SDK configurations](quick-start-1/sdk-configuration/README.md)
   * [Paywall observer mode](quick-start-1/sdk-configuration/paywall-observer-mode.md)
   * [Full mode](quick-start-1/sdk-configuration/full-mode.md)

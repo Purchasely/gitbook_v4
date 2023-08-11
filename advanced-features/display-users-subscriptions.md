@@ -68,5 +68,13 @@ try {
 }
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.PresentSubscriptions();
+```
+{% endtab %}
 {% endtabs %}
 

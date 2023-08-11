@@ -57,6 +57,13 @@ Purchasely.isReadyToPurchase(true);
 Purchasely.isReadyToPurchase(true);
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+<pre class="language-csharp"><code class="lang-csharp">private PurchaselyRuntime.Purchasely _purchasely;
+
+<strong>_purchasely.SetReadyToPurchase(true);
+</strong></code></pre>
+{% endtab %}
 {% endtabs %}
 
 You can set it back to false when the app goes in the background when you have a screen that blocks UI in background mode and that is dismissed when the app is in foreground (like in banking apps).
