@@ -87,7 +87,7 @@ var adid = Adjust.getAdid();
 Purchasely.setAttribute(Attributes.ADJUST_ID, Adjust.getAdid());
 ```
 
-***
+
 
 ### 2. Creating your `event tokens` in the Adjust Console
 

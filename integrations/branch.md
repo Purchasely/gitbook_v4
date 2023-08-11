@@ -52,7 +52,7 @@ The integration requires ${integration\_setup\_steps\_count} steps:
 
 See the [Branch Documentation](https://help.branch.io/developers-hub/docs/custom-settings#settings-for-user-ids) for more information
 
-***
+
 
 ### 2. Activating the Branch integration
 

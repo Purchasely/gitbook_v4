@@ -156,6 +156,20 @@ if (!configured) {
 }
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+...
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely = new PurchaselyRuntime.Purchasely("USER_ID",
+			false,
+			LogLevel.Debug,
+			RunningMode.Full,
+			OnPurchaselyStart,
+			OnPurchaselyEvent);
+```
+{% endtab %}
 {% endtabs %}
 
 The `userID` parameter is optional and allows you to associate the purchase to a user instead of a device.
@@ -232,6 +246,19 @@ Purchasely.presentPresentationForPlacement('onboarding');
 {% tab title="Flutter" %}
 ```jsx
 await Purchasely.presentPresentationForPlacement('onboarding');
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+...
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.PresentPresentationForPlacement('placementId',
+			OnPresentationResult,
+			OnPresentationContentLoaded,
+			OnPresentationContentClosed,
+			'contentId');
 ```
 {% endtab %}
 {% endtabs %}

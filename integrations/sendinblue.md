@@ -100,7 +100,7 @@ Purchasely.setAttribute(Attributes.SENDINBLUE_USER_EMAIL,  "mail@company.com");
 {% endtab %}
 {% endtabs %}
 
-***
+
 
 ### 2. Activating the Sendinblue integration
 

@@ -85,6 +85,25 @@ List<PLYProduct> products = await Purchasely.allProducts();
 print('Products $products');
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+...
+_purchasely.GetAllProducts(OnGetAllProductsSuccess, Log);
+...
+
+private void OnGetAllProductsSuccess(List<Product> products)
+{
+	Log($"Get All Products Success. Products fetched: {products.Count}.");
+	foreach (var product in products)
+	{
+		LogProduct(product);
+	}
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ### Getting a product
@@ -171,6 +190,21 @@ Purchasely.productWithIdentifier('PRODUCT_VENDOR_ID', (product) => {
 PLYProduct product =
           await Purchasely.productWithIdentifier("PRODUCT_VENDOR_ID");
 print(product.name);
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+...
+_purchasely.GetProduct("productId", LogProduct, Log);
+...
+
+private void LogProduct(Product product)
+{
+	Log($"Product name: {product.name}. ID: {product.vendorId}");
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -273,6 +307,21 @@ PLYPlan plan =
 print(plan.name);
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+...
+_purchasely.GetPlan("planId", LogPlan, Log);
+...
+
+private void LogPlan(Plan plan)
+{
+    Log($"Plan name: {plan.name}. ID: {plan.vendorId}");
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ### Purchasing a plan
@@ -366,6 +415,14 @@ try {
 }
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.Purchase("planId", LogPlan, Log, "contentId");
+```
+{% endtab %}
 {% endtabs %}
 
 ### Restoring all products
@@ -444,6 +501,14 @@ Purchasely.restoreAllProducts(() => {
 {% tab title="Flutter" %}
 ```dart
 bool restored = await Purchasely.restoreAllProducts();
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.RestoreAllProducts(false, LogPlan, Log);
 ```
 {% endtab %}
 {% endtabs %}
@@ -550,6 +615,34 @@ try {
   }
 } catch (e) {
   print(e);
+}
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+...
+_purchasely.GetUserSubscriptions(OnGetSubscriptionsSuccess, Log);
+...
+
+private void OnGetSubscriptionsSuccess(List<SubscriptionData> subscriptionData)
+{
+	Log("Get Subscription Data Success.");
+
+	foreach (var subscription in subscriptionData)
+	{
+		Log($"Subscription ID: {subscription.id}");
+
+		var plan = subscription.plan;
+		if (plan != null)
+			LogPlan(plan);
+
+		var product = subscription.product;
+		if (product != null)
+			LogProduct(product);
+	}
 }
 ```
 {% endtab %}

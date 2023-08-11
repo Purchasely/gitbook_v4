@@ -85,6 +85,14 @@ Purchasely.setLanguage("es");
 Purchasely.setLanguage('es');
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.SetLanguage("en");
+```
+{% endtab %}
 {% endtabs %}
 
 {% hint style="warning" %}
@@ -101,7 +109,7 @@ The keys that can be overriden are in the following files with the default trans
 iOS Localizable.strings - English version
 {% endfile %}
 
-{% file src="../.gitbook/assets/strings.xml" %}
+{% file src="../.gitbook/assets/strings (1).xml" %}
 Android strings - English version
 {% endfile %}
 

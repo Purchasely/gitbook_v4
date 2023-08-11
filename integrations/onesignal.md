@@ -103,7 +103,7 @@ Purchasely.setAttribute(Attributes.ONESIGNAL_PLAYER_ID, (await OneSignal.getDevi
 {% endtab %}
 {% endtabs %}
 
-***
+
 
 ### 2. Activating the OneSignal integration
 

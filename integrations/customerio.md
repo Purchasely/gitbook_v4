@@ -52,7 +52,7 @@ The integration requires ${integration\_setup\_steps\_count} steps:
 
 See the [Customer.io Documentation]($%7Bintegration\_documentation\_url%7D/) for more information
 
-***
+
 
 ### 2. Activating the Customer.io integration
 

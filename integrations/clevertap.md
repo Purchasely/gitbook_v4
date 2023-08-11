@@ -89,7 +89,7 @@ CleverTap.getCleverTapID((err, res) => {
 {% endtab %}
 {% endtabs %}
 
-***
+
 
 ### 2. Activating the CleverTap integration
 

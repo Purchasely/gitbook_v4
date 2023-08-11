@@ -89,7 +89,7 @@ Purchasely.setAttribute(Attributes.MIXPANEL_DISTINCT_ID, (await mixpanel.getDist
 {% endtab %}
 {% endtabs %}
 
-***
+
 
 ### 2. Activating the Mixpanel integration
 

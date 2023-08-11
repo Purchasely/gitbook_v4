@@ -159,8 +159,9 @@ Purchasely.fetchPresentationForPlacement("onboarding") { presentation, error ->
 {% endtab %}
 
 {% tab title="Java" %}
-<pre class="language-java"><code class="lang-java"><strong>Purchasely.fetchPresentationForPlacement(
-</strong>    this, 
+```java
+Purchasely.fetchPresentationForPlacement(
+    this, 
     "onboarding", 
     null,
     (presentation, error) -> {
@@ -181,14 +182,14 @@ Purchasely.fetchPresentationForPlacement("onboarding") { presentation, error ->
         
         if(presentation.getType() == PLYPresentationType.CLIENT) {
             String paywallId = presentation.getId();
-            List&#x3C;String> planIds = presentation.getPlans();
+            List<String> planIds = presentation.getPlans();
             // Display your own paywall
         }
         
         return null;
-<strong>    }
-</strong><strong>);
-</strong></code></pre>
+    }
+);
+```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -283,6 +284,43 @@ try {
 {% tab title="Cordova" %}
 ```javascript
 // coming soon
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+...
+_purchasely.FetchPresentation("presentationId",
+			OnFetchPresentationSuccess,
+			Log,
+			"contentId");		
+...
+
+private void OnFetchPresentationSuccess(Presentation presentation)
+{
+	Log("Fetch Presentation Success.");
+	LogPresentation(presentation);
+
+	switch (presentation.presentationType)
+	{
+		case PresentationType.Normal:
+		case PresentationType.Fallback:
+			_purchasely.PresentPresentationWithId(presentation.id,
+				OnPresentationResult,
+				OnPresentationContentLoaded,
+				OnPresentationContentClosed);
+			break;
+		case PresentationType.Unknown:
+		case PresentationType.Deactivated:
+			Log($"Fetched presentation with type: {presentation.presentationType}. Will not show content.");
+			break;
+		case PresentationType.Client:
+			paywall.Show(presentation);
+			break;
+	}
+}
 ```
 {% endtab %}
 {% endtabs %}

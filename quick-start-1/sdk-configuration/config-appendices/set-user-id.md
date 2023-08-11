@@ -68,6 +68,14 @@ Purchasely.userLogin('123456789').then((refresh) => {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.UserLogin("userId", OnUserLoginCompleted);
+```
+{% endtab %}
 {% endtabs %}
 
 To remove the user (logged out) you can perform a :
@@ -112,6 +120,14 @@ Purchasely.userLogout()
 {% tab title="Flutter" %}
 ```dart
 Purchasely.userLogout();
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+```csharp
+private PurchaselyRuntime.Purchasely _purchasely;
+
+_purchasely.UserLogout();
 ```
 {% endtab %}
 {% endtabs %}

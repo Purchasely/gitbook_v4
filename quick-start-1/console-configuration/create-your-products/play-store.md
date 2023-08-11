@@ -7,14 +7,34 @@
    _Google Play Console > All apps > \[YOUR APP] > Monetize > Products > Subscriptions_
 3. Click on _Create subscription_
 4. Fill in the **Product ID** and details such as name and description which will be displayed to the user
-5. Adjust the Subscription duration & the prices
+5. Add one or several **Base Plans** and their associated Pricings / Phases / Offers
 
-![](../../../.gitbook/assets/Screenshot\_20210105\_181322.png)
+<div data-full-width="true">
 
-The value of the **Product ID** parameter will be needed to be mapped with the corresponding plan in the Purchasely Console.
+<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption><p>Create a new Subscription entry</p></figcaption></figure>
+
+</div>
+
+<div data-full-width="true">
+
+<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption><p>Add one or several base plans to the Susbcription</p></figcaption></figure>
+
+</div>
+
+Don't forget to **Activate** the newly created **Base Plan** to make it available for purchase.
+
+{% hint style="danger" %}
+The value of the **Product ID,** **Base Plan ID** and **"Backwards Compatible"** parameters need to be mapped with the corresponding plan in the Purchasely Console.
+{% endhint %}
+
+<div data-full-width="true">
+
+<figure><img src="../../../.gitbook/assets/image (137).png" alt=""><figcaption><p>Map Plan attributes in Purchasely Console according to Google Play Console</p></figcaption></figure>
+
+</div>
 
 {% hint style="info" %}
-These in-app purchases may take some times - a few hours - to be available for internal or public testing
+These updates in the Google Play Console may take some time - a few hours - to be available for internal or public testing
 {% endhint %}
 
 ## Creating a new In-App product in the Google Play Store Console
@@ -26,7 +46,11 @@ These in-app purchases may take some times - a few hours - to be available for i
 4. Fill in the **Product ID** and details such as name and description which will be displayed to the user
 5. Adjust the price
 
-![](../../../.gitbook/assets/Screenshot\_20210105\_181745.png)
+<div data-full-width="true">
+
+<img src="../../../.gitbook/assets/Screenshot_20210105_181745.png" alt="">
+
+</div>
 
 The value of the **Product ID** parameter will be needed to be mapped with the corresponding plan in the Purchasely Console.
 

@@ -1,0 +1,2 @@
+user_id;receipt_data;store_product_id;amount_cents;currency;quantity;intro_amount_cents;intro_cycles;intro_duration;intro_period;duration;period
+1234;abcdFEbsbs;com.foo.bar;1235;EUR;1;0;2;4;week;3;month
