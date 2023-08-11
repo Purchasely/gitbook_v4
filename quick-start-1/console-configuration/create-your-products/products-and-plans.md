@@ -1,16 +1,12 @@
 # Products & Plans
 
-## Creating _`Products`_ in the Purchasely Console
+## &#x20;_`Products`_
 
-![](<../../../.gitbook/assets/image (118).png>)
+<div data-full-width="true">
 
-_**`Products`**_ already created for this application are visible in the block Products
+<figure><img src="../../../.gitbook/assets/image (206).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../../.gitbook/assets/image (183).png>)
-
-By clicking on the **`+ Add new product`** button in the upper right corner, you can add a new _**`Product`**_ to your Mobile Application.
-
-![](<../../../.gitbook/assets/image (198).png>)
+</div>
 
 A _**`Product`**_ is composed of the following parameters :
 
@@ -34,11 +30,15 @@ The Product Vendor ID cannot be changed after its creation, so choose it careful
 
 To edit a _**`Product`**_, click on the **`Edit`** entry in the upper right corner
 
-![](<../../../.gitbook/assets/image (126).png>)
+<div data-full-width="true">
+
+<figure><img src="../../../.gitbook/assets/image (207).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 Except the `Product Vendor ID`, all the other parameters can be modified when editing a _**`Product`**_
 
-## About _`Plans`_
+## _`Plans`_
 
 In Purchasely model, _**`Plans`**_ correspond to items users can actually purchase. They correspond to :
 
@@ -55,13 +55,13 @@ In Purchasely Console, a _**`Product`**_, can be associated to several _**`Plans
 
 ## Creating _`Plans`_ in the Purchasely Console
 
-![](<../../../.gitbook/assets/image (135).png>)
+To create a _**`Plan`**_, click on the button **`+ Add new plan`**
 
-To create a _**`Plan`**_, click on the button **`+ Add new plan`**&#x20;
+<div data-full-width="true">
 
-test
+<figure><img src="../../../.gitbook/assets/image (209).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../../.gitbook/assets/image (148) (1) (1) (2) (1).png>)
+</div>
 
 A _**`Plan`**_ is composed of the following parameters :
 
@@ -80,21 +80,31 @@ A _**`Plan`**_ is composed of the following parameters :
 
 To bind the Plan with the Store Product ID, you must first ensure that the [Application has been correctly plugged with the stores](../../../quick-start/console-configuration/installation.md#2-plug-it-with-the-stores).
 
-![](<../../../.gitbook/assets/image (168).png>)
+<div data-full-width="true">
+
+<figure><img src="../../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 * Check the Stores on which your Plan is distributed\
 
 * Report the `Product ID` from the corresponding in-app purchase retrieved from the App Store Connect Console in the field `App Store Product id`\
   _App Store Connect Console > My Apps > \[YOUR APP] > In-App Purchases > Manage > In-App Purchases > \[YOUR IN-APP PURCHASE]_
 
-![](<../../../.gitbook/assets/image (37).png>)
+<div data-full-width="true">
 
-* Report the `Product ID` from the corresponding in-app product retrieved from the Play Store Console in the field `Play Store Product id`\
+<figure><img src="../../../.gitbook/assets/image (181).png" alt=""><figcaption><p>Plan mappings App Store Connect -> Purchasely</p></figcaption></figure>
+
+</div>
+
+* Report the `Product ID`, `Base Plan ID` and wether or not the plan is `Backwards Compatible` from the corresponding in-app product retrieved from the Play Store Console in the field `Play Store Product id`\
   _Play Store Console > \[YOUR APP] > Store presence > In-App products > Subscriptions > \[YOUR IN-APP SUBSCRIPTION]_
 
-![](<../../../.gitbook/assets/image (36).png>)
+<div data-full-width="true">
 
+<figure><img src="../../../.gitbook/assets/image (169).png" alt=""><figcaption><p>Plan Mappings Google Play Console -> Purchasely</p></figcaption></figure>
 
+</div>
 
 ### Ordering Plans inside a Product
 
@@ -132,9 +142,7 @@ On iOS, the migration is directly applied by the App Store. The condition to mee
   \
   Inside the app, the user flow looks like this :
 
-![User flo on iOS when ](<../../../.gitbook/assets/image (38) (1) (1) (1).png>)
-
-
+![User flow on iOS](<../../../.gitbook/assets/image (38) (1) (1) (1).png>)
 
 * **Upgrade** : if subscription A has a lower rank than subscription B in the `Subscription Group`, the migration will be considered as an upgrade. In this case, subscription B will immediately replace subscription A a new billing cycle will start right away. Subscription B will be refund _prorata temporis_ (for the time remaining before the end of the current billing period) to the user.\
 
@@ -153,4 +161,8 @@ More information about the all this is accessible directly on [Apple Help Center
 
 To edit a _**`Plan`**_,  click on the **`Edit`** button in the upper right corner.
 
-![](<../../../.gitbook/assets/image (155).png>)
+<div data-full-width="true">
+
+<figure><img src="../../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
+
+</div>

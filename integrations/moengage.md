@@ -52,7 +52,7 @@ The integration requires ${integration\_setup\_steps\_count} steps:
 
 See the [MoEngage Documentation](https://developers.moengage.com) for more information
 
-***
+
 
 ### 2. Activating the MoEngage integration
 

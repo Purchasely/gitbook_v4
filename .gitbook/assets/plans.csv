@@ -1,0 +1,4 @@
+Product name;Product id;Plan name;Plan Id;Level;Type;ID Apple;ID Google
+Premium subscription;PREMIUM;Premium 1 month;PREMIUM_1;1;AUTO_RENEWING_SUBSCRIPTION;com.myapp.premium.1month;com.myapp.premium.1month
+Premium subscription;PREMIUM;Premium 3 months;PREMIUM_3;3;AUTO_RENEWING_SUBSCRIPTION;com.myapp.premium.3month;com.myapp.premium.3month
+Premium subscription;PREMIUM;Premium 6 months;PREMIUM_6;6;AUTO_RENEWING_SUBSCRIPTION;com.myapp.premium.6month;com.myapp.premium.6month

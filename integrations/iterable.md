@@ -86,7 +86,7 @@ Purchasely.setAttribute(Attributes.ITERABLE_USER_EMAIL,  "mail@company.com");
 {% endtab %}
 {% endtabs %}
 
-***
+
 
 ### 2. Activating the Iterable integration
 

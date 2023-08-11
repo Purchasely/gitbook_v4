@@ -1,0 +1,2 @@
+user_id;purchase_token;store_product_id;amount_cents;currency;quantity;intro_amount_cents;intro_duration;intro_period
+1234;abcdFEbsbs;com.foo.bar;1500;EUR;1;0;3;day
