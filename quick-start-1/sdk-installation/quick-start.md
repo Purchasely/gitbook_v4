@@ -4,12 +4,10 @@ description: Guide for integrating Purchasely SDK inside your Android app
 
 # Android SDK
 
-
-
 {% hint style="info" %}
-Our SDK is compiled with Java 11. You can still use Java 8 for your project but your gradle deamon must use Java 11 to compile your project.
+Our SDK is compiled with Java 17. You can still use Java 8 for your project but your gradle deamon must use Java 17 to compile your project.
 
-You can use Android Studio to change the default java version of gradle by going to Preferences -> Build, Execution, Deployment -> Build Tools -> Gradle and select Java 11 as Gradle JDK
+You can use Android Studio to change the default java version of gradle by going to Preferences -> Build, Execution, Deployment -> Build Tools -> Gradle and select Java 17 as Gradle JDK
 {% endhint %}
 
 ## **Maven**
@@ -33,7 +31,7 @@ jcenter() is also a valid repository but will be discontinued February 1st 2022.
 Add the core sdk to your dependencies
 
 ```bash
-implementation 'io.purchasely:core:3.7.3'
+implementation 'io.purchasely:core:4.0.0'
 ```
 
 The core SDK does not contains a billing store, you need to add the ones you want to use as a dependency otherwise your users won't be able to make purchases.
@@ -41,7 +39,7 @@ The core SDK does not contains a billing store, you need to add the ones you wan
 ### Google Play Billing
 
 ```bash
-implementation 'io.purchasely:google-play:3.7.3'
+implementation 'io.purchasely:google-play:4.0.0'
 ```
 
 {% hint style="info" %}
@@ -85,7 +83,7 @@ apply plugin: 'com.huawei.agconnect'
 
 dependencies {
     //Add this line to integrate Huawei Mobile Services with Purchasely
-    implementation 'io.purchasely:huawei-services:3.7.3'
+    implementation 'io.purchasely:huawei-services:4.0.0'
 }
 
 ```
@@ -95,16 +93,16 @@ dependencies {
 ### Amazon App Store
 
 ```bash
-implementation 'io.purchasely:amazon:3.7.3'
+implementation 'io.purchasely:amazon:4.0.0'
 ```
 
 ### Video Player
 
-If you have videos in your paywall, you must provide a video player to play them. \
+If you have videos in your paywall, you must provide a video player to play them.\
 Since version 3.1.0, Purchasely core dependency does not include a video player to avoid dependency conflicts.
 
 \
 We provide a new player dependency which will be detected automatically by our SDK.\
-`implementation 'io.purchasely:player:3.7.3'`\
+`implementation 'io.purchasely:player:4.0.0'`\
 \
 You can also provide your own player view, more information in our [help center](https://help.purchasely.com/en/articles/5963004-display-a-video-on-android-devices)
