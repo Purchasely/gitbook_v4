@@ -21,8 +21,8 @@ You can find the full list of events [here](../analytics/events/webhook-events/s
 
 Naming your users allows our servers to send purchase events on your behalf to Airship. You've got 2 ways of doing it...
 
-1. [From within the app](broken-reference)
-2. [From your server](broken-reference)
+1. [From within the app](broken-reference/)
+2. [From your server](broken-reference/)
 
 ### From within your app
 
@@ -68,7 +68,7 @@ UAirship.setNamedUser("YOUR_USER_ID")
 {% endtabs %}
 
 {% hint style="info" %}
-&#x20;More informations on "named users" can be found [h](https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User)ere: [https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User](https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User)
+More informations on "named users" can be found [h](https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User)ere: [https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User](https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User)
 {% endhint %}
 
 ### From your server
@@ -185,17 +185,17 @@ UAirship.getChannelID(function (channelID) {
 
 Go in the "External integrations" section, and open the edition form for Airship:
 
-![](<../.gitbook/assets/Screenshot 2021-03-24 at 22.36.51@2x.jpg>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MWa1QDakqUp\_C\_YDzM5%2F-MWaACqpGr74r34oJmuc%2FScreenshot%202021-03-24%20at%2022.36.51%402x.jpg?alt=media\&token=4503b63b-eb77-49a7-b27c-f499c7b3ecd5)
 
-![](<../.gitbook/assets/Screenshot 2021-03-24 at 22.49.09@2x.jpg>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MWa1QDakqUp\_C\_YDzM5%2F-MWaChCw2FxkPe-dR8ah%2FScreenshot%202021-03-24%20at%2022.49.09%402x.jpg?alt=media\&token=f1e9e627-cd75-44ec-88c2-efe1a6d90121)
 
 You'll find your "**Airship API key**" in your Airship console, section "_Settings » APIs & Integrations_":
 
-![](<../.gitbook/assets/Screenshot 2021-03-24 at 22.41.10@2x.jpg>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MWa1QDakqUp\_C\_YDzM5%2F-MWaB4TF0Bqo2o6PuAxk%2FScreenshot%202021-03-24%20at%2022.41.10%402x.jpg?alt=media\&token=7c0db479-c812-4524-ae29-746d1772abe8)
 
 You need to generate the "**Airship API token**" in your Airship console, section "_Settings » APIs & Integrations » Tokens_", with the "**Audience Modification**" role:
 
-![](<../.gitbook/assets/Screenshot 2021-03-24 at 22.43.21@2x.jpg>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MWa1QDakqUp\_C\_YDzM5%2F-MWaBe7hjX0SFT\_k\_w8s%2FScreenshot%202021-03-24%20at%2022.43.21%402x.jpg?alt=media\&token=844c8000-594a-4649-9f50-1b9336a33e16)
 
 Finally, the "**Server**" to use depends on your app.
 
@@ -204,7 +204,7 @@ Finally, the "**Server**" to use depends on your app.
 
 If you want to, you can rename the events sent to Airship:
 
-![](<../.gitbook/assets/Screenshot 2021-03-25 at 00.03.46@2x.jpg>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MWaSdXiZZtzphvzW2-O%2F-MWaTsjKqvr4Hu4dZkFR%2FScreenshot%202021-03-25%20at%2000.03.46%402x.jpg?alt=media\&token=8c852525-9a06-4d0f-8606-610979fa2912)
 
 {% hint style="info" %}
 The overridden name must only contain **alphanumeric lowercase characters**, **underscores and dashes**, as [specified in the Airship documentation](https://docs.airship.com/api/ua/#schemas-customeventobject-body-name).

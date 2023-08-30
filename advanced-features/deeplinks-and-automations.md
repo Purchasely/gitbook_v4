@@ -115,7 +115,7 @@ class MyActivity : FragmentActivity() {
         val data = intent.data
         if(data != null) {
             //Purchasely sdk will return true if it handles the deeplink
-            val isHandledByPurchasely = Purchasely.handle(data)
+            val isHandledByPurchasely = Purchasely.isDeeplinkHandled(data)
         }
     }    
 
@@ -135,7 +135,7 @@ public class MyActivity extends FragmentActivity {
         Uri data = getIntent().getData();
         if(data != null) {
             //Purchasely sdk will return true if it handles the deeplink
-            boolean isHandledByPurchasely = Purchasely.handle(data);
+            boolean isHandledByPurchasely = Purchasely.isDeeplinkHandled(data);
         }
     }
 }
@@ -187,13 +187,13 @@ Purchasely.isReadyToPurchase(true)
 
 {% tab title="Kotlin" %}
 ```kotlin
-Purchasely.isReadyToPurchase = true
+Purchasely.readyToOpenDeeplink = true
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
-Purchasely.setReadyToPurchase(true);
+Purchasely.setReadyToOpenDeeplink(true);
 ```
 {% endtab %}
 

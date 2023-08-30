@@ -1,6 +1,6 @@
 # Controllers (iOS) / Fragments (Android)
 
-The SDK can pop controllers above your UI like product presentation pages (see [Promoting In-App Purchases](../promoting-your-products/promoting-in-app-purchases.md)) or the subscription lists or any deeplink triggered by a push service.&#x20;
+The SDK can pop controllers above your UI like product presentation pages (see [Promoting In-App Purchases](../promoting-your-products/promoting-in-app-purchases.md)) or the subscription lists or any deeplink triggered by a push service.
 
 Of course we will wait for you to tell us when we are free to cover your content by calling `isReadyToPurchase` ([more details](../../quick-start-1/sdk-configuration/config-appendices/#notifying-the-sdk-when-the-app-is-ready-loaded)) but you might want to take control on the controller animation, position… It can be a side bar with the offer on tablets or toaster messages for the error messages.
 
@@ -57,8 +57,8 @@ override fun onAlert(alert: PLYAlertMessage) {
     //TODO display alert dialog, see "Errors & alerts" page
 }
 
-override fun onFragment(fragment: Fragment, type: PLYUIFragmentType) {
-    //TODO display fragment as you wish in your activity
+override fun onView(@NotNull view: View, type: PLYUIViewType) {
+    //TODO display view as you wish in your activity
     //type can be PRODUCT_PAGE, SUBSCRIPTION_LIST or CANCELLATION_PAGE
 }
 ```
@@ -72,15 +72,13 @@ public void onAlert(@NotNull PLYAlertMessage alert) {
 }
 
 @Override
-public void onFragment(@NotNull Fragment fragment, @NotNull PLYUIFragmentType type) {
-  //TODO display fragment as you wish in your activity
+public void onView(@NotNull View view, @NotNull PLYUIViewType type) {
+  //TODO display view as you wish in your activity
   //type can be PRODUCT_PAGE, SUBSCRIPTION_LIST or CANCELLATION_PAGE
 }
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 {% hint style="warning" %}
 Android only : We advise you to call `Purchasely.setUiListener(null)`when done to remove all references to your activity if you are not using `WeakReference`

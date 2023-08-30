@@ -52,8 +52,6 @@ The integration requires ${integration\_setup\_steps\_count} steps:
 
 See the [MoEngage Documentation](https://developers.moengage.com) for more information
 
-
-
 ### 2. Activating the MoEngage integration
 
 The activation requires ${integration\_setup\_activation\_steps\_count} steps:
@@ -63,17 +61,17 @@ The activation requires ${integration\_setup\_activation\_steps\_count} steps:
 3. Retrieving your MoEngage DATA API KEY from MoEngage's dashboard
 4. Enabling the MoEngage integration in the Purchasely Console
 
-#### a. // Retrieve your MoEngage APP ID from MoEngage's dashboard
+#### a. Retrieve your MoEngage APP ID from MoEngage's dashboard
 
 1. The APP\_ID for your MoEngage account is available on the MoEngage Dashboard in Settings > App Settings > General Settings > Account Settings > APP ID.
 2. Write down your APP ID
 
-#### b. // Retrieve your MoEngage DATA API ID from MoEngage's dashboard
+#### b. Retrieve your MoEngage DATA API ID from MoEngage's dashboard
 
 1. The APP\_ID for your MoEngage account is available on the MoEngage Dashboard in Settings > App Settings > General Settings > Data API settings > DATA API ID
 2. Write down your DATA API ID
 
-#### c. // Retrieve your MoEngage DATA API ID from MoEngage's dashboard
+#### c. Retrieve your MoEngage DATA API ID from MoEngage's dashboard
 
 1. The APP\_ID for your MoEngage account is available on the MoEngage Dashboard inSettings > App Settings > General Settings > Data API settings > DATA API KEY
 2. Write down your DATA API KEY

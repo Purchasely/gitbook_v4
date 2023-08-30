@@ -2,7 +2,7 @@
 
 Paywalls are displayed by calling a Placement.
 
-A Placement represents a specific location in your user journey inside your app (e.g. Onboarding, Settings, Home page, Article). A placement is linked to a paywall and a single paywall can be used for different Placements. You can create as many Placements as you want, and this is the only thing that ties the app developer to the marketer.&#x20;
+A Placement represents a specific location in your user journey inside your app (e.g. Onboarding, Settings, Home page, Article). A placement is linked to a paywall and a single paywall can be used for different Placements. You can create as many Placements as you want, and this is the only thing that ties the app developer to the marketer.
 
 Once the placements are defined and called from the app, you can change the displayed paywall remotely without any developer action.
 
@@ -38,7 +38,7 @@ Clic on the top right corner of the Placements page on "New placement".
 
 Then you will have to fill different text fields.
 
-* `NAME` : the name is only used in the Purchasely console&#x20;
+* `NAME` : the name is only used in the Purchasely console
 * `ID` : the id is what the developer will need to call in the app
 * `DESCRIPTION` : the description is only used in the Purchasely console and is meant to help for collaborative work.
 * `PAYWALL` : the paywall is the paywall that will be displayed when the Placement will be called in the app. This is where the magic is, you will be able to change the displayed Paywall for that Placement whenever you want without any further developer action.
@@ -51,13 +51,9 @@ Once it's created you can manage all your Placements at the same place and edit 
 
 ## How to implement a Placement in your app
 
-
-
 Once the placement has been define in the Purchasely Console you have to call it in your app.
 
 You can do it using an almost identical method than the one you already used for a `presentationController`with an id.
-
-
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -80,19 +76,23 @@ UIViewController *paywallCtrl = [Purchasely presentationControllerFor:@"my_place
 
 {% tab title="Kotlin" %}
 ```kotlin
-val placementId = "onboarding"
-val contentId = "my_content_id" //or null
-Purchasely.presentationFragmentForPlacement(placementId, contentId) { result, plan ->
-      Log.d("Purchasely", "Result is $result with plan $plan")
+Purchasely.presentationViewForPlacement(
+    context = context,
+    placementId = placementId,
+    contentId = contentId,
+    onClose = { }
+) { result, plan ->
+    Log.d("Purchasely", "Result is $result with plan $plan")
 }
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
-String placementId = "onboarding"
-String contentId = "my_content_id" //or null
-Purchasely.presentationFragmentForPlacement(placementId, contentId);
+String placementId = "onboarding";
+String contentId = "my_content_id"; // or null
+
+Purchasely.presentationViewForPlacement(context, placementId, contentId, null, null);
 ```
 {% endtab %}
 
@@ -138,6 +138,3 @@ The callback `PLYProductViewControllerResult`(iOS) / `ProductViewResultListener`
 {% hint style="info" %}
 You can be alerted if the purchase was made by listening to the [Notifications](https://github.com/Purchasely/Purchasely-iOS#notifications) or by implementing the optional completion block
 {% endhint %}
-
-
-

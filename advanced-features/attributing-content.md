@@ -1,6 +1,6 @@
 # Associating content
 
-When you purchase an item / subscription, in most cases,  you will know what it is meant for without needing additional details. This is the case if you purchase 200 coins, unlock level 3 of your game or subscribe to a service.
+When you purchase an item / subscription, in most cases, you will know what it is meant for without needing additional details. This is the case if you purchase 200 coins, unlock level 3 of your game or subscribe to a service.
 
 In some cases the identifier of the plan purchased is not enough to precisely identify the purchase. This is especially the case when it comes to consumables. As subscriptions and consumables cannot be purchased multiple times their usages are usually unambiguous.
 
@@ -10,9 +10,9 @@ There are many use cases in which you need to identify the content purchased:
   You will have several consumables that define the different possible prices of each movie on your platform. Several movies will have the same pricing and the plan identifier is not enough to know which movie was purchased as it only dexscribes a price.\
   You will need to identify the program additionally.
 * **Fantasy league**\
-  If you develop a fantasy league app with multiple league and you can unlock boosters, you will have to know which league the booster must be applied to.&#x20;
+  If you develop a fantasy league app with multiple league and you can unlock boosters, you will have to know which league the booster must be applied to.
 * **Multiple user account app**\
-  If your app or game has several profiles / accounts  you will want to associate the account to the purchase.
+  If your app or game has several profiles / accounts you will want to associate the account to the purchase.
 * … in fact each time the plan identifier is not enough to identify what you purchased and unlock the feature, you will need to pass an additional identifier.
 
 ### Introducing Content Ids
@@ -52,9 +52,9 @@ UIViewController *paywallCtrl = [Purchasely presentationControllerWith:@"my_pres
 
 {% tab title="Kotlin" %}
 ```kotlin
-Purchasely.presentationFragment(
-    presentationId = "my_presentation_id",
-    contentId = "content_id"
+Purchasely.presentationView(
+    context = context,
+    properties = properties
 ) { result, plan ->
 }
 ```
@@ -62,7 +62,7 @@ Purchasely.presentationFragment(
 
 {% tab title="Java" %}
 ```java
-Purchasely.presentationFragment("my_presentation_id", "my_content_id",
+Purchasely.presentationView(context, properties,
 new ProductViewResultListener() {
     @Override
     public void onResult(@NotNull PLYProductViewResult result, @Nullable PLYPlan plan) {
@@ -125,7 +125,7 @@ Purchasely.purchase(plan: plan,	contentId: "my_content_id", success: {
 
 {% tab title="Kotlin" %}
 ```kotlin
-Purchasely.purchase(this@MainActivity, plan, "content_id", object: PurchaseListener {
+Purchasely.purchase(this@MainActivity, plan, offer, "content_id", object: PurchaseListener {
     override fun onPurchaseStateChanged(state: State) {
     }
 })
@@ -134,7 +134,7 @@ Purchasely.purchase(this@MainActivity, plan, "content_id", object: PurchaseListe
 
 {% tab title="Java" %}
 ```java
-Purchasely.purchase(this, plan, "my_content_id", (PurchaseListener) state -> {
+Purchasely.purchase(this, plan, offer, "my_content_id", (PurchaseListener) state -> {
 });
 ```
 {% endtab %}

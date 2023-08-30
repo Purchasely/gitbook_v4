@@ -3,7 +3,7 @@
 Purchasely provides customizable presentation templates you but if you want to create your own and only use Purchasely for handling the purchase process you can. We offer methods to:
 
 * Get a product
-* Get a plan&#x20;
+* Get a plan
 * Get a users subscriptions
 * Purchase a product
 * Restore all products
@@ -349,7 +349,7 @@ Purchasely.purchase(plan: plan, success: {
 
 {% tab title="Kotlin" %}
 ```kotlin
-Purchasely.purchase(this@MainActivity, plan, object: PurchaseListener {
+Purchasely.purchase(this@MainActivity, plan, offer, object: PurchaseListener {
     override fun onPurchaseStateChanged(state: State) {
         when(state) {
             is State.PurchaseComplete -> //Display success purchase
@@ -365,7 +365,7 @@ Purchasely.purchase(this@MainActivity, plan, object: PurchaseListener {
 
 {% tab title="Java" %}
 ```java
-Purchasely.purchase(this, plan, (PurchaseListener) state -> {
+Purchasely.purchase(this, plan, offer, (PurchaseListener) state -> {
     if(state instanceof State.PurchaseComplete) {
         //Display success purchase           
     } else if(state instanceof State.NotAvailable) {

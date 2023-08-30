@@ -62,7 +62,7 @@ AppboyPlugin.changeUser("YOUR_USER_ID");
 {% endtabs %}
 
 {% hint style="info" %}
-Make sure the User ID you give to Braze matches the**`vendor_id`** you give to Purchasely, as our servers refer to this ID when sending events for the user. Read Braze documentation on [Setting User IDs](https://www.braze.com/docs/developer\_guide/platform\_integration\_guides/ios/analytics/setting\_user\_ids/) for more information.
+Make sure the User ID you give to Braze matches the\*\*`vendor_id`\*\* you give to Purchasely, as our servers refer to this ID when sending events for the user. Read Braze documentation on [Setting User IDs](https://www.braze.com/docs/developer\_guide/platform\_integration\_guides/ios/analytics/setting\_user\_ids/) for more information.
 {% endhint %}
 
 ## Handle anonymous users
@@ -132,23 +132,23 @@ When the anonymous user later becomes logged in, Purchasely will automatically s
 
 Go to the "External integrations" section, and open the edition form for Braze:
 
-![](<../.gitbook/assets/image (61).png>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MX2Vh3w6Rg9vuPeQDoQ%2F-MX2jb9jbR5E\_smwo3y8%2Fimage.png?alt=media\&token=94b75afb-a7d6-41f9-98a3-fbd252e795ef)
 
-![](<../.gitbook/assets/image (62).png>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MX2Vh3w6Rg9vuPeQDoQ%2F-MX2jrXe8bmlKqVIlt0a%2Fimage.png?alt=media\&token=ebd5b9a7-020b-4805-ac71-86c8c87d12dc)
 
 ### Getting Braze API key
 
 Go to your **Braze Developer Console**, and click on "_Create New API Key"_
 
-![](<../.gitbook/assets/image (64).png>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MX2qKSRaMg6Vmn7MtyR%2F-MX2u4Wr02FCyWFKH22n%2Fimage.png?alt=media\&token=551716a3-f957-4a24-8e4e-2254d3e36cbf)
 
 Give a relevant name to your API Key. In the _"User Data"_ permission area, check **`users.track`** as our servers need this permission to report backend events to Braze.
 
-![](<../.gitbook/assets/image (63).png>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MX2qKSRaMg6Vmn7MtyR%2F-MX2spZR39jV3Eas4YYM%2Fimage.png?alt=media\&token=206493ac-a64f-4e15-ab21-1aa950959bd7)
 
 Click _"Save API Key"_ at the bottom of the page.
 
-![](<../.gitbook/assets/image (65).png>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MX2qKSRaMg6Vmn7MtyR%2F-MX2zPavnCBk6ZNhmgqJ%2Fimage.png?alt=media\&token=1e95c932-5b50-4b2f-b1ff-44b741c54ceb)
 
 Finally, paste the API key Identifier value into Purchasely console.
 
@@ -160,7 +160,7 @@ Refer to [Braze API Endpoints table](https://www.braze.com/docs/api/basics/#endp
 
 If you want to, you can rename events sent to Braze:
 
-![](<../.gitbook/assets/image (66).png>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MX2zpb3oYhB767Zvv\_E%2F-MX31ItK5VFB4g9yYkw8%2Fimage.png?alt=media\&token=db0cca1a-bcc0-4785-bced-cd3318b64146)
 
 {% hint style="info" %}
 Please refer to Braze documentation on [Event Naming Conventions](https://www.braze.com/docs/user\_guide/data\_and\_analytics/custom\_data/event\_naming\_conventions/) to choose appropriate event names.
@@ -179,7 +179,7 @@ Each event sent to Braze carries a set of properties that you can use to further
 | `plan_name`              | Plan name as set in Purchasely Console, e.g. `"Monthly"`                       |
 | `plan_store_product_id`  | Store product identifier, e.g. `"com.purchasely.plus.monthly"`                 |
 | `plan_type`              | Type of the plan, e.g. `"RENEWING_SUBSCRIPTION"`                               |
-| `product_id`             |  Product Vendor ID, e.g. `"PURCHASELY_PLUS"`                                   |
+| `product_id`             | Product Vendor ID, e.g. `"PURCHASELY_PLUS"`                                    |
 | `product_name`           | Product name as set in Purchasely Console, e.g. `"Purchasely +"`               |
 | `store`                  | Store associated with the event, e.g. `"GOOGLE_PLAY_STORE"`                    |
 

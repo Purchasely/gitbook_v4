@@ -6,8 +6,7 @@ When you display a paywall with [Purchasely.presentation](https://docs.purchasel
 
 * Purchased
 * Restored
-* Cancelled\
-
+* Cancelled\\
 
 You also have as a second argument the `plan` bought or restored by the user, it is set to `nil` if no purchase was made.\
 This is the preferred way to get notified when a purchase or restoration was made from a Purchasely paywall.
@@ -48,17 +47,18 @@ UIViewController *paywallCtrl = [Purchasely presentationControllerWith:@"my_pres
 
 {% tab title="Kotlin" %}
 ```kotlin
-Purchasely.presentationFragmentForPlacement(
+Purchasely.presentationViewForPlacement(
+    context = this,
     placementId = "my_placement_id",
     contentId = "my_content_id",
-    callbackLoaded = { isLoaded -> }
-) { result, plan -> 
+    onClose = { },
+    onLoaded  = { isLoaded -> }
+) { result, plan ->
     when(result) {
         PLYProductViewResult.PURCHASED -> Log.d("Purchasely", "User purchased ${plan?.name}")
         PLYProductViewResult.CANCELLED -> Log.d("Purchasely", "User cancelled purchased")
         PLYProductViewResult.RESTORED -> Log.d("Purchasely", "User restored ${plan?.name}")
-    }    
-    
+    }
 }
 ```
 {% endtab %}
@@ -69,6 +69,7 @@ Purchasely.presentationFragmentForPlacement(
         "my_placement_id",
         "my_content_id",
         isLoaded -> null,
+        onClose,
         (result, plan) -> {
             switch (result) {
                 case PURCHASED:
@@ -159,7 +160,7 @@ try {
 
 ### Anywhere in your application
 
-When a purchase or restoration is made, you can listen to our notification. \
+When a purchase or restoration is made, you can listen to our notification.\
 This is the method to use in parts of your application where you wish to unlock some features after a purchase was made but you should only use it to **unlock** content, not to notify your server of a purchase or check the current state of user subscription.\
 \
 Once the purchase is made to Apple Servers, registered in our systems, Purchasely sends a local `Notification` in the `NotificationCenter`. You can use it to unlock the content or refresh it.

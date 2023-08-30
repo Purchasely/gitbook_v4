@@ -86,8 +86,6 @@ Purchasely.setAttribute(Attributes.ITERABLE_USER_EMAIL,  "mail@company.com");
 {% endtab %}
 {% endtabs %}
 
-
-
 ### 2. Activating the Iterable integration
 
 The activation requires 2 steps:
@@ -104,19 +102,19 @@ The activation requires 2 steps:
 
 1. Go in the "External integrations" section, and open the edition form for Iterable:
 
-//TODO: Thomas: add screenshot ![](<../.gitbook/assets/Screenshot 2022-07-08 at 00.10.34.png>)
+&#x20;![](<../.gitbook/assets/Screenshot 2022-07-08 at 00.10.34.png>)
 
 2\. Enable the integration
 
-3\. Set your Iterable API Key
+3\. Set your Iterable API Key’
 
-//TODO: Thomas: add screenshot ![](<../.gitbook/assets/Screenshot 2022-07-08 at 00.11.06.png>)
+&#x20;![](<../.gitbook/assets/Screenshot 2022-07-08 at 00.11.06.png>)
 
 4\. Enable the events you want to be sent to Iterable
 
 5\. (Optional) Override the names of the events that will be sent to Iterable
 
-//TODO: Thomas: add screenshot ![](<../.gitbook/assets/Screenshot 2022-07-08 at 00.11.39.png>)
+&#x20;![](<../.gitbook/assets/Screenshot 2022-07-08 at 00.11.39.png>)
 
 6\. Save
 

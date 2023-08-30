@@ -22,7 +22,7 @@ So if you unlock a level with a non-consumable product, add coins to you game wa
 
 Consumables, non-consumables and non-renewing subscriptions can be declared just like a regular plans.
 
-You can either choose them to be inside a new product (for example coins offerings will be inside a "Coins" product and you will have several plans like "100 coins", "200 coins", …).&#x20;
+You can either choose them to be inside a new product (for example coins offerings will be inside a "Coins" product and you will have several plans like "100 coins", "200 coins", …).
 
 You can also add a non-consumable alongside subscriptions in the same product. It can be a **lifetime access to a feature** next to a monthly and yearly subscription. _This is a pretty common behaviour and we will take that example._
 
@@ -30,22 +30,20 @@ You can also add a non-consumable alongside subscriptions in the same product. I
 
 First you need to add a plan to a product (newly created or not).
 
-![Create a new plan for a non subscription product](<../.gitbook/assets/Capture d’écran 2020-12-31 à 02.13.25.png>)
+![Create a new plan for a non subscription product](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MPqJawNT7Kqgz2OoZzC%2F-MPqMZwJOykHEAks63Rd%2FCapture%20d%E2%80%99e%CC%81cran%202020-12-31%20a%CC%80%2002.13.25.png?alt=media\&token=30f4bcc0-2a06-4ba3-9dc5-90fb12a14a1c)
 
 {% hint style="info" %}
 Recommendations:
 
 * Be sure to select the appopriate type of product (Step 1)
-* Use a **Plan Vendor ID** that your can easily identify as this will be the identifier sent to your server to increment the items to your users account or unlock the content  (Step 3)
+* Use a **Plan Vendor ID** that your can easily identify as this will be the identifier sent to your server to increment the items to your users account or unlock the content (Step 3)
 * If you build a lifetime purchase, set a **plan level higher** than any other subscription (Step 4)
 * If you are inside a game coin product, the more coins are contained, the higher plan level should be (Step 4)
 {% endhint %}
 
-
-
 ### Add the plan to a presentation
 
-![Exemple of the addition of a purchase button for a lifetime purchase](<../.gitbook/assets/Capture d’écran 2020-10-19 à 18.12.47.png>)
+![Exemple of the addition of a purchase button for a lifetime purchase](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MK0Z4T2jaOq4tdtf85Y%2F-MK0dsNvHKtloA13kzVd%2FCapture%20d%E2%80%99e%CC%81cran%202020-10-19%20a%CC%80%2018.12.47.png?alt=media\&token=0403f7c8-a9de-4cb6-9c49-0ebff0113822)
 
 ### Handle the purchase on your server
 

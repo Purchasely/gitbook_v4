@@ -21,15 +21,13 @@ Plugging Purchasely and Batch has 3 advantages:
 * Communication and engagement automations can then be configured based on these transactional events.
 * Engagement messages can be linked to Purchasely paywalls using [deeplink automations](../advanced-features/deeplinks-and-automations.md) to close the loop and manage conversion, upsell or retention campaigns.
 
-
-
 ### General overview
 
-![](<../.gitbook/assets/batch animated.gif>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FZawuA9DJdXT97zLPVxoB%2Fbatch%20animated.gif?alt=media\&token=790d65fd-830a-4f6e-8479-8a0ac41e3b5d)
 
 ### Sample automation
 
-![](<../.gitbook/assets/Archi diagrams.001.jpeg>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2Fnpwe8XFX6ix6C17YUH5j%2FArchi%20diagrams.001.jpeg?alt=media\&token=1207ce29-8f49-40de-a53f-70c24265ff5d)
 
 ## Integrating Purchasely with Batch
 
@@ -44,31 +42,29 @@ The integration requires 4 steps:
 3. Enable the events in the Batch Dashboard
 4. Associate Batch Installation Ids to events
 
-
-
 #### 1. Activate the Batch integration in the Purchasely Console
 
 In the Purchasely Console, go to Integration > Batch and enable the integration.
 
-![](<../.gitbook/assets/image (172).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2F8MqIRZZ1ErcQKce2cvoP%2Fimage.png?alt=media\&token=df9a7768-4108-41ad-8a94-fa66869e0d3f)
 
 Then carry the Android / iOS Live / Rest API keys forward from your Batch Dashboard to the Purchasely Console.
 
 These parameters can be found in your Batch Dashboard in the following location:\
 Batch Dashboard > You \[iOS / Android] app > Settings > General > API Keys
 
-![Screenshot of the Batch Dashboard (January 2022)](<../.gitbook/assets/image (195).png>)
+![Screenshot of the Batch Dashboard (January 2022)](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FYLmCVeVcNQIQEmhbE94v%2Fimage.png?alt=media\&token=f5eddd5e-b56a-4628-9c38-a54fd23183c7)
 
 #### 2. Enable the events forwarded to Batch in the Purchasely Console
 
 In the Purchasely Console, under the Server Events thumbnail, you can choose with subscription events must be forwarded to Batch.
 
-![](<../.gitbook/assets/image (154).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2F0JTy0Ezyn8sMk38l2b9P%2Fimage.png?alt=media\&token=6f19ad7e-35c6-4ba0-899e-9a6c1aa375b6)
 
 (Optional) Events names can be override to match with your tacking plan.
 
 {% hint style="info" %}
-Front events triggered by the Purchasely SDK cannot be forwarded to Batch directly from the Purchasely Console. This has to be done at the app level by intercepting the [SDK events](../analytics/events/sdk-events/) and forwarding them to the Batch SDK.&#x20;
+Front events triggered by the Purchasely SDK cannot be forwarded to Batch directly from the Purchasely Console. This has to be done at the app level by intercepting the [SDK events](../analytics/events/sdk-events/) and forwarding them to the Batch SDK.
 {% endhint %}
 
 #### 3. Enable the events in the Batch Dashboard
@@ -78,7 +74,7 @@ Once events have been enabled on Purchasely's side, they must also be enabled on
 To do so, navigate to the following location:\
 Batch Dashboard > You \[iOS / Android] app > Settings > Custom Data > User events
 
-![](<../.gitbook/assets/image (114).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FqYvnww6Hi8yxXiiYwD9p%2Fimage.png?alt=media\&token=de2ad68f-fbdb-48c6-a803-95ddf99f33a9)
 
 {% hint style="info" %}
 Note: Purchasely events must have been received at least once on Batch's side to appear in this list of User events
@@ -132,21 +128,21 @@ To configure your automations navigate to the following location in Batch:
 
 Batch > Campaigns
 
-![](<../.gitbook/assets/image (130).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2Ft0FgCuHUWYx2ObteRSiM%2Fimage.png?alt=media\&token=f77ce561-cbc9-4951-8db3-32aea65283f9)
 
-To create an automation triggered by a Purchasely event, choose Trigger in the block When.&#x20;
+To create an automation triggered by a Purchasely event, choose Trigger in the block When.
 
-![](<../.gitbook/assets/image (110).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FJQWe9SQkdWlQ6uHOxk49%2Fimage.png?alt=media\&token=aeea6ab0-9e02-4823-bfd3-f7383f2d8b20)
 
 All the events that have already been received at least once by Batch will appear in the list.
 
 You can even add a filter (set of condition) on the [event attributes](../analytics/events/webhook-events/attributes.md).
 
-![](<../.gitbook/assets/image (146).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2F2sdH6ImVZPzOs8dmfdoB%2Fimage.png?alt=media\&token=2c392052-f3ec-43f6-af4e-639a165ec405)
 
 You can then define the message that will be sent and the deeplink associated to it.
 
-![](<../.gitbook/assets/image (116).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2Fz8DeGKJoaZga8jhHSUOv%2Fimage.png?alt=media\&token=e051dbf9-e725-47ac-8a03-fbcb2137f6aa)
 
 If the deeplink matches a pattern handled by Purchasely, it will allow you to:
 
@@ -155,7 +151,5 @@ If the deeplink matches a pattern handled by Purchasely, it will allow you to:
 * notify users that their credit card has expired and send them to their devices settings
 
 More information in the section [deeplinks automations](../advanced-features/deeplinks-and-automations.md).
-
-
 
 For more information about Batch Dashboard and campaigns configuration, please refer directly to [Batch Documentation](https://doc.batch.com/).

@@ -19,7 +19,7 @@ They are replaced by 2 simple events:
 * `ACTIVATE` use to grant access immediately (will be triggered at each renewal)
 * `DEACTIVATE` use to revoke access immediately
 
-![](<../../../.gitbook/assets/timeline (1).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FDQmN3MFjpZdxhW1RYKGm%2Ftimeline%20\(1\).png?alt=media\&token=b1a88ab1-8851-4b8a-989c-b087678fe87a)
 
 `PURCHASE_VALIDATED` _and_ `SUBSCRIPTION_EXPIRED` will no longer be triggered. `SUBSCRIPTION_RENEWED` **must** only be used for marketing purposes.
 
@@ -104,8 +104,6 @@ This structure has been flattened to ease integration and match what we sent to 
 
 Learn more and find the full list of attributes [here](../../../analytics/events/webhook-events/attributes.md).
 
-
-
 Here is the mapping between old and new attributes:
 
 | Old property                                                                                                | New property                                                                                               |
@@ -131,8 +129,6 @@ Here is the mapping between old and new attributes:
 | user.vendor\_id                                                                                             | user\_id                                                                                                   |
 | user.anonymous\_id                                                                                          | anonymous\_user\_id                                                                                        |
 
-⚠️ Be cautious,  <mark style="color:red;">**`properties.expires_at`**</mark> has been renamed to <mark style="color:green;">**`effective_next_renewal_at`**</mark>. DO NOT use the new `next_renewal_at` field which has a totally different meanings (see the [full list of attributes](../../../analytics/events/webhook-events/attributes.md) for more details) ⚠️
-
-
+⚠️ Be cautious, <mark style="color:red;">**`properties.expires_at`**</mark> has been renamed to <mark style="color:green;">**`effective_next_renewal_at`**</mark>. DO NOT use the new `next_renewal_at` field which has a totally different meanings (see the [full list of attributes](../../../analytics/events/webhook-events/attributes.md) for more details) ⚠️
 
 If you have any question reach us on our [help center](https://help.purchasely.com/en/) .
