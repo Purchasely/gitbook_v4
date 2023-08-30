@@ -30,7 +30,7 @@ You can do pretty much everything:
 
 ## General overview
 
-![](<../../.gitbook/assets/full animated.gif>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FQ9HnKR8on9VMAljYQ2qR%2Ffull%20animated.gif?alt=media\&token=87810d9c-d9a7-4875-aed8-76e1f66f2db5)
 
 ## Implementation
 
@@ -39,8 +39,6 @@ You can do pretty much everything:
 The first thing you need to do is to call the `start` method passing the mode `paywallObserver` / `PLYRunningModePaywallObserver` .\
 \
 [View implementation details](config-appendices/start-the-sdk.md)
-
-
 
 ### 2- Set user identifier
 
@@ -51,15 +49,11 @@ We need to know whenever a user is logged in or logged out to:
 
 [View implementation details](config-appendices/set-user-id.md)
 
-
-
 ### 3- Configure and present paywalls
 
-To display a paywall, you need to can get a Controller / Fragment from Purchasely.&#x20;
+To display a paywall, you need to can get a Controller / Fragment from Purchasely.
 
 [View implementation details](config-appendices/present-paywalls.md)
-
-
 
 ### 4- Save/Verify user subscriptions
 
@@ -69,15 +63,11 @@ In these cases your app is notified by the SDK and you must unlock the content /
 
 [View implementation details](config-appendices/unlock-content-service.md)
 
-
-
 After the initial purchase you will want to check the status. To do so you can use one of the following options:
 
 * Using your backend (if you implemented [Webhook](../../integrations/webhook-1/))
 * Using Firebase (if you have our [Firebase extension](https://github.com/Purchasely/Purchasely-Firebase-Extension))
-* Using the SDK's [userSubscriptions](../../advanced-features/subscription-status.md) method &#x20;
-
-
+* Using the SDK's [userSubscriptions](../../advanced-features/subscription-status.md) method
 
 ### 5- Configure deeplinks (optional)
 
@@ -87,14 +77,11 @@ Paywalls can be used in many othe ways that can be:
 * [Deeplinks](../../advanced-features/deeplinks-and-automations.md)
 * Push notifications deeplinks
 
-
-
 ### 6- Migrate your existing subscriber base (optional)
 
 If your app already has subscribers, you must migrate them to Purchasely to:
 
 * Have complete dashboards including every subscriber acquired in the past
-* Handle status using the `userSubscriptions` &#x20;
+* Handle status using the `userSubscriptions`
 
 Follow [this guide](../../faq/migration-guides/migrate-from-an-existing-setup.md) to import your subscribers to Purchasely.
-

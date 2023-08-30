@@ -25,7 +25,7 @@ Please note that the article provides a step-by-step guide to integrating Purcha
 
 To grant Purchasely permission to connect to mobile app stores like Apple and Google on your behalf, you need to make a small setup in the Purchasely console.
 
-Head to the [quick start guide](../quick-start/console-configuration.md) to learn more about the app store access setup.&#x20;
+Head to the [quick start guide](../quick-start/console-configuration.md) to learn more about the app store access setup.
 
 **Note**: **there is no need to configure S2S notifications** at this stage. The article explains the S2S setup in the dedicated section below.
 
@@ -39,10 +39,10 @@ Once you’ve given Purchasely permission to connect to app stores, you need to 
 
 When duplicating the information, **please be aware of the discrepancy in the definition of a “plan” and a “product” used by RevenueCat and Purchasely**.
 
-**In Purchasely’s terms**: \
+**In Purchasely’s terms**:\
 A “plan” is an item (SKU) you sell on Apple/Google, such as a subscription, consumable or non-consumable. A “product” is a group of plans where you can manage upgrades and downgrades.
 
-**In RevenueCat’s terms**: \
+**In RevenueCat’s terms**:\
 A “product” is an item (SKU) you sell on Apple/Google which is equivalent to what is defined as a “plan” by Purchasely.
 
 Refer to [help center](https://help.purchasely.com/en/collections/3507048-products-plans) to learn more.
@@ -103,7 +103,6 @@ Purchasely.Builder(applicationContext)
     .apiKey("API_KEY")
     .logLevel(LogLevel.DEBUG) // set to warning or error for release
     .userId("USER_ID")
-    .eventListener(eventListener)
     .runningMode(PLYRunningMode.PaywallObserver)
     .stores(listOf(GoogleStore(), HuaweiStore()))
     .build()
@@ -125,7 +124,6 @@ new Purchasely.Builder(getApplicationContext())
     .apiKey("API_KEY")
     .logLevel(LogLevel.DEBUG) // set to warning or error for release
     .userId("USER_ID")
-    .eventListener(this)
     .runningMode(PLYRunningMode.Full.PaywallObserver)
     .stores(stores)
     .build();
@@ -285,7 +283,7 @@ await Purchasely.presentPresentationForPlacement('onboarding');
 
 Finally, you must use the Paywall Actions Interceptor in your purchase system to register the purchase triggered by Purchasely's paywalls.
 
-Here is an example where  RevenueCat is used to make the purchase, which requires you to [fetch products](https://www.revenuecat.com/docs/displaying-products) from their SDK and then [start the purchase](https://www.revenuecat.com/docs/making-purchases)
+Here is an example where RevenueCat is used to make the purchase, which requires you to [fetch products](https://www.revenuecat.com/docs/displaying-products) from their SDK and then [start the purchase](https://www.revenuecat.com/docs/making-purchases)
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -662,17 +660,21 @@ Purchasely only **observes** the data from the SDK or directly from the stores w
 App Store Connect only allows setting **one** endpoint url for S2S in production and sandbox mode. To circumvent this limitation, you can enable our `S2S Forwardings` integration in Purchasely console.\
 In App Store Connect, you need to set the Purchasely url for S2S instead of the RevenueCat url
 
-![](../.gitbook/assets/SCR-20220927-osb.png)\
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2Ft2G6zCEZhHCqZXXwYGEl%2FSCR-20220927-osb.png?alt=media\&token=1ac14bb5-7698-48e5-a073-21358e998a9c)\
 \
 Then in Purchasely Console, you can set up a **S2S Forwardings** integration for Apple with RevenueCat endpoints
 
-<div>
+<div align="left">
 
-<figure><img src="../.gitbook/assets/SCR-20220926-fnw.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FCuWfVbU4XbIdM5icehf7%2FSCR-20220926-fnw.png?alt=media&#x26;token=cd8bb0d7-01d7-4079-8aa4-e5c13e70fa1d" alt=""><figcaption></figcaption></figure>
 
  
 
 <figure><img src="../.gitbook/assets/SCR-20220926-fp6.png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2Fm25NuN7aNJ8Zew0p3nbw%2FSCR-20220926-fp6.png?alt=media&#x26;token=54290673-dad1-480a-aa11-36161da0eff8" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -681,10 +683,10 @@ You are all set! Purchasely and RevenueCat will communicate real-time informatio
 ### S2S notifications with Google
 
 Server-to-Server notifications for Google are called [real-time developer notifications](https://developer.android.com/google/play/billing/rtdn-reference)\
-It is possible to set up as many endpoints as you want to receive those notifications so that you can set up another for Purchasely. \
+It is possible to set up as many endpoints as you want to receive those notifications so that you can set up another for Purchasely.\
 We provide an easy configuration in our console, where we connect directly to Google once you have provided your access key.
 
-<figure><img src="../.gitbook/assets/SCR-20220927-p15.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FMUs2yUjddCNxHBE64y8b%2FSCR-20220927-p15.png?alt=media&#x26;token=782ab720-6f47-4bf1-8e94-7789bbfb846e" alt=""><figcaption></figcaption></figure>
 
 It’s most likely that you’ve already setup S2S in the RevenueCat environment. This means Play-Store-Notifications have already been created on Google Pub/Sub.\
 Select the topic from the dropdown list to add Purchasely to the same topic.
@@ -693,17 +695,21 @@ Select the topic from the dropdown list to add Purchasely to the same topic.
 Only one topic is set on Google Play Console to receive notifications in real time. A topic can have multiple endpoints (subscriptions in Google cloud console). Purchasely will add an endpoint to the same topic so that Google sends notifications to Purchasely and RevenueCat at the same time
 {% endhint %}
 
-<div>
+<div align="left">
 
-<figure><img src="../.gitbook/assets/SCR-20220927-p62.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2F8CBa3J1T7TwNo2pUJ83s%2FSCR-20220927-p62.png?alt=media&#x26;token=d451d633-cc3f-4c6a-9a53-98788c6a469c" alt=""><figcaption></figcaption></figure>
 
  
 
 <figure><img src="../.gitbook/assets/SCR-20220927-p6f.png" alt=""><figcaption></figcaption></figure>
 
+ 
+
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FG1ZhJICT5T9zXElG1UXU%2FSCR-20220927-p6f.png?alt=media&#x26;token=c369ec1b-1a19-42a5-bda3-5128e9cb73b9" alt=""><figcaption></figcaption></figure>
+
 </div>
 
-Once you have selected your topic (or created a new one if none exists), click on Next so that the setup can be done by Purchasely automatically. \
+Once you have selected your topic (or created a new one if none exists), click on Next so that the setup can be done by Purchasely automatically.\
 After that, you can follow the instructions to ensure the correct topic is configured on Google Play Console.
 
 ### Importing your existing users
@@ -720,4 +726,3 @@ This will provide multiple benefits:
 {% hint style="info" %}
 Due to a technical limitation from Google API, we will retrieve **full historical data of an active subscription** and up to **60 days for an inactive subscription** with Google Play Billing
 {% endhint %}
-

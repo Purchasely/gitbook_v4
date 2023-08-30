@@ -6,8 +6,6 @@ Purchasely combines a powerful Subscription Platform with a unique no-code nativ
 
 It helps app developers to BUILD their in-app subscriptions stack and marketers to GROW their revenue by iterating on their paywalls and creating no-code automations.
 
-
-
 The Purchasely Platform can be used in multiple ways:
 
 * To perform purchases and process transactions
@@ -15,17 +13,13 @@ The Purchasely Platform can be used in multiple ways:
 * To display paywalls
 * For everything listed above
 
-
-
 ## Platform modules
 
-![](../.gitbook/assets/components.png)
+<figure><img src="../.gitbook/assets/prez.png" alt=""><figcaption></figcaption></figure>
 
 ## Platform components
 
-
-
-![](<../.gitbook/assets/Purchasely Architecture.png.001.png>)
+<figure><img src="../.gitbook/assets/prez2.png" alt=""><figcaption></figcaption></figure>
 
 It is composed of :
 

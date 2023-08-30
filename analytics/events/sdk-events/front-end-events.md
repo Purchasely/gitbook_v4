@@ -8,23 +8,23 @@ Every front end event is available through the `eventDelegate`/`eventListener`
 
 ### Paywall user behavior
 
-| Event name              | Description                                                           | iOS value             | Android value        |
-| ----------------------- | --------------------------------------------------------------------- | --------------------- | -------------------- |
-| Event Name              | Description                                                           | iOS value             | Android Value        |
-| DEEPLINK\_OPENED        | The user opened a deeplink                                            | .deeplinkOpened       | DeepLinkOpened       |
-| PRESENTATION\_VIEWED    | The presentation was opened                                           | .presentationViewed   | PresentationViewed   |
-| PRESENTATION\_CLOSED    | The presentation was closed                                           | .presentationClosed   | PresentationClosed   |
-| LOGIN\_TAPPED           | The user tapped on the login button                                   | .loginTapped          | LoginTapped          |
-| RESTORE\_TAPPED         | The user has tapped on the restore button                             | .restoreTapped        | RestoreTapped        |
-| PROMO\_CODE\_TAPPED     | The user has tapped on the promo code button                          | .promoCodeTapped      | PromoCodeTapped      |
-| LINK\_OPENED            | The user tapped a link (Terms and conditions, …)                      | .linkOpened           | LinkOpened           |
-| PLAN\_SELECTED          | The user selected a plan in the presentation                          | .planSelected         | PlanSelected         |
-| PURCHASE\_TAPPED        | The user tapped on purchase                                           | .purchaseTapped       | PurchaseTapped       |
-| PURCHASE\_CANCELLED     | The user cancelled the purchase action                                | .purchaseCancelled    | PurchaseCancelled    |
-| CAROUSEL\_SLIDE\_SWIPED | The user has swipe on the carousel to see the next slide.             | .carouselSlideSwiped  | CarouselSlideSwiped  |
-| PRESENTATION\_OPENED    | The user tapped to open another presentation (FLOWS)                  | .presentationOpened   | PresentationOpened   |
-| PRESENTATION\_SELECTED  | The user selected a presentation in the current  presentation (FLOWS) | .presentationSelected | PresentationSelected |
-| PRESENTATION\_LOADED    | The presentation was loaded and is ready to be displayed              | .presentationLoaded   | PresentationLoaded   |
+| Event name              | Description                                                          | iOS value             | Android value        |
+| ----------------------- | -------------------------------------------------------------------- | --------------------- | -------------------- |
+| Event Name              | Description                                                          | iOS value             | Android Value        |
+| DEEPLINK\_OPENED        | The user opened a deeplink                                           | .deeplinkOpened       | DeepLinkOpened       |
+| PRESENTATION\_VIEWED    | The presentation was opened                                          | .presentationViewed   | PresentationViewed   |
+| PRESENTATION\_CLOSED    | The presentation was closed                                          | .presentationClosed   | PresentationClosed   |
+| LOGIN\_TAPPED           | The user tapped on the login button                                  | .loginTapped          | LoginTapped          |
+| RESTORE\_TAPPED         | The user has tapped on the restore button                            | .restoreTapped        | RestoreTapped        |
+| PROMO\_CODE\_TAPPED     | The user has tapped on the promo code button                         | .promoCodeTapped      | PromoCodeTapped      |
+| LINK\_OPENED            | The user tapped a link (Terms and conditions, …)                     | .linkOpened           | LinkOpened           |
+| PLAN\_SELECTED          | The user selected a plan in the presentation                         | .planSelected         | PlanSelected         |
+| PURCHASE\_TAPPED        | The user tapped on purchase                                          | .purchaseTapped       | PurchaseTapped       |
+| PURCHASE\_CANCELLED     | The user cancelled the purchase action                               | .purchaseCancelled    | PurchaseCancelled    |
+| CAROUSEL\_SLIDE\_SWIPED | The user has swipe on the carousel to see the next slide.            | .carouselSlideSwiped  | CarouselSlideSwiped  |
+| PRESENTATION\_OPENED    | The user tapped to open another presentation (FLOWS)                 | .presentationOpened   | PresentationOpened   |
+| PRESENTATION\_SELECTED  | The user selected a presentation in the current presentation (FLOWS) | .presentationSelected | PresentationSelected |
+| PRESENTATION\_LOADED    | The presentation was loaded and is ready to be displayed             | .presentationLoaded   | PresentationLoaded   |
 
 ### Payment
 
@@ -105,61 +105,7 @@ Some events are specific to the [User subscriptions screen](../../../advanced-fe
 
 ## Listen to the events
 
-Purchasely tracks every action perfomed and you can insert these events into your own tracking system. To receive these events (`PLYEvent`) by setting yourself as a delegate (`PLYEventDelegate/PLYEventListener`), either from the `start` method:
-
-{% tabs %}
-{% tab title="Swift" %}
-```swift
- Purchasely.start(withAPIKey: "API_KEY", eventDelegate: self)
-```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-```objectivec
-[Purchasely startWithAPIKey:@"API_KEY"
-					  appUserId:@"USER_ID"
-				  eventDelegate:self
-					 uiDelegate:nil
-					   logLevel: LogLevelInfo];
-```
-{% endtab %}
-
-{% tab title="Kotlin" %}
-```kotlin
-Purchasely.Builder(applicationContext)
-            .apiKey("API_KEY")
-            .eventListener(eventListener)
-            .stores(listOf(GoogleStore(), HuaweiStore(), AmazonStore()))
-            .build()
-            .start()
-```
-{% endtab %}
-
-{% tab title="Java" %}
-```java
-new Purchasely.Builder(applicationContext)
-            .apiKey("API_KEY")
-            .eventListener(eventListener)
-            .stores(listOf(GoogleStore(), HuaweiStore(), AmazonStore()))
-            .build()
-            .start();
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-```javascript
-// Nothing special to setup, just go to "Receiving events" below
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-```javascript
-// Nothing special to setup, just go to "Receiving events" below
-```
-{% endtab %}
-{% endtabs %}
-
-or later
+Purchasely tracks every action perfomed and you can insert these events into your own tracking system. To receive these events (`PLYEvent`) by setting yourself as a delegate (`PLYEventDelegate/PLYEventListener`), after calling `start` method:
 
 {% tabs %}
 {% tab title="Swift" %}

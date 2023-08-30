@@ -12,14 +12,12 @@ If the user is not signed-in inside the application, you can rely on the propert
 
 The **Event** name carries the information about the event signification.
 
-* If the name is `ACTIVATE`, this means that a new purchase has been made or the subscription has renewed. The corresponding user shall be entitled.\
-
-* If the name is `DEACTIVATE`, this means that the user subscription has expired. Entitlements shall thus be removed immediately.\
-
+* If the name is `ACTIVATE`, this means that a new purchase has been made or the subscription has renewed. The corresponding user shall be entitled.\\
+* If the name is `DEACTIVATE`, this means that the user subscription has expired. Entitlements shall thus be removed immediately.\\
 
 Entitlements can be seen as an on/off switch.
 
-![](<../../.gitbook/assets/Frame 4.png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FulI7ohPKrNWZ0vxipexE%2FFrame%204.png?alt=media\&token=3a534d34-4117-4b37-b107-7447d886adfe)
 
 ## Determining which entitlements shall be granted to the user
 
@@ -47,9 +45,8 @@ You **MUST** return a `HTTP 200` or `HTTP 404` to tell our backend that you succ
 Attached to those events you will only need to look a at 2 attributes to make it work:
 
 * `user_id` or `anonymous_user_id` to identify the user and grant him with the access to the ressource he purchased.
-* `plan` to identify precisely what the user has subscribed to. You may also refer to `product` for more details.&#x20;
+* `plan` to identify precisely what the user has subscribed to. You may also refer to `product` for more details.
 
-Additionally to these two "transactional" events we have added over 20 events for more of a marketing purposes for you to be able to track and understand you subscribers lifecycle. We also added attributes attached to the events to ease integration and give you more context and understanding of your subscription system.&#x20;
+Additionally to these two "transactional" events we have added over 20 events for more of a marketing purposes for you to be able to track and understand you subscribers lifecycle. We also added attributes attached to the events to ease integration and give you more context and understanding of your subscription system.
 
 You can find the full list of these events [here ](../../analytics/events/webhook-events/subscription-events.md)and the attributes [there](../../analytics/events/webhook-events/attributes.md).
-

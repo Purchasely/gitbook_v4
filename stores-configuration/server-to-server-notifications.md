@@ -9,14 +9,14 @@ They consist in messages, sent by the Applications Stores, every time an event o
 * is purchased
 * is renewed
 * is cancelled (auto-renewing cancelled by user for the following billing period)
-* is refund&#x20;
+* is refund
 * gets expired
 * encounters a billing issue
 * …
 
-The server-to-server notifications are not mandatory for making subscriptions work, but they are very valuable in the sense that they bring a real-time and comprehensive vision for the app editor.&#x20;
+The server-to-server notifications are not mandatory for making subscriptions work, but they are very valuable in the sense that they bring a real-time and comprehensive vision for the app editor.
 
-![](<../.gitbook/assets/image (15) (1).png>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MHNZQtARU6GiueTeby7%2F-MHRWJXcDaywiMVBprNZ%2Fimage.png?alt=media\&token=4cdfbf65-c77f-4531-9678-2ad7977f6ac7)
 
 ## What's the challenge in implementing them ?
 
@@ -58,4 +58,3 @@ Here are the guides to connect each store :
 {% content-ref url="huawei-app-gallery.md" %}
 [huawei-app-gallery.md](huawei-app-gallery.md)
 {% endcontent-ref %}
-

@@ -12,14 +12,12 @@ This catalogue configuration is done partly directly in the Mobile Applications 
 
 In Purchasely, catalogue items use a 2-levels model : `Products` & `Plans`
 
-![](<../../../.gitbook/assets/image (21) (1).png>)
-
-
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MHVZlDz1iQiROmOzAvz%2F-MHWC-DxCOMHdcragto3%2Fimage.png?alt=media\&token=19a0d61d-b4ba-42ba-b92d-a862253f981f)
 
 * _**`Products`**_ are high level representation of what user can buy like a "Netflix subscription". A product can be distributed in various versions named _**`Plans`**_
 * For a same _**`Plans`**_ can vary from one another regarding 2 dimensions :
   * _Multi-tiers products_ can propose different entitlements (i.e.: levels of access). e.g. : _bronze_, _silver_, _gold_
-  * _Multi-periodicity products_ can have different renewing periodicity \
+  * _Multi-periodicity products_ can have different renewing periodicity\
     e.g. : _daily_, _weekly_, _monthly_, _yearly_
 
 {% hint style="info" %}

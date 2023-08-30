@@ -2,10 +2,10 @@
 
 The `start` must be done **as soon as possible** to catch every purchase / renewal.\
 On iOS, initialise the SDK in your `AppDelegate` method `didFinishLaunchingWithOptions` to allow promoted In-App Purchase and support PSD2.\
-This initialisation will allow tyou to access products prices instantly later in the app.&#x20;
+This initialisation will allow tyou to access products prices instantly later in the app.
 
 {% hint style="info" %}
-You will need an API Key that you can find in your App settings in the [Purchasely Console](https://purchasely.io).&#x20;
+You will need an API Key that you can find in your App settings in the [Purchasely Console](https://purchasely.io).
 {% endhint %}
 
 <figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
@@ -50,7 +50,6 @@ Purchasely.Builder(applicationContext)
     .apiKey("API_KEY")
     .logLevel(LogLevel.DEBUG) // set to warning or error for release
     .userId("USER_ID")
-    .eventListener(eventListener)
     .runningMode(PLYRunningMode.Full)
     .stores(listOf(GoogleStore(), HuaweiStore()))
     .build()

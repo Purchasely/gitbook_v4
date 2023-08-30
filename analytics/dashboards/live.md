@@ -4,9 +4,9 @@ description: Get a real time overview of your subscriber base and how it is chan
 
 # Live
 
-![](<../../.gitbook/assets/Capture d’écran 2021-10-19 à 15.39.05 (1).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FNvdMIqmm3dmWKauV5d10%2FCapture%20d%E2%80%99e%CC%81cran%202021-10-19%20a%CC%80%2015.39.05.png?alt=media\&token=cb9d6725-dc0e-45c3-81aa-028ecdcf38cd)
 
-This page provides a real time daily pulse of your subscription business.&#x20;
+This page provides a real time daily pulse of your subscription business.
 
 You will first find tables of your real time subscriber base and then charts of subscriptions composition.
 
@@ -20,7 +20,7 @@ You can get the live figures on:
 
 ## Active subscription statuses
 
-![](<../../.gitbook/assets/Capture d’écran 2021-10-19 à 15.39.05.png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FCDXNT6S79vBfkChgIerM%2FCapture%20d%E2%80%99e%CC%81cran%202021-10-19%20a%CC%80%2015.39.05.png?alt=media\&token=103fd8a8-654c-4546-acea-961d18979035)
 
 * Active renewing: Your currently active subscribers that will renew
 * Active not renewing: Your currently active subscribers that won't renew at the end of their current period
@@ -40,7 +40,7 @@ Forcing your users to register before being able to purchase will probably lower
 
 You will probably offer your anonymous customers to register after the purchase but this might not be enough and you will want to monitor this and this dashboard was built for that purpose.
 
-![](<../../.gitbook/assets/Capture d’écran 2021-10-20 à 10.13.44 (1).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FsqL2cqygiy94avD5BUpa%2FCapture%20d%E2%80%99e%CC%81cran%202021-10-20%20a%CC%80%2010.13.44.png?alt=media\&token=53ea1b40-2dc0-4909-bbb7-ed978289b372)
 
 ## Inactive subscriptions causes
 
@@ -50,11 +50,11 @@ A subscriber churns for many reasons. Understand the reasons why your subscriber
 * Refunded: The user asked the store to be refunded
 * Unpaid: The subscriptions stoped because of a billing issue
 * Paused: The subscriber chose to pause the subscription that might start at any time
-* Billing retry: There was a billing issue on the subscription that entered a grace period that wasn't successful&#x20;
+* Billing retry: There was a billing issue on the subscription that entered a grace period that wasn't successful
 
 Additionaly, we display the total fraud attempts that was blocked by Purchasely.
 
-![](<../../.gitbook/assets/Capture d’écran 2021-10-20 à 10.25.32.png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2Fm3vGIkZoTTrvOQk0KhAa%2FCapture%20d%E2%80%99e%CC%81cran%202021-10-20%20a%CC%80%2010.25.32.png?alt=media\&token=af0d9670-b75d-4f84-bbd5-66486ccaa219)
 
 ## Today
 
@@ -64,7 +64,7 @@ Want to know what happened today? The today dashboard gives you a quick overview
 * Number of subscriptions that entered grace period
 * Number of lost subscribers
 
-![](<../../.gitbook/assets/Capture d’écran 2021-10-20 à 10.26.11.png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FzTWkFlT7zKQOdR2QNZr7%2FCapture%20d%E2%80%99e%CC%81cran%202021-10-20%20a%CC%80%2010.26.11.png?alt=media\&token=18b45312-cb5e-427d-afaa-1aa6f6af5541)
 
 ## Active subscriptions composition
 
@@ -75,4 +75,4 @@ This dashboard provides different views of your active subscribers base in the r
 * by product
 * by plan (monthly, yearly, …)
 
-![](<../../.gitbook/assets/Capture d’écran 2021-10-20 à 10.41.40 (1).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FUfPNyhwCtfGCbZIN984c%2FCapture%20d%E2%80%99e%CC%81cran%202021-10-20%20a%CC%80%2010.41.40.png?alt=media\&token=376b505b-32d2-4ac8-93af-9b0d9c3d8f68)

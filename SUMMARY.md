@@ -59,7 +59,6 @@
 * [Apple App Store](stores-configuration/app-store.md)
 * [Google Play Store](stores-configuration/play-store.md)
 * [Huawei App Gallery](stores-configuration/huawei-app-gallery.md)
-* [Amazon App Store](stores-configuration/amazon-app-store.md)
 
 ## Analytics
 

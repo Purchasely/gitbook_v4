@@ -4,7 +4,7 @@
 
 Go to [Purchasely console](https://purchasely.io) with your credentials.
 
-<figure><img src="../../.gitbook/assets/SCR-20230127-k46.png" alt=""><figcaption></figcaption></figure>
+{% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2F2DriIdK5Z1VvXpfEl1fk%2FSCR-20230127-k46.png?alt=media&token=68873980-a3ab-43eb-b091-c6d2cb6828cd" %}
 
 These credentials are provided to you by the Purchasely Team. If you want to have your credentials created, just contact us at [hello@purchasely.com](mailto:hello@purchasely.com)
 
@@ -12,7 +12,7 @@ These credentials are provided to you by the Purchasely Team. If you want to hav
 
 To create a new app, click on the **`Add new application`** in the drop-down menu in the top-left corner
 
-<figure><img src="../../.gitbook/assets/SCR-20230127-kc7-2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FmH7D6xDhzakeM8w4NRfB%2FSCR-20230127-kc7-2.png?alt=media&#x26;token=84adddfb-faff-47cc-b91e-65dd1ce9c2f8" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 If you have 2 different environments (e.g.: staging & production), you should create 2 different **Applications** in the Purchasely Console and use 2 different **API keys**
@@ -26,7 +26,7 @@ This new application must be configured with a set of parameters among 3 differe
 
 #### 1. Create a new application
 
-<figure><img src="../../.gitbook/assets/SCR-20230127-kay.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2F6HjcoVYeXBrEstPQ5SsB%2FSCR-20230127-kay.png?alt=media&#x26;token=35db782e-b236-44aa-8430-a25aaec8dd74" alt=""><figcaption></figcaption></figure>
 
 The mandatory parameters are :
 
@@ -37,7 +37,7 @@ The mandatory parameters are :
 
 #### 2. Plug it with the stores
 
-<figure><img src="../../.gitbook/assets/image%20(48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FwfoWcGInBhbSme4MQfwv%2Fimage.png?alt=media&#x26;token=a40f8bda-fd4d-4481-aae6-720a7d7b7fa1" alt=""><figcaption></figcaption></figure>
 
 You can add up to 4 different stores. Step by step configuration of each store is explained below, in dedicated sections.
 
@@ -48,11 +48,11 @@ You can add up to 4 different stores. Step by step configuration of each store i
 
 #### 3. Plug it with your backend
 
-<figure><img src="../../.gitbook/assets/image%20(21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FdwTLGilAlpC7GI6pAAWB%2Fimage.png?alt=media&#x26;token=a9d09bb2-d15a-49a2-825d-e85ee0de51bf" alt=""><figcaption></figcaption></figure>
 
 In this section, you can plug the Purchasely Cloud Platform with your own backend through server-to-server integration. This will allow having your backend notified through a _webhook_ when a transaction event is received from the stores.
 
-![Purchasely webhook illustration](../../.gitbook/assets/webhook%20anim.gif)
+![Purchasely webhook illustration](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FTNFGs2vja41HpZO7ST0E%2Fwebhook%20anim.gif?alt=media\&token=66a77bdb-5fd0-4388-9127-656143207c7e)
 
 Fill in the `Client webhook URL` with the endpoint URL on your own backend where you want to receive the subscription events.
 
@@ -77,7 +77,7 @@ In order to connect your Apple App Store account with Purchasely, you have to pr
 3. [App Scheme](installation.md#app-scheme)
 4. [Shared App Secret](installation.md#shared-app-secret)
 
-<figure><img src="../../.gitbook/assets/image%20(69).png" alt=""><figcaption><p>Apple App Store Plug-in with Purchasely</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FOGEQxF3FTOuZkANaRh13%2Fimage.png?alt=media&#x26;token=fa1deef3-80d1-4b43-a01d-ddf1bb1783e5" alt=""><figcaption><p>Apple App Store Plug-in with Purchasely</p></figcaption></figure>
 
 ### App bundle id
 
@@ -95,7 +95,7 @@ _App Store Connect > My Apps > \[YOUR APP] > General > App Information_
 The value of the `Bundle ID` should be reported in the field App Package in the Purchasely Console\
 _Purchasely > \[YOUR APPLICATION] > Settings > App Settings > Store Configuration > Apple App Store_
 
-<figure><img src="../../.gitbook/assets/image%20(43).png" alt=""><figcaption><p>Bundle ID and Apple ID</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FwmCdEUgGHUtM7AbatI2p%2Fimage.png?alt=media&#x26;token=dfeeba11-070c-444d-8312-e8c509d4e789" alt=""><figcaption><p>Bundle ID and Apple ID</p></figcaption></figure>
 
 ### Apple ID
 
@@ -121,7 +121,7 @@ You can define the app scheme of your mobile application refer to these document
 The Shared App Secret is used by Purchasely Cloud Platform and required to validate receipts for this specific app
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/SCR-20230127-kno.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FI4tjJkROn8a2RSavi148%2FSCR-20230127-kno.png?alt=media&#x26;token=9a79e2da-4be4-493d-8d41-f5025860ebf8" alt=""><figcaption></figcaption></figure>
 
 **App Store:**
 
@@ -147,7 +147,7 @@ In order to connect your Google Play Console account with Purchasely, you have t
 2. [App Scheme](installation.md#app-scheme-1)
 3. [Access Key JSON](installation.md#acces-key-json)
 
-<figure><img src="../../.gitbook/assets/image%20(8).png" alt=""><figcaption><p>Google Play Console Plug-in with Purchasely</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2F1fWkyw2vIdMGXzcRVgjf%2Fimage.png?alt=media&#x26;token=a9a09751-6500-4c05-aac1-8699ddd246fe" alt=""><figcaption><p>Google Play Console Plug-in with Purchasely</p></figcaption></figure>
 
 ### Android App Bundle ID
 
@@ -155,7 +155,7 @@ In order to connect your Google Play Console account with Purchasely, you have t
 The Bundle ID is used by Purchasely Backend to validate that receipts are indeed coming from your app
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image%20(2).png" alt=""><figcaption><p>Android App Bundle ID</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FkfJKbTRlMXcmbfNMogMu%2Fimage.png?alt=media&#x26;token=3a6c49b4-a57b-4e81-a3df-0c0f86f48119" alt=""><figcaption><p>Android App Bundle ID</p></figcaption></figure>
 
 The value of the Package ID should be reported in the field `App bundle id` in your Purchasely console
 
@@ -215,7 +215,7 @@ Set "no expiration date"
 
 **Tab: App permissions -** Select the application corresponding to the app bundle id
 
-<figure><img src="../../.gitbook/assets/image%20(4).png" alt=""><figcaption><p>Service Account permission in Google Play Console</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FFXorzZLHlO4WaNeKdvRC%2Fimage.png?alt=media&#x26;token=82a80871-5031-4f54-94cb-040674ca8dba" alt=""><figcaption><p>Service Account permission in Google Play Console</p></figcaption></figure>
 
 **Tab: Account permissions -** Ensure the following permissions are selected :
 
@@ -223,7 +223,7 @@ Set "no expiration date"
 * [x] View financial data, orders, and cancellation survey responses
 * [x] Manage orders and subscriptions
 
-<figure><img src="../../.gitbook/assets/image%20(11).png" alt=""><figcaption><p>Service Account permission in Google Play Console</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FmcqFGVC5rGhSeQMUUoHA%2Fimage.png?alt=media&#x26;token=7763db29-2e15-45b7-8604-2b14fb9ca757" alt=""><figcaption><p>Service Account permission in Google Play Console</p></figcaption></figure>
 
 ### Server to Server notifications <a href="#server-to-server-notifications" id="server-to-server-notifications"></a>
 
@@ -233,7 +233,7 @@ We connect to Google Cloud Pub/Sub automatically for you by using your service a
 
 ## Configuring Huawei AppGallery parameters
 
-<figure><img src="../../.gitbook/assets/image%20(5)%20(1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2Faje3GfCMOGcp7PBeyc35%2Fimage.png?alt=media&#x26;token=2157270f-1c51-441f-9834-ec4792f6b2d7" alt=""><figcaption></figcaption></figure>
 
 ### Huawei App Package ID
 
@@ -245,7 +245,7 @@ The Package name is used by Purchasely Cloud Platform to validate the authentici
 2. Go to: [_AppGallery Connect_](https://developer.huawei.com/consumer/en/service/josp/agc/index.html) _>_ [_My Apps_](https://developer.huawei.com/consumer/en/service/josp/agc/index.html#/myApp) _> \[YOUR APPLICATION]_
 3. Get the value of the `Package name`
 
-![](../../.gitbook/assets/Screenshot%202021-01-05%20at%2011.40.26%20copy.png)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MQH3u0Fop3zqK9yJ66P%2F-MQH8oIM5MXsWSUsRAp3%2FScreenshot%202021-01-05%20at%2011.40.26%20copy.png?alt=media\&token=d3e4696f-2dc3-42b3-a814-2f3f025c6889)
 
 The value of the Package name should be reported in the field Huawei `App package id` in your Purchasely console
 
@@ -257,7 +257,7 @@ The App ID is used by Purchasely Cloud Platform to validate the authenticity of 
 
 Same procedure as "App Package Id", with the `App ID` property which must be put under `App id` in the Purchasely Console (_Purchasely > Mobile Applications > \[YOUR APPLICATION] > Huawei configuration_)
 
-![](../../.gitbook/assets/Screenshot%202021-01-05%20at%2011.40.26%20copy%20\(1\).png)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MQH3u0Fop3zqK9yJ66P%2F-MQH9eY3AmaQtQBojpEB%2FScreenshot%202021-01-05%20at%2011.40.26%20copy.png?alt=media\&token=01ca243a-8d75-4338-adde-927ca648d9a9)
 
 ### App secret
 
@@ -267,7 +267,7 @@ The App secret is used by Purchasely Cloud Platform to validate the authenticity
 
 Same procedure as "App Package Id", with the `App secret` property which must be put under `App secret` in the Purchasely Console (_Purchasely > Mobile Applications > \[YOUR APPLICATION] > Huawei configuration_)
 
-![](../../.gitbook/assets/Screenshot%202021-01-05%20at%2011.40.26%20copy%20\(2\).png)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MQH3u0Fop3zqK9yJ66P%2F-MQHApK-VcP3E4jOG0PF%2FScreenshot%202021-01-05%20at%2011.40.26%20copy.png?alt=media\&token=4f31ac47-8ee5-4aa8-9dec-712432816b0f)
 
 ### Public key
 
@@ -280,13 +280,13 @@ The public key is used by Purchasely Cloud Platform to validate the authenticity
 3. In the "All services" menu on top, search for "In-App Purchases" and click on it
 4. Get the `Public key` property
 
-![](../../.gitbook/assets/Screenshot%202021-01-05%20at%2011.56.26%20copy.png)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MQH3u0Fop3zqK9yJ66P%2F-MQHCzmUjZXr46XekYLD%2FScreenshot%202021-01-05%20at%2011.56.26%20copy.png?alt=media\&token=db25b3f8-49fc-4a02-aaea-0ef4d683d80b)
 
 1. Fill in this value under `"In-App Purchases" public key` in the Purchasely Console (_Purchasely > Mobile Applications > \[YOUR APPLICATION] > Huawei configuration_)
 
 ## Configuring Amazon App Store parameters
 
-<figure><img src="../../.gitbook/assets/image%20(3)%20(2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FUdeToU5uQnoZGwl2LcII%2Fimage.png?alt=media&#x26;token=d272987c-6975-4614-a87b-4c998e331af6" alt=""><figcaption></figcaption></figure>
 
 ### App SKU
 
@@ -299,7 +299,7 @@ The Package name is used by Purchasely Cloud Platform to validate the authentici
 3. Select your app
 4. Get the value of the `App SKU`
 
-![](../../.gitbook/assets/Capture%20d%E2%80%99%C3%A9cran%202021-05-05%20%C3%A0%2018.24.14%20\(1\).png)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MZxLmHh5hKsuOqYY1\_B%2F-MZxLwdUCqnrA5IQ2uOk%2FCapture%20d%E2%80%99e%CC%81cran%202021-05-05%20a%CC%80%2018.24.14.png?alt=media\&token=8ddd7d51-0dec-445b-ace6-47565ecc5e26)
 
 The value of the `App SKU` should be reported in the field `Amazon App SKU` in your Purchasely console.
 

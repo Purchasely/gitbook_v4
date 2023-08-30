@@ -8,8 +8,8 @@ description: >-
 
 ## Subscription activation
 
-![](<../../.gitbook/assets/image (48) (1).png>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MHps5g37nfoUYymTFEG%2F-MHuJRXAVKt8x2cpKMis%2Fimage.png?alt=media\&token=54e1c7db-20d3-4cd0-81f1-fb57b65170ba)
 
 ## Subscription update
 
-![](<../../.gitbook/assets/image (57) (1).png>)
+![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MIG46MAZUUeeZMowevE%2F-MINwVDBTOqBvArsP8\_s%2Fimage.png?alt=media\&token=20789ea5-6678-405d-8194-c83cac18413b)

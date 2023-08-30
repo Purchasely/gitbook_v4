@@ -39,8 +39,8 @@ platform :ios, '11.0'
 buildscript {
     ext {
         minSdkVersion = 21 //min version must not be below 21
-        compileSdkVersion = 31
-        targetSdkVersion = 31
+        compileSdkVersion = 33
+        targetSdkVersion = 33
     }
 }
 
@@ -62,7 +62,7 @@ npm install @purchasely/react-native-purchasely-google --save
 ```
 
 {% hint style="info" %}
-Our SDK integrates Google Play Billing Client version 4.1.0, you must not use with your project another dependency with an older version.
+Our SDK integrates Google Play Billing Client version 5.2.1, you must not use with your project another dependency with an older version.
 {% endhint %}
 
 ### Huawei Mobile Services
@@ -80,4 +80,3 @@ To add Amazon as a store, you can use NPM
 ```bash
 npm install @purchasely/react-native-purchasely-amazon --save
 ```
-

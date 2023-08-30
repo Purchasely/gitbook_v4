@@ -16,4 +16,4 @@ A lot of things happen on your subscriber base every day:
 * Transfer
 * Refund
 
-![](<../../.gitbook/assets/Capture d’écran 2021-10-20 à 16.33.18.png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2F1IxOFocIcAh3cyRAN6jq%2FCapture%20d%E2%80%99e%CC%81cran%202021-10-20%20a%CC%80%2016.33.18.png?alt=media\&token=c5569251-7561-47d3-83bc-6861ff837c26)

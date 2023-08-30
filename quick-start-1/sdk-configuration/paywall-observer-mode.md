@@ -32,7 +32,7 @@ In this mode Purchasely won't consume your purchases or acknowledge purchases ma
 
 ## General overview
 
-![](<../../.gitbook/assets/Paywall + Observer animated.gif>)
+![](../../.gitbook/assets/Paywall%20+%20Observer%20animated.gif)
 
 ## Implementation
 
@@ -94,7 +94,6 @@ Purchasely.Builder(applicationContext)
     .apiKey("API_KEY")
     .logLevel(LogLevel.DEBUG) // set to warning or error for release
     .userId("USER_ID")
-    .eventListener(eventListener)
     .runningMode(PLYRunningMode.PaywallObserver)
     .stores(listOf(GoogleStore(), HuaweiStore()))
     .build()
@@ -116,7 +115,6 @@ new Purchasely.Builder(getApplicationContext())
     .apiKey("API_KEY")
     .logLevel(LogLevel.DEBUG) // set to warning or error for release
     .userId("USER_ID")
-    .eventListener(this)
     .runningMode(PLYRunningMode.Full.PaywallObserver)
     .stores(stores)
     .build();
@@ -199,8 +197,6 @@ if (!configured) {
 \
 [View implementation details](config-appendices/start-the-sdk.md)
 
-
-
 ### 2- Set user identifier
 
 We need to know whenever a user is logged in or logged out to:
@@ -210,22 +206,18 @@ We need to know whenever a user is logged in or logged out to:
 
 [View implementation details](config-appendices/set-user-id.md)
 
-
-
 Use a [PaywallActionInterceptor](../../advanced-features/paywall-action-interceptor.md) to handle login from a paywall and display your login screen
-
-
 
 ### 3- Configure and present paywalls
 
-To display a paywall, you need to can get a Controller / Fragment from Purchasely.&#x20;
+To display a paywall, you need to can get a Controller / Fragment from Purchasely.
 
 [View implementation details](config-appendices/present-paywalls.md)
 
 \
 Then you must use the Paywall Actions Interceptor to perform the purchase triggered from Purchasely's paywalls with your purchase system.
 
-Here is an example where  `MyPurchaseSystem` is your internal subscription management system.
+Here is an example where `MyPurchaseSystem` is your internal subscription management system.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -408,8 +400,6 @@ Purchasely.setPaywallActionInterceptorCallback(
 {% endtab %}
 {% endtabs %}
 
-
-
 ### 4- Sync your purchases (Android only)
 
 In `oberver` and `paywallObserver` modes, when a purchase or a restoration is made with your current flow, call the `synchronize()` method of our SDK to send the receipt to our backend. This allow us to save the receipts on our server to prepare for your migration.
@@ -440,8 +430,6 @@ Purchasely.synchronize();
 {% endtab %}
 {% endtabs %}
 
-
-
 ### 5- Configure deeplinks (optional)
 
 Paywalls can be used in many othe ways that can be:
@@ -450,13 +438,11 @@ Paywalls can be used in many othe ways that can be:
 * [Deeplinks](../../advanced-features/deeplinks-and-automations.md)
 * Push notifications deeplinks
 
-
-
 ### 6- Migrate your existing subscriber base (optional)
 
 If your app already has subscribers, you must migrate them to Purchasely to:
 
 * Have complete dashboards including every subscriber acquired in the past
-* Handle status using the `userSubscriptions` &#x20;
+* Handle status using the `userSubscriptions`
 
 Follow [this guide](../../faq/migration-guides/migrate-from-an-existing-setup.md) to import your subscribers to Purchasely.

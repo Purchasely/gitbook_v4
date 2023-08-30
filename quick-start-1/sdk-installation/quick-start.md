@@ -43,7 +43,7 @@ implementation 'io.purchasely:google-play:4.0.0'
 ```
 
 {% hint style="info" %}
-Our SDK integrates Google Play Billing Client version 4.1.0, you must not use with your project another dependency with an older version.
+Our SDK integrates Google Play Billing Client version 5.2.1, you must not use with your project another dependency with an older version.
 {% endhint %}
 
 ### Huawei Mobile Services

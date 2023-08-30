@@ -6,14 +6,14 @@
 
 1. Connect to the Purchasely Console
 2. Access the settings of the application you want to connect
-3. Get the value of the parameter `Google S 2 S Notifications Endpoint` \
+3. Get the value of the parameter `Google S 2 S Notifications Endpoint`\
    _Purchasely > Mobile Applications > \[YOUR APPLICATION] > Application settings_
 
-![](<../.gitbook/assets/image (147).png>)
+![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FAayaLhsAm9GOOp2Fcb6L%2Fimage.png?alt=media\&token=80e5051d-6a10-4050-8155-7d5d3b830628)
 
 ### Creating a new Pub/Sub Topic
 
-1. Connect to the [Google Cloud Platform Console](https://cloud.google.com/pubsub)&#x20;
+1. Connect to the [Google Cloud Platform Console](https://cloud.google.com/pubsub)
 2. Create new Pub/Sub topic\
    _Google Cloud Platform > PubSub > Topics > `+ Create new topic`_
 3. Suggested name for the topic `Playstore-S2S-notifications`
@@ -39,7 +39,7 @@ To receive S2S notifications on mutiple endpoints, you can create another subscr
 
 ### Adding a publisher to the topic
 
-1. Add a new Pub/Sub Editor to the topic in the [Google Cloud Platform Console](https://cloud.google.com/pubsub) \
+1. Add a new Pub/Sub Editor to the topic in the [Google Cloud Platform Console](https://cloud.google.com/pubsub)\
    _Google Cloud Platform > PubSub > Topics > \[Playstore-S2S-Notifications] > `+ Add principal`_
 2. Copy & paste the following value `google-play-developer-notifications@system.gserviceaccount.com` in the `member` field
 3. Set the `role` to `Pub/Sub Publisher`
@@ -52,12 +52,11 @@ To receive S2S notifications on mutiple endpoints, you can create another subscr
 3. Click on the button Send test notification.\
    You can send several notifications at the same time
 4. Click on **Save changes**
-5.  Check the good reception of the test notification at the `topic` level&#x20;
+5.  Check the good reception of the test notification at the `topic` level
 
     in the [Google Cloud Platform Console](https://cloud.google.com)\
     _Google Cloud Platform > Topics > Googleplay-S2S-Notifications_
-6.  Check the good reception of the test notification at the `subscription` level&#x20;
+6.  Check the good reception of the test notification at the `subscription` level
 
     in the [Google Cloud Platform Console](https://cloud.google.com)\
     _Google Cloud Platform > Subscriptions > Purchasely-Subscriptions_
-

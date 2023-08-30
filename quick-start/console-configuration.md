@@ -4,14 +4,15 @@ This is a simplified overview of our more detailed [console configuration](conso
 
 ### Application
 
-<figure><img src="../.gitbook/assets/image%20(59)%20(2).png" alt=""><figcaption><p>Create a New Application</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/quickStart_consoleConfig_1.png" alt=""><figcaption><p>Create a New Application</p></figcaption></figure>
 
 The mandatory parameters are :
 
 * **Name**: the name of the application as it will be displayed in the Purchasely Console
 * **The default language**: this will define which language shall be used when the language on a user device is not supported by the application. ⚠️ It can't be changed later
+*
 
-<figure><img src="../.gitbook/assets/image%20(32).png" alt=""><figcaption><p>Store Configuration</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/quickStart_consoleConfig_2.png" alt=""><figcaption><p>Store Configuration</p></figcaption></figure>
 
 The next step is to plug your applications with the different stores you want to use.
 
@@ -19,22 +20,32 @@ The next step is to plug your applications with the different stores you want to
 
 By clicking on the Apple App Store tab in your App Settings you can do the 3 required steps for Apple configuration
 
-1. App bundle id\
-   <img src="../.gitbook/assets/SCR-20220617-mwm.png" alt="" data-size="original">
-2. Shared App Secret\
-   ![](../.gitbook/assets/SCR-20220617-mwy.png)![](../.gitbook/assets/SCR-20220617-myi.png)
-3. Server to Server notifications\
-   ![](../.gitbook/assets/SCR-20220617-mzk.png)
+1. **App bundle id**\
+   <img src="../.gitbook/assets/quickStart_consoleConfig_3.png" alt="" data-size="original">
+2. **Shared App Secret**\
+   ![](../.gitbook/assets/quickStart\_consoleConfig\_4.png)![](../.gitbook/assets/quickStart\_consoleConfig\_5.png)
+3. **Server to Server notifications**\
+   ![](../.gitbook/assets/quickStart\_consoleConfig\_6.png)
 
 ### Google Play Console
 
 By clicking on the Play Store tab in your App Settings you can do the 3 required steps for Google configuration
 
-#### App Bundle Id ![](../.gitbook/assets/SCR-20220617-n4t.png)
+#### App Bundle Id
+
+<div align="left">
+
+<figure><img src="../.gitbook/assets/quickStart_consoleConfig_7.png" alt="" width="375"><figcaption></figcaption></figure>
+
+</div>
 
 #### Access Key
 
-![](../.gitbook/assets/SCR-20220617-n68.png)
+<div align="left">
+
+<figure><img src="../.gitbook/assets/quickStart_consoleConfig_8.png" alt="" width="375"><figcaption></figcaption></figure>
+
+</div>
 
 Create a dedicated Service Account under [Google Cloud Platform Console](https://console.cloud.google.com/) [https://console.cloud.google.com](https://console.cloud.google.com/)\
 _Google Cloud Platform > IAM & admin > Service Account > Create a new Service Account_
@@ -53,12 +64,12 @@ _Google Play Console> API Access > \[PURCHASELY SERVICE ACCOUNT] > Grant authori
 
 1. Set "no expiration date"
 2. **Tab: App permissions -** Select the application corresponding to the app bundle id\
-   ![](../.gitbook/assets/SCR-20220617-n7r.png)
+   ![](../.gitbook/assets/quickStart\_consoleConfig\_9.png)
 3. **Tab: Account permissions -** Ensure the following permissions are selected :
    * [x] View app information and download bulk reports
    * [x] View financial data, orders, and cancellation survey responses
    * [x] Manage orders and subscriptions\
-     ![](../.gitbook/assets/SCR-20220617-n8a.png)\\
+     ![](../.gitbook/assets/quickStart\_consoleConfig\_10.png)
 
 {% hint style="warning" %}
 Once you have completed all those steps, it can **take up from 30 minutes to 48 hours** to Google to activate those new permissions, specifically the 2nd step **App Permission** for the service account
@@ -69,4 +80,4 @@ Once you have completed all those steps, it can **take up from 30 minutes to 48 
 We connect to Google Cloud Pub/Sub automatically for you by using your service account access.\
 All you need to do is click on "Connect to Google" and follow the steps
 
-![](../.gitbook/assets/SCR-20220617-nee.png)
+<figure><img src="../.gitbook/assets/quickStart_consoleConfig_11.png" alt=""><figcaption></figcaption></figure>

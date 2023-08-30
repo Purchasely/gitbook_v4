@@ -5,12 +5,12 @@ description: You can opt-in to use StoreKit2 for Apple In-App Purchases
 # StoreKit 2
 
 {% hint style="info" %}
-To request StoreKit 2 usage, simply send an email to our support team or reach out to us via Intercom.&#x20;
+To request StoreKit 2 usage, simply send an email to our support team or reach out to us via Intercom.
 {% endhint %}
 
 Purchasely, by default, uses StoreKit 1 to initiate and process purchases on iOS devices. However, if you wish to enable StoreKit 2 for users on iOS 15 and above, see requirements below, you can make a request to our support team.\
 \
-Our team will assist you in enabling StoreKit 2 for your application, ensuring a seamless purchasing experience for your users on the latest iOS devices. \
+Our team will assist you in enabling StoreKit 2 for your application, ensuring a seamless purchasing experience for your users on the latest iOS devices.\
 Users with devices below minimum requirements will continue to uses StoreKit 1 under the hood.
 
 ## Configuration
@@ -26,7 +26,7 @@ Configuring StoreKit 2 with App Store Connect to allow Purchasely to verify tran
 * Choose a name for the key and click "Generate"
 * Download the API key file (`.p8`), and note the **Key ID** and **Issuer ID**. Keep the file secure, as you won't be able to download it again
 
-<figure><img src="../../.gitbook/assets/SCR-20230403-nktk.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FuzmdiMgxXbvsSrj7F58m%2FSCR-20230403-nktk.png?alt=media&#x26;token=8e370356-52f1-4913-8a78-702d441ace65" alt=""><figcaption></figcaption></figure>
 
 #### Setup StoreKit2 on Purchasely Console
 
@@ -38,7 +38,7 @@ Configuring StoreKit 2 with App Store Connect to allow Purchasely to verify tran
 * Fill your **Issuer Id**
 * Click on **Save** in the top right corner
 
-<figure><img src="../../.gitbook/assets/SCR-20230403-nefu.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FGziQy6NPfXfCjK3doltM%2FSCR-20230403-nefu.png?alt=media&#x26;token=fa220406-60e9-4b51-bf9d-cd5e70535913" alt=""><figcaption></figcaption></figure>
 
 ## Implementation
 
@@ -109,17 +109,14 @@ try await Purchasely.syncPurchase(for: "apple-product-id")
 {% endtab %}
 {% endtabs %}
 
-#### &#x20;Purchasely SDK
+#### Purchasely SDK
 
 * iOS: 3.5.0
 
-#### **OS version** (built with Xcode 14 or later)&#x20;
+#### **OS version** (built with Xcode 14 or later)
 
 * iOS 15
 * iPadOS 15
 * macOS 12
 * tvOS 15
 * watchOS 8
-
-
-

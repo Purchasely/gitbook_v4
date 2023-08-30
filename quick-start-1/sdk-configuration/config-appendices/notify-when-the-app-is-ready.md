@@ -18,50 +18,50 @@ This is mandatory to be able to handle [**Promoted In-App Purchases**](../../../
 {% tab title="Swift" %}
 ```swift
 // Call me in your viewDidAppear
-Purchasely.isReadyToPurchase(true)
+Purchasely.readyToOpenDeeplink(true)
 ```
 {% endtab %}
 
 {% tab title="Objective-C" %}
 ```objectivec
-[Purchasely isReadyToPurchase: true];
+[Purchasely readyToOpenDeeplink: true];
 ```
 {% endtab %}
 
 {% tab title="Kotlin" %}
 ```kotlin
-Purchasely.isReadyToPurchase = true
+Purchasely.readyToOpenDeeplink = true
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
-Purchasely.setIsReadyToPurchase(true);
+Purchasely.setReadyToOpenDeeplink(true);
 ```
 {% endtab %}
 
 {% tab title="React Native" %}
 ```javascript
-Purchasely.isReadyToPurchase(true);
+Purchasely.readyToOpenDeeplink(true);
 ```
 {% endtab %}
 
 {% tab title="Cordova" %}
 ```javascript
-Purchasely.isReadyToPurchase(true);
+Purchasely.readyToOpenDeeplink(true);
 ```
 {% endtab %}
 
 {% tab title="Flutter" %}
 ```dart
-Purchasely.isReadyToPurchase(true);
+Purchasely.readyToOpenDeeplink(true);
 ```
 {% endtab %}
 
 {% tab title="Unity" %}
 <pre class="language-csharp"><code class="lang-csharp">private PurchaselyRuntime.Purchasely _purchasely;
 
-<strong>_purchasely.SetReadyToPurchase(true);
+<strong>_purchasely.SetReadyToOpenDeeplink(true);
 </strong></code></pre>
 {% endtab %}
 {% endtabs %}

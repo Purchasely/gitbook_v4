@@ -13,7 +13,11 @@ All confirmation emails are sent by the App store to the email address used for 
 \
 See below for the time correspondence :
 
-![testing in app purchases subscription cycles](https://downloads.intercomcdn.com/i/o/357506852/71a22650ed94f3e94c8f9570/Screenshot+2021-06-03+at+10.27.34.jpg)
+<div align="left">
+
+<img src="https://downloads.intercomcdn.com/i/o/357506852/71a22650ed94f3e94c8f9570/Screenshot+2021-06-03+at+10.27.34.jpg" alt="testing in app purchases subscription cycles" width="375">
+
+</div>
 
 ### Apple
 
