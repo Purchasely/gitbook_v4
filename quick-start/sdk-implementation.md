@@ -56,7 +56,6 @@ Purchasely.Builder(applicationContext)
     .apiKey("API_KEY")
     .logLevel(LogLevel.DEBUG) // set to warning or error for release
     .userId("USER_ID")
-    .eventListener(eventListener)
     .runningMode(PLYRunningMode.Full)
     .stores(listOf(GoogleStore(), HuaweiStore()))
     .build()
@@ -78,7 +77,6 @@ new Purchasely.Builder(getApplicationContext())
     .apiKey("API_KEY")
     .logLevel(LogLevel.DEBUG) // set to warning or error for release
     .userId("USER_ID")
-    .eventListener(this)
     .runningMode(PLYRunningMode.Full.INSTANCE)
     .stores(stores)
     .build();
@@ -178,17 +176,13 @@ The `userID` parameter is optional and allows you to associate the purchase to a
 
 Paywalls are displayed by calling a Placement.
 
-A Placement represents a specific location in your user journey inside your app (e.g. Onboarding, Settings, Home page, Article). A placement is linked to a paywall and a single paywall can be used for different Placements. You can create as many Placements as you want, and this is the only thing that ties the app developer to the marketer.&#x20;
+A Placement represents a specific location in your user journey inside your app (e.g. Onboarding, Settings, Home page, Article). A placement is linked to a paywall and a single paywall can be used for different Placements. You can create as many Placements as you want, and this is the only thing that ties the app developer to the marketer.
 
 Once the placements are defined and called from the app, you can change the displayed paywall remotely without any developer action.
-
-
 
 {% hint style="info" %}
 You can also preload paywalls [asynchronously](../advanced-features/asynchronous-paywalls.md) using `fetchPresentation` method
 {% endhint %}
-
-
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -211,19 +205,31 @@ UIViewController *paywallCtrl = [Purchasely presentationControllerFor:@"my_place
 
 {% tab title="Kotlin" %}
 ```kotlin
-val placementId = "onboarding"
-val contentId = "my_content_id" //or null
-Purchasely.presentationFragmentForPlacement(placementId, contentId) { result, plan ->
-      Log.d("Purchasely", "Result is $result with plan $plan")
-}
+val paywallView = Purchasely.presentationViewForPlacement(
+    context,
+    placementId = "onboarding",
+    onClose = {
+        //TODO remove view from layout hierarchy
+    },
+)
+        
+//TODO add paywallView to layout hierarchy
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
-String placementId = "onboarding"
-String contentId = "my_content_id" //or null
-Purchasely.presentationFragmentForPlacement(placementId, contentId);
+Purchasely.presentationViewForPlacement(
+        context,
+        "onboarding",
+        "content_id", //optional
+        isLoaded -> null, //optional if you want to handle the onLoaded state
+        () -> {
+            // TODO remove view
+            return null;
+        },
+        null
+);
 ```
 {% endtab %}
 
@@ -309,27 +315,35 @@ UIViewController *paywallCtrl = [Purchasely presentationControllerWith:@"my_pres
 
 {% tab title="Kotlin" %}
 ```kotlin
-Purchasely.presentationFragmentForPlacement(
-    placementId = "my_placement_id",
-    contentId = "my_content_id",
-    callbackLoaded = { isLoaded -> }
-) { result, plan -> 
+val paywallView = Purchasely.presentationViewForPlacement(
+    context,
+    placementId = "onboarding",
+    onClose = {
+        //TODO remove view from layout hierarchy
+    },
+) { result, plan ->
     when(result) {
         PLYProductViewResult.PURCHASED -> Log.d("Purchasely", "User purchased ${plan?.name}")
         PLYProductViewResult.CANCELLED -> Log.d("Purchasely", "User cancelled purchased")
         PLYProductViewResult.RESTORED -> Log.d("Purchasely", "User restored ${plan?.name}")
-    }    
-    
+    }
 }
+
+//TODO add paywallView to layout hierarchy
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
-Purchasely.presentationFragmentForPlacement(
-        "my_placement_id",
-        "my_content_id",
-        isLoaded -> null,
+Purchasely.presentationViewForPlacement(
+        context,
+        "onboarding",
+        "content_id", //optional
+        isLoaded -> null, //optional if you want to handle the onLoaded state
+        () -> {
+            // TODO remove view
+            return null;
+        },
         (result, plan) -> {
             switch (result) {
                 case PURCHASED:
@@ -342,6 +356,7 @@ Purchasely.presentationFragmentForPlacement(
                     Log.d("Purchasely", "User cancelled purchase");
                     break;
             }
+            return null;
         }
 );
 ```
