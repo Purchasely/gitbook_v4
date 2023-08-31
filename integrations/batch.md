@@ -31,7 +31,7 @@ Plugging Purchasely and Batch has 3 advantages:
 
 ## Integrating Purchasely with Batch
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 The integration of Purchasely and Batch requires the activation of the [Trigger Events API](https://doc.batch.com/api/trigger-events-api/track-events) on Batch side. Please contact directly your Batch account manager to activate the access to this feature.
 {% endhint %}
 
@@ -40,7 +40,7 @@ The integration requires 4 steps:
 1. Activate the Batch integration in the Purchasely Console
 2. Enable the events forwarded to Batch in the Purchasely Console
 3. Enable the events in the Batch Dashboard
-4. Associate Batch Installation Ids to events
+4. Set Batch SDK Custom User ID
 
 #### 1. Activate the Batch integration in the Purchasely Console
 
@@ -80,47 +80,32 @@ Batch Dashboard > You \[iOS / Android] app > Settings > Custom Data > User event
 Note: Purchasely events must have been received at least once on Batch's side to appear in this list of User events
 {% endhint %}
 
-### 4. Associate Batch Installation Ids to events
+### 4. Set Batch SDK Custom User ID
 
-{% tabs %}
-{% tab title="Swift" %}
-```swift
-if let installationId = BatchUser.installationID() {
-			Purchasely.setAttribute(.batchInstallationId, value: installationId)
-}
-```
-{% endtab %}
+{% hint style="warning" %}
+This step is very important, otherwise events sent by Purchasely will not be properly associated with users
+{% endhint %}
 
-{% tab title="Kotlin" %}
-```kotlin
-Purchasely.setAttribute(Attribute.BATCH_INSTALLATION_ID, Batch.User.getInstallationID())
-```
-{% endtab %}
+Configure Batch SDK with the **same User ID** that is [given](../quick-start-1/sdk-configuration/config-appendices/set-user-id.md) to Purchasely SDK
 
-{% tab title="Java" %}
-```java
-Purchasely.setAttribute(Attribute.BATCH_INSTALLATION_ID, Batch.User.getInstallationID());
-```
-{% endtab %}
+For example, if `Purchasely.userLogin` is called with:&#x20;
 
-{% tab title="React Native" %}
-```javascript
-Purchasely.setAttribute(Attributes.BATCH_INSTALLATION_ID,  BatchUser.getInstallationID());
 ```
-{% endtab %}
+Purchasely.userLogin("john.doe")...
+```
 
-{% tab title="Cordova" %}
-```javascript
-Purchasely.setAttribute(Purchasely.Attribute.BATCH_INSTALLATION_ID, batch.user.getInstallationID());
-```
-{% endtab %}
+Then set Batch SDK with:
 
-{% tab title="Flutter" %}
-```dart
-Purchasely.setAttribute(PLYAttribute.batch_installation_id, BatchUser.instance.installationID());
-```
-{% endtab %}
-{% endtabs %}
+<pre><code><strong>Batch.User.editor()
+</strong>    .setIdentifier("john.doe")
+    .save();
+...
+</code></pre>
+
+For more details, see Batch documentation:
+
+* [Custom user ID (Android)](https://doc.batch.com/android/custom-data/customid/#setting-up-a-custom-user-id)
+* [Custom user ID (iOS)](https://doc.batch.com/ios/custom-data/customid/#setting-up-a-custom-user-id)
 
 ## Setting-up your first automation
 
