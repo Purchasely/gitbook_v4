@@ -137,6 +137,7 @@
       * [v2.1.3](faq/migration-guides/sdk/migrate-to-sdk-v3.0/v-2.1.3.md)
     * [Migrate to SDK v3.1](faq/migration-guides/sdk/migrate-to-sdk-v3.1.md)
     * [Migrate to SDK v3.2](faq/migration-guides/sdk/migrate-to-sdk-v3.2.md)
+    * [Migrate to SDK v4.0.0](faq/migration-guides/sdk/migrate-to-sdk-v4.0.0.md)
 
 ## TESTING
 
