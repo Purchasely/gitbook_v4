@@ -4,7 +4,7 @@
 
 ### Pre-requisites
 
-The minimal version of the Purchasely SDK supporting this integration is //TODO: Kevin. If the Purchasely SDK integrated in your app is under the minimal version, please update it.
+The minimal version of the Purchasely SDK supporting this integration is v3.4.0. If the Purchasely SDK integrated in your app is under the minimal version, please update it.
 
 The Customer.io SDK also needs to be integrated inside the app.
 
@@ -51,8 +51,6 @@ The integration requires ${integration\_setup\_steps\_count} steps:
 ### 1. Associating users to events
 
 See the [Customer.io Documentation]($%7Bintegration\_documentation\_url%7D/) for more information
-
-
 
 ### 2. Activating the Customer.io integration
 

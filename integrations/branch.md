@@ -4,7 +4,7 @@
 
 ### Pre-requisites
 
-The minimal version of the Purchasely SDK supporting this integration is //TODO: Kevin. If the Purchasely SDK integrated in your app is under the minimal version, please update it.
+The minimal version of the Purchasely SDK supporting this integration is v3.4.0. If the Purchasely SDK integrated in your app is under the minimal version, please update it.
 
 The Branch SDK also needs to be integrated inside the app.
 
@@ -51,8 +51,6 @@ The integration requires ${integration\_setup\_steps\_count} steps:
 ### 1. Associating users to events
 
 See the [Branch Documentation](https://help.branch.io/developers-hub/docs/custom-settings#settings-for-user-ids) for more information
-
-
 
 ### 2. Activating the Branch integration
 

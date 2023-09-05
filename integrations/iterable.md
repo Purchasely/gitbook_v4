@@ -4,7 +4,7 @@
 
 ### Pre-requisites
 
-The minimal version of the Purchasely SDK supporting this integration is v//TODO: Kevin & Mathieu. If the Purchasely SDK integrated in your app is under the minimal version, please update it.
+The minimal version of the Purchasely SDK supporting this integration is v3.3.0. If the Purchasely SDK integrated in your app is under the minimal version, please update it.
 
 The Iterable SDK also needs to be integrated inside the app.
 
