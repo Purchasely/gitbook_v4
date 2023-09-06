@@ -14,20 +14,24 @@ Go to the Purchasely's app listing on [Stripe apps marketplace](https://marketpl
 
 If you have more than one Stripe account (for each application) then connect the account you want to associate with the application.
 
-{% hint style="info" %}
-⚠️ A Stripe application combines a Stripe account with only one Purchasely mobile application. If your Stripe account works with more than one application, please contact our support team via Intercom.
+{% hint style="danger" %}
+A Stripe application combines a Stripe account with only one Purchasely Application. If your Stripe account works with more than one Purchasely Application, please contact our support team via Intercom.
+
+Read below on how to handle both Stripe "test" and "production" environments.
 {% endhint %}
 
+
+
 Click on install app.\
-The list of authorisations required for the proper functioning of our application is then displayed.
+The list of authorizations required for the proper functioning of our application is then displayed.
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FaqmcfLds8WDfZNbJnQRV%2FStripe-app-listing-img2.png?alt=media&#x26;token=8fa35b14-7c4e-428b-977d-043378de97d0" alt=""><figcaption><p>Authorisation validation</p></figcaption></figure>
 
 {% hint style="info" %}
-If you have a question about the use of an authorisation, contact our support team via Intercom.
+If you have a question about the use of an authorization, contact our support team via Intercom.
 {% endhint %}
 
-Validate the authorisations requested
+Validate the authorizations requested
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FDTUTu7emWhyXa0UkMq1Y%2Fimage.png?alt=media&#x26;token=b6d0481a-f897-47dd-8517-1e372e1a8f54" alt=""><figcaption><p>Permission samples</p></figcaption></figure>
 
@@ -55,7 +59,17 @@ Select the Purchasely app you wish to link your Stripe account to.
 Click on "NEXT".
 
 {% hint style="info" %}
-⚠️ A Stripe account can only be associated with one and only one Purchasely mobile application. A Purchasely mobile application can only be associated with one Stripe application. If your Stripe account works with several applications, please contact our support team via Intercom.
+Once the app is installed, it needs to be configured both in the "test" and "production" Stripe environments for purchases to be tracked in those environments accordingly.
+
+
+
+The following configurations are supported :
+
+* 2 Purchasely applications
+  * My Purchasely App (staging) <-> Stripe Account (test mode)
+  * My Purchasely App (production) <-> Stripe Account (production mode)
+* 1 Purchasely application
+  * My Purchasely App <-> Stripe Account (test + production mode)
 {% endhint %}
 
 <div align="left">
@@ -88,9 +102,19 @@ From the Stripe console, copy the API ID (price) ...
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FoVKtKulziIHeXDlnHjtO%2Fimage.png?alt=media&#x26;token=2a216b47-21ce-44d3-884d-dbf87255328c" alt=""><figcaption></figcaption></figure>
 
-... then paste this ID into the corresponding plan or directly from the Stripe store configuration.
+Then paste this ID into the corresponding plan:
 
-<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGgUdOzhqa07uh7nB2iZA%2Fuploads%2FoD3RFJuEr7Y78RmkWinY%2FStripe-app-config-plans2.png?alt=media&#x26;token=e78b5d6f-2848-40af-ac41-f2e4dde6b044" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+Purchasely allows you to associate more than one Stripe Price to one given Purchasely plan, to handle cases where there exists several Stripe Prices tied to the same "plan" but with a different currency.
+{% endhint %}
+
+{% hint style="warning" %}
+Do not associate more than one Stripe Price to one given Purchasely plan if the Stripe Prices have different periodicicy, or different level of entitlement.
+
+For such use cases, create another plan.
+{% endhint %}
 
 ## IV. Associating Stripe subscriptions to Purchasely
 
