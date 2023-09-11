@@ -139,6 +139,14 @@ Purchasely.setReadyToOpenDeeplink(true);
 Purchasely.isDeeplinkHandled(deeplink);
 ```
 {% endtab %}
+
+{% tab title="ReactNative" %}
+<pre class="language-typescript"><code class="lang-typescript">Purchasely.readyToOpenDeeplink(true);
+
+<strong>Purchasely.isDeeplinkHandled('app://ply/presentations/')
+</strong>          .then((value) => console.log('Deeplink handled by Purchasely ? ' + value));
+</code></pre>
+{% endtab %}
 {% endtabs %}
 
 ## Fetch presentation with context (Android only)

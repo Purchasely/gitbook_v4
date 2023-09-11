@@ -144,7 +144,7 @@ public class MyActivity extends FragmentActivity {
 
 {% tab title="React Native" %}
 ```typescript
-Purchasely.handle('app://ply/presentations/')
+Purchasely.isDeeplinkHandled('app://ply/presentations/')
           .then((value) => console.log('Deeplink handled by Purchasely ? ' + value));
 ```
 {% endtab %}
@@ -199,7 +199,7 @@ Purchasely.setReadyToOpenDeeplink(true);
 
 {% tab title="React Native" %}
 ```javascript
-Purchasely.isReadyToPurchase(true);
+Purchasely.readyToOpenDeeplink(true);
 ```
 {% endtab %}
 
@@ -211,7 +211,7 @@ Purchasely.isReadyToPurchase(true);
 
 {% tab title="Flutter" %}
 ```
-Purchasely.isReadyToPurchase(true);
+Purchasely.readyToOpenDeeplink(true);
 ```
 {% endtab %}
 {% endtabs %}
