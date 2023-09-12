@@ -7,7 +7,9 @@ At Purchasely, we believe that every app deserves to be profitable. That's why w
 This new version makes it easier than ever to create and manage effective promotional campaigns, helping you to increase your app's revenue.
 
 {% hint style="warning" %}
-Take note that we have adopted **Google Billing v5.2.1** and the minimum required **Kotlin** version is **1.7.0**.
+Take note that : \
+On Android, we have adopted **Google Billing v5.2.1** and the minimum required **Kotlin** version is **1.7.0**\
+On iOS, we are using **StoreKit 2 by default** but you can force the usage of StoreKit1
 {% endhint %}
 
 ## Update `Builder` class
@@ -16,14 +18,46 @@ The Builder class no longer includes the `uiListener` and `eventListener` config
 
 {% tabs %}
 {% tab title="Swift" %}
-```swift
-// Some code
-```
+<pre class="language-swift"><code class="lang-swift">import Purchasely
+
+Purchasely.start(withAPIKey: "API_KEY",
+                         appUserId: "USER_ID",
+<strong>                         runningMode: .full,
+</strong><strong>                         paywallActionsInterceptor: PLYPaywallActionsInterceptor,
+</strong>                         storekitSettings: .storeKit2, // optional but set to StoreKit 2 by default. 
+                         // Fallsback to StoreKit 1 in case the informations are not setup correctly on Purchasely console
+                         logLevel: .debug, // set to warning or error for release
+                         initialized: PLYSuccessErrorClosure))
+                         
+// Paywall interceptor can be setted afterwards by calling
+Purchasely.setPaywallActionsInterceptor { [weak self] (action, parameters, presentationInfo, proceed) in
+}
+
+// Set your ui listener
+Purchasely.Purchasely.setUIDelegate(PLYUIDelegate?)
+
+</code></pre>
 {% endtab %}
 
 {% tab title="Objective-C" %}
 ```objectivec
-// Some code
+#import <Purchasely/Purchasely-Swift.h>
+
+[Purchasely startWithAPIKey:@"API_KEY"
+		appUserId:@"USER_ID"
+		runningMode: PLYRunningModeFull
+	  	paywallActionsInterceptor:nil
+		storekitSettings: [StorekitSettings .storekit2] // optional but set to StoreKit 2 by default. 
+		// Fallsback to StoreKit 1 in case the informations are not setup correctly on Purchasely console
+		logLevel: LogLevelInfo
+		initialized: nil];
+
+// Paywall interceptor can be setted afterwards by calling
+[Purchasely setPaywallActionsInterceptor:^(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)) {
+}];
+
+// Set your ui listener
+[Purchasely setUIDelegate:(id<PLYUIDelegate> _Nullable)
 ```
 {% endtab %}
 
@@ -112,14 +146,18 @@ We have additionally changed the name of the method `handle` to `isDeeplinkHandl
 
 {% tabs %}
 {% tab title="Swift" %}
-```
-// Some code
+```swift
+Purchasely.readyToOpenDeeplink(true)
+
+Purchasely.isDeeplinkHandled(deeplink: "URL")
 ```
 {% endtab %}
 
 {% tab title="Objective-C" %}
-```
-// Some code
+```objectivec
+[Purchasely readyToOpenDeeplink:(BOOL)]
+
+[Purchasely isDeeplinkHandled:(NSURL * _Nonnull)]
 ```
 {% endtab %}
 
@@ -227,13 +265,28 @@ By introducing `offer` to the `purchase` method as an optional parameter, we now
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-// Some code
+// Purchase with promotional offer    
+Purchasely.purchaseWithPromotionalOffer(plan: <PLYPlan>,
+                                        contentId: "contentId",
+                                        storeOfferId: "storeOfferId") {
+// Success completion block
+} failure: { error in
+// Failure completion block                    
+}
 ```
 {% endtab %}
 
 {% tab title="Objective-C" %}
 ```objectivec
-// Some code
+// Purchase with promotional offer
+[Purchasely purchaseWithPromotionalOfferWithPlan:plan
+                  contentId:@"contentId"
+                  storeOfferId:@"storeOfferId"
+                  success:^{
+// Success completion block
+} failure:^(NSError * error) {
+// Failure completion block
+}];
 ```
 {% endtab %}
 
