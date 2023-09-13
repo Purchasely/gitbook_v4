@@ -12,9 +12,9 @@ On Android, we have adopted **Google Billing v5.2.1** and the minimum required *
 On iOS, we are using **StoreKit 2 by default** but you can force the usage of StoreKit1
 {% endhint %}
 
-## Update `Builder` class
+## Initialization update
 
-The Builder class no longer includes the `uiListener` and `eventListener` configuration options as part of its initial configuration, but they can still be set after calling the `start()` method.
+The start method no longer includes the `uiListener/uiDelegate` and `eventListener/eventDelegate` configuration options as part of its initial configuration, but they can still be set after calling the `start()` method.
 
 {% tabs %}
 {% tab title="Swift" %}

@@ -104,6 +104,7 @@
 ## Advanced Features
 
 * [Asynchronous paywalls](advanced-features/asynchronous-paywalls.md)
+* [NEW: Promotional offers](advanced-features/promotional-offers.md)
 * [Anonymous user](advanced-features/anonymous-user.md)
 * [Associating content](advanced-features/attributing-content.md)
 * [Audiences](advanced-features/audiences.md)

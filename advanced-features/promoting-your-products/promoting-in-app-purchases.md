@@ -22,17 +22,16 @@ In Purchasley console, select the presentation associated to that plan and that 
 
 Here is **what we do for you**:
 
-* Once a product is purchased we make sure that it won't be visible on the App Store page of your app to make more room to other products you might be selling\
-
+* Once a product is purchased we make sure that it won't be visible on the App Store page of your app to make more room to other products you might be selling\\
 * Apple says: "_If you are offering an auto-renewable subscription, you’ll need to explain how auto-renewal works in the purchase flow within your app_".\
   In that case we pop the product offer paywall once your app is started.
 
-To ensure that we won't be popping the paywall during on boarding or loading … you need to call the following method when your app is ready:
+To ensure that we won't be popping the paywall during on boarding or loading … you need to call the following method when your app is ready:
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-Purchasely.isReadyToPurchase(true)
+Purchasely.readyToOpenDeeplink(true)
 ```
 {% endtab %}
 {% endtabs %}
