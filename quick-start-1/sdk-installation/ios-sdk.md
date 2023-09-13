@@ -9,7 +9,7 @@ description: Guide for integrating Purchasely SDK inside your iOS app
 You can use [CocoaPods](https://cocoapods.org/) to install `Purchasely` by adding it to your `Podfile`:
 
 ```bash
-pod 'Purchasely', '~> 3.7.2'
+pod 'Purchasely', '~> 4.0.1'
 ```
 
 ## **Carthage**
@@ -27,4 +27,3 @@ You can integrate Purchasely as a Swift package by adding the following URL to t
 ```
 https://github.com/Purchasely/Purchasely-iOS
 ```
-

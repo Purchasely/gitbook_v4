@@ -295,7 +295,7 @@ Purchasely.setPaywallActionsInterceptor { [weak self] (action, parameters, prese
 				return
 			}
 			
-			let offer = parameters?.offer
+			let offer = parameters?.promoOffer
 	
 			// sign the offer
         		Purchasely.signPromotionalOffer(storeProductId: appleProductId,
