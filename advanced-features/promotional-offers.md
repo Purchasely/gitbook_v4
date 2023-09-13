@@ -9,9 +9,9 @@ description: >-
 {% hint style="success" %}
 The feature described in this section is supported on the following versions and above:
 
-* iOS: 4.0.0
+* iOS: 4.0.1
 * Android: 4.0.0
-* ReactNative: 4.0.0
+* ReactNative: 4.0.1
 * Flutter: 4.0.0\
 
 
