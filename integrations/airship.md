@@ -19,7 +19,7 @@ You can find the full list of events [here](../analytics/events/webhook-events/s
 
 ## Associate your users
 
-Naming your users allows our servers to send purchase events on your behalf to Airship. You've got 2 ways of doing it...
+Naming your users allows our servers to send purchase events on your behalf to Airship. You have 2 ways of doing it:
 
 1. [From within the app](broken-reference/)
 2. [From your server](broken-reference/)
@@ -28,12 +28,18 @@ Naming your users allows our servers to send purchase events on your behalf to A
 
 In the Airship console, enable or disable **Named Users**[ ](https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User)in "_Settings" APIs & Integrations » Named Users_".
 
-In your app, when a user sign-in, associate their id in Airship:
+In your app, when a user sign-in, associate their id in Airship.&#x20;
+
+If the Airship UserId differs from the Purchasely UserId, you can also pass the value you gave to Airship to Purchasely SDK (see second code block):
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
 UAirship.namedUser().identifier = "theUserId"
+```
+
+```swift
+Purchasely.setAttribute(.airshipUserId, value: "theUserId")
 ```
 {% endtab %}
 
@@ -46,11 +52,25 @@ UAirship.namedUser().identifier = "theUserId"
 ```kotlin
 UAirship.shared().namedUser.id = "YOUR_USER_ID"
 ```
+
+```kotlin
+Purchasely.setAttribute(
+    Attribute.AIRSHIP_USER_ID,
+    "YOUR_USER_ID"
+)
+```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
 UAirship.shared().getNamedUser().setId("YOUR_USER_ID");
+```
+
+```java
+Purchasely.setAttribute(
+    Attribute.AIRSHIP_USER_ID,
+    "YOUR_USER_ID"
+);
 ```
 {% endtab %}
 
@@ -58,24 +78,32 @@ UAirship.shared().getNamedUser().setId("YOUR_USER_ID");
 ```jsx
 UAirship.setNamedUser("YOUR_USER_ID")
 ```
+
+```jsx
+Purchasely.setAttribute(Attributes.AIRSHIP_USER_ID, "YOUR_USER_ID");
+```
 {% endtab %}
 
 {% tab title="Cordova" %}
 ```javascript
 UAirship.setNamedUser("YOUR_USER_ID")
 ```
+
+```javascript
+Purchasely.setAttribute(AIRSHIP_USER_ID, value: "YOUR_USER_ID");
+```
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-More informations on "named users" can be found [h](https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User)ere: [https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User](https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User)
+More information on "named users" can be found [here](https://support.airship.com/hc/en-us/articles/360012434371-Step-7-Named-User)
 {% endhint %}
 
 ### From your server
 
 By restricting association to server-side calls only, you have the added security of requiring your master secret to be verified after each call. While increasing security, you also lose the convenience of having your application automatically associate named users on login. Most apps do not require this additional security. But, if your app deals with extremely sensitive data, you may want to leave this setting disabled and associate named users exclusively through the API.
 
-Use the Airship API to associate your users: [https://docs.airship.com/api/ua/#operation-api-named\_users-associate-post](https://docs.airship.com/api/ua/#operation-api-named\_users-associate-post).
+Use the Airship API to associate your users [here](https://docs.airship.com/api/ua/#operation-api-named\_users-associate-post)
 
 {% tabs %}
 {% tab title="Ruby" %}
@@ -185,9 +213,9 @@ UAirship.getChannelID(function (channelID) {
 
 Go in the "External integrations" section, and open the edition form for Airship:
 
-![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MWa1QDakqUp\_C\_YDzM5%2F-MWaACqpGr74r34oJmuc%2FScreenshot%202021-03-24%20at%2022.36.51%402x.jpg?alt=media\&token=4503b63b-eb77-49a7-b27c-f499c7b3ecd5)
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MWa1QDakqUp\_C\_YDzM5%2F-MWaChCw2FxkPe-dR8ah%2FScreenshot%202021-03-24%20at%2022.49.09%402x.jpg?alt=media\&token=f1e9e627-cd75-44ec-88c2-efe1a6d90121)
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 You'll find your "**Airship API key**" in your Airship console, section "_Settings » APIs & Integrations_":
 
@@ -204,7 +232,11 @@ Finally, the "**Server**" to use depends on your app.
 
 If you want to, you can rename the events sent to Airship:
 
-![](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MHAzdlUVqKyZvwTnNIE%2F-MWaSdXiZZtzphvzW2-O%2F-MWaTsjKqvr4Hu4dZkFR%2FScreenshot%202021-03-25%20at%2000.03.46%402x.jpg?alt=media\&token=8c852525-9a06-4d0f-8606-610979fa2912)
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+And also choose to update user properties:
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The overridden name must only contain **alphanumeric lowercase characters**, **underscores and dashes**, as [specified in the Airship documentation](https://docs.airship.com/api/ua/#schemas-customeventobject-body-name).
