@@ -87,7 +87,7 @@
 * [Amplitude](integrations/amplitude.md)
 * [AppsFlyer](integrations/appsflyer.md)
 * [Adjust](integrations/adjust.md)
-* [AT Internet](integrations/atinternet.md)
+* [Piano analytics(ex AT Internet)](integrations/atinternet.md)
 * [Batch](integrations/batch.md)
 * [Branch](integrations/branch.md)
 * [Braze](integrations/braze.md)
@@ -99,7 +99,7 @@
 * [MoEngage](integrations/moengage.md)
 * [OneSignal](integrations/onesignal.md)
 * [Segment](integrations/segment.md)
-* [Brevo(formerly Sendinblue)](integrations/sendinblue.md)
+* [Brevo(ex Sendinblue)](integrations/sendinblue.md)
 
 ## Advanced Features
 

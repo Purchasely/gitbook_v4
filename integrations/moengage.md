@@ -108,4 +108,4 @@ The activation requires ${integration\_setup\_activation\_steps\_count} steps:
 
 ### Testing your integration
 
-To test your integration, you can perform a set of in-app purchases in a Sandbox environment (eg: TestFlight for the App Store) and verify your events are received in the MoEngage dashboard [https://www.moengage.com](https://www.moengage.com). d
+To test your integration, you can perform a set of in-app purchases in a Sandbox environment (eg: TestFlight for the App Store) and verify your events are received in the MoEngage dashboard [https://www.moengage.com](https://www.moengage.com).&#x20;
