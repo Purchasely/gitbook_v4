@@ -12,7 +12,7 @@ The Customer.io SDK also needs to be integrated inside the app.
 
 ### General overview
 
-[Customer.io]($%7Bintegration\_website\_url%7D/) is a leading is an automated messaging platform for tech-savvy marketers who want more control and flexibility to craft and send data-driven emails, push notifications, in-app messages, and SMS.
+[Customer.io ](https://fly.customer.io/login?nav=header&\_gl=1\*1tghkpf\*\_up\*MQ..\*\_ga\*MzA5MjcxMTEyLjE2OTUwMzkzNjk.\*\_ga\_L97TR1N1TG\*MTY5NTAzOTM2OC4xLjAuMTY5NTAzOTM2OC4wLjAuMA..)is a leading is an automated messaging platform for tech-savvy marketers who want more control and flexibility to craft and send data-driven emails, push notifications, in-app messages, and SMS.
 
 This integration will allow you to get all the available Purchasely events to Customer.io and get a better and deeper understanding of your subscription business and customer behavior.
 
@@ -50,7 +50,7 @@ The integration requires ${integration\_setup\_steps\_count} steps:
 
 ### 1. Associating users to events
 
-See the [Customer.io Documentation]($%7Bintegration\_documentation\_url%7D/) for more information
+See the [Customer.io Documentation](https://customer.io/docs/?\_gl=1\*1ycu2om\*\_up\*MQ..\*\_ga\*MTc2MzM4NjIwNi4xNjk1MDM5NTA3\*\_ga\_L97TR1N1TG\*MTY5NTAzOTUwNi4xLjAuMTY5NTAzOTUwNi4wLjAuMA..) for more information
 
 ### 2. Activating the Customer.io integration
 
