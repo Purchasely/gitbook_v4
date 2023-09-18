@@ -99,7 +99,7 @@
 * [MoEngage](integrations/moengage.md)
 * [OneSignal](integrations/onesignal.md)
 * [Segment](integrations/segment.md)
-* [Sendinblue](integrations/sendinblue.md)
+* [Brevo(formerly Sendinblue)](integrations/sendinblue.md)
 
 ## Advanced Features
 

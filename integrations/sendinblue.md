@@ -1,4 +1,4 @@
-# Sendinblue
+# Brevo(formerly Sendinblue)
 
 ## Why combine Sendinblue and Purchasely?
 
@@ -13,8 +13,6 @@ The Sendinblue SDK also needs to be integrated inside the app.
 ### General overview
 
 [Sendinblue](https://www.sendinblue.com) is a customer engagement solutions for Email and CRM.
-
-This integration will allow you to forward all Purchasely [subscription events](sendinblue.md#subscription-events) to Sendinblue.
 
 This integration will allow you to get all Purchasely [subscription events](sendinblue.md#subscription-events) to Sendinblue making you able to trigger automated communication based on those events, messages that could be linked to a Purchasely powered paywall to engage, upsell, retain customers.
 
@@ -99,8 +97,6 @@ Purchasely.setAttribute(Attributes.SENDINBLUE_USER_EMAIL,  "mail@company.com");
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ### 2. Activating the Sendinblue integration
 
