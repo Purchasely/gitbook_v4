@@ -282,6 +282,13 @@ Purchasely.plan(
 
 When you are using Purchasely in [paywallObserver](../quick-start-1/sdk-configuration/paywall-observer-mode.md) mode, you can retrieve the offer from our [paywall action interceptor](paywall-action-interceptor.md), sign it (iOS only) and do the purchase with your system
 
+
+
+{% hint style="warning" %}
+On iOS, Purchasely **anonymous user in lowercase** is required as **applicationUsername** with StoreKit1 or **appAccountToken** with StoreKit2\
+Please look at sample code below for more details
+{% endhint %}
+
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
@@ -307,11 +314,84 @@ Purchasely.setPaywallActionsInterceptor { [weak self] (action, parameters, prese
 				
 			// Purchase with signature
 			
+			// Using StoreKit1
+			purchaseUsingStoreKit1(plan) 
+			// Using StoreKit2
+			purchaseUsingStoreKit2(plan)
+			
 			// Finally close the process with Purchasely
 			proceed(false)
 		default:
 			proceed(true)
 	}
+}
+
+func purchaseUsingStoreKit1(_ plan: PLYPlan) {
+
+            // First step: Get SKProduct using your own service
+            
+            // Example
+            let request = SKProductsRequest(productIdentifiers: Set<String>([plan.appleProductId ?? ""]))
+            request.delegate = <Your delegate> // Get Product in the `productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse)` method
+            request.start()
+            
+            // Second Request payment
+            guard SKPaymentQueue.canMakePayments() else {
+                return nil
+            }
+            
+            let payment = SKMutablePayment(product: product)
+            
+            payment.applicationUsername = Purchasely.anonymousUserId.lowercased() // lowercase anonymous user id is mandatory
+            
+            if let signature = promotionalOfferSignature, #available(iOS 12.2, macOS 10.14.4, tvOS 12.2, *) {
+                let paymentDiscount = SKPaymentDiscount(identifier: signature.identifier,
+                                                        keyIdentifier: signature.keyIdentifier,
+                                                        nonce: signature.nonce,
+                                                        signature: signature.signature,
+                                                        timestamp: NSNumber(value: signature.timestamp))
+                payment.paymentDiscount = paymentDiscount
+            }
+            
+            SKPaymentQueue.default().add(payment)
+}
+
+func purchaseUsingStoreKit2(_ plan: PLYPlan) {
+    if #available(iOS 15.0, *) {
+                Purchasely.signPromotionalOffer(storeProductId: plan.appleProductId,
+                                                storeOfferId: plan.promoOffers.first?.storeOfferId,
+                                                success: { promoOfferSignature in
+    
+                    Task {
+    
+                        do {
+                            let products = try await Product.products(for: ["storeProductId"])
+                            var options: Set<Product.PurchaseOption> = [.simulatesAskToBuyInSandbox(<Bool: true for testing>)]
+    
+                            let userId = Purchasely.anonymousUserId.lowercased()
+                            options.insert(.appAccountToken(userId))
+    
+                            if let decodedSignature = Data(base64Encoded: promoOfferSignature.signature) {
+                                let offerOption:Product.PurchaseOption = .promotionalOffer(offerID: promoOfferSignature.identifier,
+                                                                                           keyID: promoOfferSignature.keyIdentifier,
+                                                                                           nonce: promoOfferSignature.nonce,
+                                                                                           signature: decodedSignature,
+                                                                                           timestamp: Int(promoOfferSignature.timestamp))
+                                options.insert(offerOption)
+                            }
+    
+                            if let product = products.first {
+                                let purchaseResult = try await product.purchase(options: options)
+                            }                        
+                        }
+                    }
+                }, failure: { error in
+    
+                })
+            } else {
+                // Fallback on earlier versions
+            }
+    }
 }
 ```
 {% endtab %}
