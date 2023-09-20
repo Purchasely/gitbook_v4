@@ -161,8 +161,12 @@ try {
 ### Anywhere in your application
 
 When a purchase or restoration is made, you can listen to our notification.\
-This is the method to use in parts of your application where you wish to unlock some features after a purchase was made but you should only use it to **unlock** content, not to notify your server of a purchase or check the current state of user subscription.\
-\
+This is the method to use in parts of your application where you wish to unlock some features after a purchase was made but you should only use it to **unlock** content, not to notify your server of a purchase or check the current state of user subscription.
+
+{% hint style="info" %}
+You will be notified about the purchase but **not about the plan purchased**. If you want to know the plan, you must use the method describe above with paywall displayed
+{% endhint %}
+
 Once the purchase is made to Apple Servers, registered in our systems, Purchasely sends a local `Notification` in the `NotificationCenter`. You can use it to unlock the content or refresh it.
 
 You can catch it like this

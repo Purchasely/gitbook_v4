@@ -199,18 +199,35 @@ Purchasely.fetchPresentationForPlacement(placementId = "placementId") { presenta
         val paywallView = presentation?.buildView(context, viewProperties = PLYPresentationViewProperties(onClose = {
             //TODO remove paywallView from layout
         })) { result, plan ->
-        //TODO add paywallView to layout
+            // Paywall is closed, check result to know if a purchase happened
+            when(result) {
+                PLYProductViewResult.PURCHASED -> Log.d("Purchasely", "User purchased ${plan?.name}")
+                PLYProductViewResult.CANCELLED -> Log.d("Purchasely", "User cancelled purchased")
+                PLYProductViewResult.RESTORED -> Log.d("Purchasely", "User restored ${plan?.name}")
+            }
         }
+        
+        // TODO Add paywallView to your layout to display it
     }
 }
 
+// You should always use a placement to display paywalls 
+// but if you really need to display a specific paywall
+// you can use properties to set the your paywall id
 Purchasely.fetchPresentation(properties = PLYPresentationViewProperties(presentationId = "paywall_id")) { presentation, error ->
     if(presentation?.type == PLYPresentationType.NORMAL || presentation?.type == PLYPresentationType.FALLBACK) {
         val paywallView = presentation?.buildView(context, viewProperties = PLYPresentationViewProperties(onClose = {
             //TODO remove paywallView from layout
         })) { result, plan ->
-            //TODO add paywallView to layout
+            // Paywall is closed, check result to know if a purchase happened
+            when(result) {
+                PLYProductViewResult.PURCHASED -> Log.d("Purchasely", "User purchased ${plan?.name}")
+                PLYProductViewResult.CANCELLED -> Log.d("Purchasely", "User cancelled purchased")
+                PLYProductViewResult.RESTORED -> Log.d("Purchasely", "User restored ${plan?.name}")
+            }
         }
+        
+        // TODO Add paywallView to your layout to display it
     }
 }
 ```

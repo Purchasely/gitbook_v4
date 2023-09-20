@@ -56,8 +56,7 @@ A presentation can be one of the following types:
 * **Normal**: The default behavior, a Purchasely paywall created from our console.
 * **Fallback**: A Purchasely paywall, but not the one you requested, as it could not be found.
 * **Deactivated**: No [paywall associated](disable-placements.md) with that placement, possibly for a specific A/B test or [audience](https://help.purchasely.io/en/articles/6940943-disable-a-paywall-for-a-placement).
-* **Client**: You declared [your own paywall in our console](https://help.purchasely.io/en/articles/6940803-your-own-paywall-in-the-purchasely-console) and should [display it](use-your-own-paywall.md). Use the list of plans to determine which offers to display to your users.\
-
+* **Client**: You declared [your own paywall in our console](https://help.purchasely.io/en/articles/6940803-your-own-paywall-in-the-purchasely-console) and should [display it](use-your-own-paywall.md). Use the list of plans to determine which offers to display to your users.\\
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -136,11 +135,19 @@ Purchasely.fetchPresentationForPlacement("onboarding") { presentation, error ->
                 context = this@MainActivity,
                 viewProperties = PLYPresentationViewProperties(
                     onClose = {
-                        // TODO remove view
+                        // TODO remove view from your layout
                     }
                 )
-            ) 
-            // Display Purchasely paywall
+            ) { result, plan ->
+                // Paywall is closed, check result to know if a purchase happened
+                when(result) {
+                    PLYProductViewResult.PURCHASED -> Log.d("Purchasely", "User purchased ${plan?.name}")
+                    PLYProductViewResult.CANCELLED -> Log.d("Purchasely", "User cancelled purchased")
+                    PLYProductViewResult.RESTORED -> Log.d("Purchasely", "User restored ${plan?.name}")
+                }
+            }
+            
+            // Display Purchasely paywall by adding paywallView to your layout
         }
         PLYPresentationType.DEACTIVATED -> {
             // Nothing to display
@@ -324,8 +331,3 @@ private void OnFetchPresentationSuccess(Presentation presentation)
 ```
 {% endtab %}
 {% endtabs %}
-
-
-
-
-
