@@ -28,8 +28,7 @@ First, you must [declare your own paywall](https://help.purchasely.io/en/article
 
 Then you will need to fetch the paywalls and therefore you won't be able to directly display a screen returned by Purchasely.
 
-You will have to first fetch the paywall then check whether you should display your own paywall or display the provided paywall.\
-
+You will have to first fetch the paywall then check whether you should display your own paywall or display the provided paywall.\\
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -51,7 +50,8 @@ Purchasely.fetchPresentation(for: "onboarding", fetchCompletion: { presentation,
                 
             } else if presentation.type == .client {
                 let presentationId = presentation.id
-                let planIds = presentation.plans
+                let plans = presentation.plans
+                let metadata = presentation.metadata // look section below
                 
                 // display your own paywall
                 
@@ -114,7 +114,9 @@ Purchasely.fetchPresentationForPlacement(this, "onboarding") { presentation, err
         }
         PLYPresentationType.CLIENT -> {
             val paywallId = presentation.id
-            val planIds = presentation.plans
+            val plans = presentation.plans
+            val metadata = presentation.metadata // look section below
+            
             // Display your own paywall
         }
         else -> {
@@ -222,11 +224,9 @@ try {
 {% endtab %}
 {% endtabs %}
 
-
-
 Then call `clientPresentationDisplayed(presentation)` when your paywall is displayed and `clientPresentationClosed(presentation)` when your paywall is closed.
 
-These steps are mandatory for Purchasely to compute conversion on your paywall and measure the performance of A/B tests.&#x20;
+These steps are mandatory for Purchasely to compute conversion on your paywall and measure the performance of A/B tests.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -283,8 +283,8 @@ Purchasely.clientPresentationClosed(presentation);
 {% tab title="React Native" %}
 <pre class="language-typescript"><code class="lang-typescript">// Call when your paywall is displayed
 <strong>Purchasely.clientPresentationDisplayed(presentation);
-</strong><strong>
-</strong>// Call when your paywall is closed
+</strong>
+// Call when your paywall is closed
 Purchasely.clientPresentationClosed(presentation);
 
 </code></pre>
@@ -307,8 +307,116 @@ Purchasely.clientPresentationClosed(presentation);
 {% endtabs %}
 
 {% hint style="info" %}
-You can of course do the purchase transaction from your own paywall with Purchasely by using `Purchasely.purchase(plan)`, more information [here](manually-trigger-purchases.md)
+You can of course start the purchase from your own paywall with Purchasely by using `Purchasely.purchase(plan)`, more information [here](manually-trigger-purchases.md)
+{% endhint %}
+
+## Metadata
+
+{% hint style="warning" %}
+Available starting with SDK 4.1.0
 {% endhint %}
 
 
 
+<div>
+
+<figure><img src="../.gitbook/assets/SCR-20231002-pyyu.png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src="../.gitbook/assets/SCR-20231002-pziv.png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src="../.gitbook/assets/SCR-20231002-pzgz.png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src="../.gitbook/assets/SCR-20231002-pzbz.png" alt=""><figcaption><p>Example of Metadata</p></figcaption></figure>
+
+</div>
+
+You can declare your metadata with Your Own Paywall which can be:
+
+* String (but you can set different types with it, look at example code below)
+* Image
+* Boolean
+
+These steps are mandatory for Purchasely to compute conversion on your paywall and measure the performance of A/B tests.
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+// Documentation coming soon
+
+// Look at Kotlin example as it is the same methods
+```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+Purchasely.fetchPresentationForPlacement(this, "onboarding") { presentation, error ->
+    if(error != null) {
+        Log.d("Purchasely", "Error fetching paywall", error)
+        return@fetchPresentationForPlacement
+    }
+    
+    if(presentation?.type == PLYPresentationType.CLIENT) {
+        val paywallId = presentation.id
+        val plans = presentation.plans
+        val metadata = presentation.metadata
+        
+        // Get string metadata, this method is asynchronous as it will parse tags
+        val myString = metadata.getString("myString", callback = {
+            Log.d("Demo", "myString: $it")
+        })
+        // You can also use coroutine
+        scope.launch {
+            val myString = metadata.getString("myString")
+        }
+        
+        // If you do not use Purchasely tags
+        val myString2 = metadata.getStringWithoutTags("myString2")
+        
+        val myBoolean = metadata.getBoolean("myBoolean")
+
+        // Even if declared as a String in our console, 
+        // Purchasely SDK will automatically try to convert to specific type 
+        // For example: "4.7" is a double or float
+        val myInt = metadata.getInt("myInt")
+        val myLong = metadata.getLong("myLong")
+        val myFloat = metadata.getFloat("myFloat")
+        val myDouble = metadata.getDouble("myDouble")
+        
+        // If you set a metadata with a String ISO 8601, you can retrieve the date
+        // "2023-09-21T09:48:25Z"
+        val myDate = metadata.getDate("myDate")
+        // or Instant
+        val myDateAsInstant = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            metadata.getInstant("myDate")
+        } else null
+        
+        // If you set a medata with a String which is a json, you can retrieve it
+        // "{"name":"Stranger","int_value":4,"child":{"title":"Things"}}"
+        val myJson = metadata.getJsonObject("myJson")
+    }
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+```typescript
+// Release coming soon
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+```dart
+// Release coming soon
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+You can of course do the purchase transaction from your own paywall with Purchasely by using `Purchasely.purchase(plan)`, more information [here](manually-trigger-purchases.md)
+{% endhint %}

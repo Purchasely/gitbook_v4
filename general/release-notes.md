@@ -57,10 +57,6 @@ React Native and Flutter update coming soon
 
 ## 4.0.0
 
-{% hint style="info" %}
-This version is also available on React Native and Flutter
-{% endhint %}
-
 ### iOS
 
 {% hint style="danger" %}
