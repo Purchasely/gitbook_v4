@@ -5,6 +5,7 @@
 ## General
 
 * [Presentation](general/architecture.md)
+* [Release notes](general/release-notes.md)
 
 ## Quick start
 

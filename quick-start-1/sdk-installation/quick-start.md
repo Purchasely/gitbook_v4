@@ -31,7 +31,7 @@ jcenter() is also a valid repository but will be discontinued February 1st 2022.
 Add the core sdk to your dependencies
 
 ```bash
-implementation 'io.purchasely:core:4.0.0'
+implementation 'io.purchasely:core:4.1.0'
 ```
 
 The core SDK does not contains a billing store, you need to add the ones you want to use as a dependency otherwise your users won't be able to make purchases.
@@ -39,7 +39,7 @@ The core SDK does not contains a billing store, you need to add the ones you wan
 ### Google Play Billing
 
 ```bash
-implementation 'io.purchasely:google-play:4.0.0'
+implementation 'io.purchasely:google-play:4.1.0'
 ```
 
 {% hint style="info" %}
@@ -93,7 +93,7 @@ dependencies {
 ### Amazon App Store
 
 ```bash
-implementation 'io.purchasely:amazon:4.0.0'
+implementation 'io.purchasely:amazon:4.1.0'
 ```
 
 ### Video Player
@@ -103,6 +103,6 @@ Since version 3.1.0, Purchasely core dependency does not include a video player 
 
 \
 We provide a new player dependency which will be detected automatically by our SDK.\
-`implementation 'io.purchasely:player:4.0.0'`\
+`implementation 'io.purchasely:player:4.1.0'`\
 \
 You can also provide your own player view, more information in our [help center](https://help.purchasely.com/en/articles/5963004-display-a-video-on-android-devices)
