@@ -33,7 +33,7 @@ import Purchasely
 
 func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
 	// You can chain calls to multiple handler using a OR
-	return Purchasely.handle(deeplink: url) 
+	return Purchasely.isDeeplinkHandled(deeplink: url) 
 }
 
 // ---------------------------------------------------
@@ -49,13 +49,13 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
 	// …
 
 	if let url = connectionOptions.urlContexts.first?.url {
-		_ = Purchasely.handle(deeplink: url)
+		_ = Purchasely.isDeeplinkHandled(deeplink: url)
 	}
 }
 
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
 	if let url = URLContexts.first?.url {
-		_ = Purchasely.handle(deeplink: url)
+		_ = Purchasely.isDeeplinkHandled(deeplink: url)
 	}
 }
 
@@ -74,7 +74,7 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
 	// You can chain calls to multiple handler using a OR
-	return [Purchasely handleWithDeeplink:url];
+	return [Purchasely isDeeplinkHandled:url];
 }
 
 // ---------------------------------------------------
@@ -91,14 +91,14 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 
 	NSURL *url = connectionOptions.URLContexts.allObjects.firstObject.URL;
 	if (url != nil) {
-		[Purchasely handleWithDeeplink:url];
+		[Purchasely isDeeplinkHandled:url];
 	}
 }
 
 - (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
 	NSURL *url = URLContexts.allObjects.firstObject.URL;
 	if (url != nil) {
-		[Purchasely handleWithDeeplink:url];
+		[Purchasely isDeeplinkHandled:url];
 	}
 }
 ```
@@ -175,13 +175,13 @@ The display of Purchasely deeplinks is deferred until you authorize it. Once you
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-Purchasely.isReadyToPurchase(true)
+Purchasely.readyToOpenDeeplink(true)
 ```
 {% endtab %}
 
 {% tab title="Objective-C" %}
 ```objectivec
-[Purchasely isReadyToPurchase: YES];
+[Purchasely readyToOpenDeeplink: YES];
 ```
 {% endtab %}
 
