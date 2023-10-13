@@ -43,14 +43,38 @@ The names of events sent to Branch can be overriden when setting up the integrat
 
 ## **Integrating Purchasely with Branch**
 
-The integration requires ${integration\_setup\_steps\_count} steps:
+The integration requires several steps:
 
 1. Associate the user to events by providing the Purchasely SDK with the customer user id provided to the Branch SDK
 2. Activate the Branch integration in the Purchasely Console
 
 ### 1. Associating users to events
 
-See the [Branch Documentation](https://help.branch.io/developers-hub/docs/custom-settings#settings-for-user-ids) for more information
+To associate users, you will need to tell our SDK the User ID that is given to Branch SDK when using their `setIdentity` method.&#x20;
+
+Here are some links to the appropriate Branch documentation : [Android](https://help.branch.io/developers-hub/docs/android-advanced-features#track-users) and [iOS](https://help.branch.io/developers-hub/docs/ios-advanced-features#user-tracking)
+
+Then, inform our SDK of the User ID used:
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+Purchasely.setAttribute(.branchUserDeveloperIdentity, value: "Actual Branch User ID")
+```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+Purchasely.setAttribute(Attribute.BRANCH_USER_DEVELOPER_IDENTITY, "Actual Branch User ID")
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+```javascript
+Purchasely.setAttribute(Attributes.BRANCH_USER_DEVELOPER_IDENTITY, "Actual Branch User ID");
+```
+{% endtab %}
+{% endtabs %}
 
 ### 2. Activating the Branch integration
 
