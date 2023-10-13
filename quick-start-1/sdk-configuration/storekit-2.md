@@ -1,7 +1,3 @@
----
-description: You can opt-in to use StoreKit2 for Apple In-App Purchases
----
-
 # StoreKit 2
 
 Purchasely, by default, uses StoreKit 2 to initiate and process purchases on iOS 15+. However, if you wish to only use StoreKit 1, you can set that parameter with Purchasely.start() and our SDK will use StoreKit 1 only\

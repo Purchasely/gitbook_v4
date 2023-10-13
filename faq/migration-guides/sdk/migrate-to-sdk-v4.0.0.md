@@ -187,10 +187,12 @@ Purchasely.isDeeplinkHandled(deeplink);
 {% endtab %}
 {% endtabs %}
 
-## Methodes for presentation display
+## Methods for presentation display
 
-Only with our bridges SDKs: ReactNative, Flutter and Unity, before you could call the method `Purchasely.closePresentation()` to hide the presentation or `Purchasely.closePresentation(true)` to close it\
-We have changed those methods and added new ones to make it easier to manage and understand&#x20;
+Only with our bridges SDKs: ReactNative, Flutter and Unity\
+\
+Before you could call the method `Purchasely.closePresentation()` to hide the presentation or `Purchasely.closePresentation(true)` to close it\
+We have changed those methods and added new ones to make it easier to manage and understand, see below
 
 {% tabs %}
 {% tab title="ReactNative" %}
