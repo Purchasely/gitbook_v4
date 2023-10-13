@@ -187,6 +187,46 @@ Purchasely.isDeeplinkHandled(deeplink);
 {% endtab %}
 {% endtabs %}
 
+## Methodes for presentation display
+
+Only with our bridges SDKs: ReactNative, Flutter and Unity, before you could call the method `Purchasely.closePresentation()` to hide the presentation or `Purchasely.closePresentation(true)` to close it\
+We have changed those methods and added new ones to make it easier to manage and understand&#x20;
+
+{% tabs %}
+{% tab title="ReactNative" %}
+```typescript
+// Hide the presentation being display
+// for example when you are in paywall action interceptor
+// to display your own screen like a login screen
+Purchasely.hidePresentation();
+
+// Display the presentation previously hidden
+Purchasely.showPresentation();
+
+// Close the presentation
+// cannot be displayed again until you call Purchasely.presentPresentation()
+Purchasely.closePresentation();
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+```dart
+// Hide the presentation being display
+// for example when you are in paywall action interceptor
+// to display your own screen like a login screen
+Purchasely.hidePresentation();
+
+// Display the presentation previously hidden
+Purchasely.showPresentation();
+
+// Close the presentation
+// cannot be displayed again until you call Purchasely.presentPresentation()
+Purchasely.closePresentation();
+
+```
+{% endtab %}
+{% endtabs %}
+
 ## Fetch presentation with context (Android only)
 
 The methods `FetchPresentation` and `FetchPresentationForPresentation` have been updated as well. The previously required parameters `Context` and `PLYPresentationResultHandler` have been removed and are no longer necessary.

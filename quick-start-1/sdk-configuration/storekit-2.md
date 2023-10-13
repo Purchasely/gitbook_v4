@@ -4,11 +4,7 @@ description: You can opt-in to use StoreKit2 for Apple In-App Purchases
 
 # StoreKit 2
 
-{% hint style="info" %}
-To request StoreKit 2 usage, simply send an email to our support team or reach out to us via Intercom.
-{% endhint %}
-
-Purchasely, by default, uses StoreKit 1 to initiate and process purchases on iOS devices. However, if you wish to enable StoreKit 2 for users on iOS 15 and above, see requirements below, you can make a request to our support team.\
+Purchasely, by default, uses StoreKit 2 to initiate and process purchases on iOS 15+. However, if you wish to only use StoreKit 1, you can set that parameter with Purchasely.start() and our SDK will use StoreKit 1 only\
 \
 Our team will assist you in enabling StoreKit 2 for your application, ensuring a seamless purchasing experience for your users on the latest iOS devices.\
 Users with devices below minimum requirements will continue to uses StoreKit 1 under the hood.
@@ -42,76 +38,37 @@ Configuring StoreKit 2 with App Store Connect to allow Purchasely to verify tran
 
 ## Implementation
 
-In order to activate StoreKit 2 for compatible devices within the Purchasely SDK, follow these steps to update your implementation:
+The only change you need to make is if you are in observer mode, if you are in full mode you're all set!
 
-1.  **Enable StoreKit 2 flag**
+**Handling purchases and restorations (Paywall Observer mode)**
 
-    Add the `storeKit2` flag to the `Purchasely.start()` method in your app's initialization code. This will enable StoreKit 2 for users on compatible devices (iOS 15 and above).
+If you are using the Purchasely SDK in [Paywall Observer mode](paywall-observer-mode.md), it is essential to call `Purchasely.syncPurchase()` once a purchase or restoration has been processed. This allows the SDK to be aware of new transactions and ensures accurate data reporting for A/B tests and paywall conversion.
 
-    ```swift
-    Purchasely.start(
-        withApiKey: "API_KEY",
-        storekitSettings: StorekitSettings(
-            shouldUseStorekit2IfAvailable: true, 
-            simulateAskToBuy: false)
-    )
-    ```
-2.  **Handling purchases and restorations (Paywall Observer mode)**
+After processing a purchase or restoration, call
 
-    If you are using the Purchasely SDK in [Paywall Observer mode](paywall-observer-mode.md), it is essential to call `Purchasely.syncPurchase()` once a purchase or restoration has been processed. This allows the SDK to be aware of new transactions and ensures accurate data reporting for A/B tests and paywall conversion.
+**Swift**
 
-    After processing a purchase or restoration, call
-
-    ```swift
-    try await Purchasely.syncPurchase(for: "apple product id")
-    ```
-
-### Complete code sample
-
-{% tabs %}
-{% tab title="Swift" %}
 ```swift
-Purchasely.start(
-    withApiKey: "API_KEY",
-    appUserId: "USER_ID",
-    runningMode: .full,
-    eventDelegate: nil,
-    uiDelegate: nil,
-    paywallActionsInterceptor: nil,
-    storekitSettings: StorekitSettings(shouldUseStorekit2IfAvailable: true, simulateAskToBuy: false),
-    logLevel: .debug,
-    initialized: nil
-)
-
-// Call syncPurchase if you are in paywallObserver mode after your purchase has been done.
-try await Purchasely.syncPurchase(for: "apple-product-id")
-
+try await Purchasely.syncPurchase(for: "apple product id")
 ```
-{% endtab %}
 
-{% tab title="Objective-C" %}
+**Objective-C**
+
 ```objectivec
-[Purchasely startWithAPIKey:@"API_KEY"
-                      appUserId:@"USER_ID"
-                    runningMode:PLYRunningModeFull
-                  eventDelegate:nil
-                     uiDelegate:nil
-      paywallActionsInterceptor:nil
-               storekitSettings:[[StorekitSettings alloc] initWithShouldUseStorekit2IfAvailable:YES simulateAskToBuy:NO]
-                       logLevel:LogLevelDebug
-                    initialized:nil];
-                    
- // Call syncPurchase if you are in paywallObserver mode after your purchase has been done.
- [Purchasely syncPurchaseFor:@"apple-product-id" completionHandler:^(NSError * _Nullable error) {
+[Purchasely syncPurchaseFor:@"apple-product-id" completionHandler:^(NSError * _Nullable error) {
     // Handle Error.    
-    }];
+}];
 ```
-{% endtab %}
-{% endtabs %}
+
+## Requirements
 
 #### Purchasely SDK
 
-* iOS: 3.5.0
+* iOS: 4.0.1
+* Flutter: 4.0.1
+* React Native: 4.0.1
+* Unity: 4.1.0
+* Cordova: 4.1.0
 
 #### **OS version** (built with Xcode 14 or later)
 
