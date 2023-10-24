@@ -1,0 +1,10 @@
+Product name;Product id;Plan name;Plan id;Level;Type;ID Apple;ID Google;Base plan id Google;Periodicity;Description (optional);Product icon url (optional)
+Premium subscription;PREMIUM;Premium 1 week;PREMIUM_1;1;RENEWING_SUBSCRIPTION;com.myapp.premium.1week;com.myapp.premium.1week;p1w;P1W;;
+Premium subscription;PREMIUM;Premium 2 weeks;PREMIUM_2;2;RENEWING_SUBSCRIPTION;com.myapp.premium.2weeks;com.myapp.premium.2weeks;2weeks;P2W;;
+Premium subscription;PREMIUM;Premium 1 month;PREMIUM_1_MONTH;3;RENEWING_SUBSCRIPTION;com.myapp.premium.1month;com.myapp.premium.1month;p1m;P1M;;
+Premium subscription;PREMIUM;Premium 2 months;PREMIUM_2_MONTHS;3;RENEWING_SUBSCRIPTION;com.myapp.premium.2months;com.myapp.premium.2months;p2m;P2M;;
+Premium subscription;PREMIUM;Premium 3 months;PREMIUM_3_MONTHS;4;RENEWING_SUBSCRIPTION;com.myapp.premium.3months;com.myapp.premium.3months;3months-plan;P3M;;
+Premium subscription;PREMIUM;Premium 6 months;PREMIUM_6_MONTHS;6;RENEWING_SUBSCRIPTION;com.myapp.premium.6months;com.myapp.premium.6months;p6m;P6M;;
+Premium subscription 2;PREMIUM_2;Premium 1 year;PREMIUM_1_YEAR;1;NON_RENEWING_SUBSCRIPTION;com.myapp.premium.year;com.myapp.premium.year;p1y;P1Y;;
+One Time Purchases;OTP_1;Add-On;ADD_ON;1;CONSUMABLE;com.myapp.consumable.add_on;com.myapp.consumable.add_on;;;;
+One Time Purchases;OTP_1;Lifetime;LIFETIME;1;NON_CONSUMABLE;com.myapp.non_consumable.lifetime;com.myapp.non_consumable.lifetime;;;;

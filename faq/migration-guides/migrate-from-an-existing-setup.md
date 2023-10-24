@@ -21,6 +21,10 @@ Everything is explained here: [https://docs.purchasely.com/quick-start/console-c
 
 If you have a lot of products / plans that you want to migrate, you can fill the following CSV file and send it to support@purchasely.com. We will import it for you.
 
+
+
+{% file src="../../.gitbook/assets/plans-migration-v4.csv" %}
+
 \
 The following values for the field `Type` are accepted
 
@@ -39,7 +43,10 @@ The following values for the field Periodicity are accepted (only for renewing a
 * P6M
 * P1Y
 
-{% file src="../../.gitbook/assets/plans-migration.csv" %}
+{% hint style="info" %}
+Google Base Plan Id is required to work with Google Play Billing v5 and v6\
+If you only want to do the import for Apple subscriptions, you can leave it empty
+{% endhint %}
 
 ### 2. Send us every new subscription created on you side with a call on our API
 
@@ -53,11 +60,11 @@ The subscription platform (
 
 `APP_STORE`
 
-, 
+,
 
 `PLAY_STORE`
 
-, 
+,
 
 `APPGALLERY`
 
@@ -68,110 +75,110 @@ The subscription platform (
 API Key associated to your application (available in Purchasely console)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="intro_cycles" type="integer" %}
-number of periods the intro price is available: for a double 4-weeks intro pricing, the intro_cycles would be 
+{% swagger-parameter in="body" name="intro_cycles" type="integer" required="false" %}
+number of periods the intro price is available: for a double 4-weeks intro pricing, the intro\_cycles would be
 
 `2`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="intro_duration" type="integer" %}
-number of periods the intro price is available: for a double 4-weeks intro pricing, the intro_duration would be 
+{% swagger-parameter in="body" name="intro_duration" type="integer" required="false" %}
+number of periods the intro price is available: for a double 4-weeks intro pricing, the intro\_duration would be
 
 `4`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="intro_period" type="string" %}
+{% swagger-parameter in="body" name="intro_period" type="string" required="false" %}
 unit of a subscription's intro period (
 
 `day`
 
-, 
+,
 
 `week`
 
-, 
+,
 
 `month`
 
-, 
+,
 
 `year`
 
-): for a double 4-weeks intro pricing, the intro_period would be 
+): for a double 4-weeks intro pricing, the intro\_period would be
 
 `week`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="duration" type="integer" %}
-number of periods before renewing: for a subscription renewing every 3 months, the duration would be 
+{% swagger-parameter in="body" name="duration" type="integer" required="false" %}
+number of periods before renewing: for a subscription renewing every 3 months, the duration would be
 
 `3`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="period" type="string" %}
+{% swagger-parameter in="body" name="period" type="string" required="false" %}
 unit of a subscription's duration (
 
 `day`
 
-, 
+,
 
 `week`
 
-, 
+,
 
 `month`
 
-, 
+,
 
 `year`
 
-): for a subscription renewing every 3 months, the period would be 
+): for a subscription renewing every 3 months, the period would be
 
 `month`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="intro_amount_cents" type="integer" %}
+{% swagger-parameter in="body" name="intro_amount_cents" type="integer" required="false" %}
 subscriptions's intro price in cents ($12.35 => 1235, $12.3 => 1230, $12 => 1200)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="quantity" type="integer" %}
+{% swagger-parameter in="body" name="quantity" type="integer" required="false" %}
 number of products purchased (always 1 for subscriptions)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="currency" type="string" %}
+{% swagger-parameter in="body" name="currency" type="string" required="false" %}
 ISO 4217 format (
 
 `USD`
 
-, 
+,
 
 `EUR`
 
 , ...)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="amount_cents" type="integer" %}
+{% swagger-parameter in="body" name="amount_cents" type="integer" required="false" %}
 subscription's price in cents ($12.35 => 1235, $12.3 => 1230, $12 => 1200)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="store_product_id" type="string" %}
+{% swagger-parameter in="body" name="store_product_id" type="string" required="false" %}
 product id as defined in your store console
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="user_id" type="string" %}
+{% swagger-parameter in="body" name="user_id" type="string" required="false" %}
 id of your user as defined in your backend
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="purchase_token" type="string" %}
-**[GOOGLE PLAY ONLY]**
+{% swagger-parameter in="body" name="purchase_token" type="string" required="false" %}
+**\[GOOGLE PLAY ONLY]**
 
- purchase token given by the SDK during the purchase, used to request Play Store servers
+purchase token given by the SDK during the purchase, used to request Play Store servers
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="receipt_data" type="string" %}
-**[APP STORE ONLY]**
+{% swagger-parameter in="body" name="receipt_data" type="string" required="false" %}
+**\[APP STORE ONLY]**
 
- Base64 encoded receipt data given by the SDK during the purchase, used to request App Store servers
+Base64 encoded receipt data given by the SDK during the purchase, used to request App Store servers
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Content-Type" type="String" required="false" %}
@@ -184,7 +191,7 @@ application/json
 ```
 {% endswagger-response %}
 
-{% swagger-response status="403" description="(X-API-KEY, X-PLATFORM-TYPE) doesn't match any platform" %}
+{% swagger-response status="403" description="(X-API-KEY, X-PLATFORM-TYPE) doesn" %}
 ```
 { "errors": ["unknown api_key"] }
 ```
@@ -198,7 +205,7 @@ application/json
 {% endswagger %}
 
 {% hint style="info" %}
-&#x20; The not-mandatory-fields are highly recommended: we use them to calculate the LTV (life-time value) of your users and track your revenues.
+The not-mandatory-fields are highly recommended: we use them to calculate the LTV (life-time value) of your users and track your revenues.
 {% endhint %}
 
 #### 2.1. Body parameters exemple
@@ -325,8 +332,6 @@ user_id;receipt_data;store_product_id;amount_cents;currency;intro_amount_cents;i
 ```
 {% endcode %}
 
-{% file src="../../.gitbook/assets/purchasely-appstore-migration (3).csv" %}
-
 #### 3.2. Play Store
 
 Mandatory fields: user\__id, purchase\_token, store\_product\_Id_
@@ -337,8 +342,6 @@ user_id;purchase_token;store_product_id;quantity
 1234;abcdFEbsbs;com.foo.bar;1
 ```
 {% endcode %}
-
-{% file src="../../.gitbook/assets/purchasely-playstore-migration (2).csv" %}
 
 ### 4. Release your new app
 
