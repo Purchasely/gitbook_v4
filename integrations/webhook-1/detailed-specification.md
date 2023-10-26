@@ -7,6 +7,7 @@
 ```bash
 Accept: application/json
 X-PURCHASELY-REQUEST-SIGNATURE: 506c1...44a180
+X-PURCHASELY-TIMESTAMP: 1698322022
 ```
 
 ### Authenticating request and verifying signature (recommended)
@@ -14,6 +15,7 @@ X-PURCHASELY-REQUEST-SIGNATURE: 506c1...44a180
 To ensure that events are indeed coming from Purchasely Cloud Platform, you can authentify these events using informations contained in the HEADER of the HTTP request :
 
 * `X-PURCHASELY-REQUEST-SIGNATURE` : request signature
+* `X-PURCHASELY-TIMESTAMP` : request timestamp
 
 This verification is optional.
 
@@ -36,16 +38,17 @@ const crypto = require("crypto");
 
 // Request headers
 // ---------------
-const xPurchaselyRequestSignature = "506c1cfbd92bafc81b6b1246ff9addbfdff8cddc07fb7298df2cdc32f144a180";
+const xPurchaselyRequestSignature = "f3c2a452e9ea72f41107321aeaf7999f1054148866a710c9b23f9f501785e2a4";
+const xPurchaselyTimestamp = "1698322022";
 
 // Request body
 // ------------
-const body = {"a_random_key":"a_random_value_amet"};
+const body = "{\"a_random_key\":\"a_random_value_ad\"}";
 
 // Signature verification
 // ----------------------
 const webhookSharedSecret = "foobar";
-const dataToSign = webhookSharedSecret + JSON.stringify(body);
+const dataToSign = xPurchaselyTimestamp + body;
 const computedSignature = crypto
                           .createHmac("sha256", webhookSharedSecret)
                           .update(dataToSign)
@@ -63,16 +66,17 @@ require 'openssl'
 
 # Request headers
 # ---------------
-x_purchasely_signature = '506c1cfbd92bafc81b6b1246ff9addbfdff8cddc07fb7298df2cdc32f144a180'
+x_purchasely_signature = "f3c2a452e9ea72f41107321aeaf7999f1054148866a710c9b23f9f501785e2a4"
+x_purchasely_timestamp = "1698322022"
 
 # Request body
 # ------------
-body = {"a_random_key" => "a_random_value_amet"}
+body = "{\"a_random_key\":\"a_random_value_ad\"}"
 
 # Signature verification
 # ----------------------
-webhook_shared_secret = 'foobar'
-data_to_sign = webhook_shared_secret + body.to_json
+webhook_shared_secret = "foobar"
+data_to_sign = x_purchasely_timestamp + body.to_json
 computed_signature = OpenSSL::HMAC.hexdigest('sha256', webhook_shared_secret, data_to_sign)
 
 if (computed_signature == x_purchasely_signature) {
@@ -90,16 +94,17 @@ import javax.crypto.spec.SecretKeySpec
 
 // Request headers
 // ---------------
-val xPurchaselySignature = "506c1cfbd92bafc81b6b1246ff9addbfdff8cddc07fb7298df2cdc32f144a180";
+val xPurchaselySignature = "f3c2a452e9ea72f41107321aeaf7999f1054148866a710c9b23f9f501785e2a4"
+val xPurchaselyTimestamp = "1698322022"
 
 // Request body
 // ------------
-val body = "{\"a_random_key\":\"a_random_value_amet\"}"
+val body = "{\"a_random_key\":\"a_random_value_ad\"}"
 
 // Signature verification
 // ----------------------
 val webhookSharedSecret = "foobar"
-val dataToSign = webhookSharedSecret + body
+val dataToSign = xPurchaselyTimestamp + body
 val hmac = Mac.getInstance("HmacSHA256")
 hmac.init(SecretKeySpec(webhookSharedSecret.toByteArray(), "HmacSHA256"))
 val computedSignature = hmac.doFinal(dataToSign.toByteArray()).joinToString("") { "%02x".format(it) }
@@ -110,6 +115,8 @@ if (computedSignature == xPurchaselySignature) {
 ```
 {% endtab %}
 {% endtabs %}
+
+You can also compute the difference between the current timestamp and the received timestamp, then decide if the difference is within your tolerance.
 
 ### Body
 
