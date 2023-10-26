@@ -19,11 +19,15 @@ To ensure that events are indeed coming from Purchasely Cloud Platform, you can 
 
 This verification is optional.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Depending on your framework, you may receive the headers under another format:
 
 * Ruby on Rails: `HTTP_X_PURCHASELY_REQUEST_SIGNATURE`
 * NestJS: x-purchasely-request-signature
+{% endhint %}
+
+{% hint style="danger" %}
+Do not use the deprecated `X-PURCHASELY-SIGNATURE header`
 {% endhint %}
 
 The signature relies on a shared secret that you can find in your Purchasely Console (_Client shared secret_)\
