@@ -76,7 +76,7 @@ body = "{\"a_random_key\":\"a_random_value_ad\"}"
 # Signature verification
 # ----------------------
 webhook_shared_secret = "foobar"
-data_to_sign = x_purchasely_timestamp + body.to_json
+data_to_sign = x_purchasely_timestamp + body
 computed_signature = OpenSSL::HMAC.hexdigest('sha256', webhook_shared_secret, data_to_sign)
 
 if (computed_signature == x_purchasely_signature) {
