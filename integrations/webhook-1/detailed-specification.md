@@ -6,24 +6,22 @@
 
 ```bash
 Accept: application/json
-X-PURCHASELY-SIGNATURE: ea909...ba5a6,
-X-PURCHASELY-TIMESTAMP: 1580...929
+X-PURCHASELY-REQUEST-SIGNATURE: 506c1...44a180
 ```
 
 ### Authenticating request and verifying signature (recommended)
 
-To ensure that events are indeed coming from Purchasely Cloud Platform, you can authentify event using informations contained in the HEADER of the HTTP request :
+To ensure that events are indeed coming from Purchasely Cloud Platform, you can authentify these events using informations contained in the HEADER of the HTTP request :
 
-* `X-PURCHASELY-SIGNATURE` : message signature
-* `X-PURCHASELY-TIMESTAMP` : request timestamp to avoid replay attacks
+* `X-PURCHASELY-REQUEST-SIGNATURE` : request signature
 
 This verification is optional.
 
 {% hint style="info" %}
 Depending on your framework, you may receive the headers under another format:
 
-* Ruby on Rails: `HTTP_X_PURCHASELY_SIGNATURE`
-* NestJS: x-purchasely-signature
+* Ruby on Rails: `HTTP_X_PURCHASELY_REQUEST_SIGNATURE`
+* NestJS: x-purchasely-request-signature
 {% endhint %}
 
 The signature relies on a shared secret that you can find in your Purchasely Console (_Client shared secret_)\
@@ -38,13 +36,16 @@ const crypto = require("crypto");
 
 // Request headers
 // ---------------
-const xPurchaselyTimestamp = "1580909929";
-const xPurchaselySignature = "ea909b88098b63ef93711cd14542403e5efe1a23c07d94a764bd4db55abba5a6";
+const xPurchaselyRequestSignature = "506c1cfbd92bafc81b6b1246ff9addbfdff8cddc07fb7298df2cdc32f144a180";
+
+// Request body
+// ------------
+const body = {"a_random_key":"a_random_value_amet"};
 
 // Signature verification
 // ----------------------
 const webhookSharedSecret = "foobar";
-const dataToSign = webhookSharedSecret + xPurchaselyTimestamp;
+const dataToSign = webhookSharedSecret + JSON.stringify(body);
 const computedSignature = crypto
                           .createHmac("sha256", webhookSharedSecret)
                           .update(dataToSign)
@@ -62,13 +63,16 @@ require 'openssl'
 
 # Request headers
 # ---------------
-x_purchasely_timestamp = '1580909929'
-x_purchasely_signature = 'ea909b88098b63ef93711cd14542403e5efe1a23c07d94a764bd4db55abba5a6'
+x_purchasely_signature = '506c1cfbd92bafc81b6b1246ff9addbfdff8cddc07fb7298df2cdc32f144a180'
+
+# Request body
+# ------------
+body = {"a_random_key" => "a_random_value_amet"}
 
 # Signature verification
 # ----------------------
 webhook_shared_secret = 'foobar'
-data_to_sign = webhook_shared_secret + x_purchasely_timestamp
+data_to_sign = webhook_shared_secret + body.to_json
 computed_signature = OpenSSL::HMAC.hexdigest('sha256', webhook_shared_secret, data_to_sign)
 
 if (computed_signature == x_purchasely_signature) {
@@ -86,13 +90,16 @@ import javax.crypto.spec.SecretKeySpec
 
 // Request headers
 // ---------------
-val xPurchaselyTimestamp = "1580909929";
-val xPurchaselySignature = "ea909b88098b63ef93711cd14542403e5efe1a23c07d94a764bd4db55abba5a6";
+val xPurchaselySignature = "506c1cfbd92bafc81b6b1246ff9addbfdff8cddc07fb7298df2cdc32f144a180";
+
+// Request body
+// ------------
+val body = "{\"a_random_key\":\"a_random_value_amet\"}"
 
 // Signature verification
 // ----------------------
 val webhookSharedSecret = "foobar"
-val dataToSign = webhookSharedSecret + xPurchaselyTimestamp
+val dataToSign = webhookSharedSecret + body
 val hmac = Mac.getInstance("HmacSHA256")
 hmac.init(SecretKeySpec(webhookSharedSecret.toByteArray(), "HmacSHA256"))
 val computedSignature = hmac.doFinal(dataToSign.toByteArray()).joinToString("") { "%02x".format(it) }
@@ -148,7 +155,7 @@ if (computedSignature == xPurchaselySignature) {
 }
 ```
 
-More information on these properties can be found [here](../../analytics/events/webhook-events/subscription-events.md):&#x20;
+More information on these properties can be found [here](../../analytics/events/webhook-events/subscription-events.md):
 
 {% hint style="danger" %}
 Never use the `next_renewal_at / effective_next_renewal_at` to invalidate a subscription (and always use the webhook sent to you for this sole purpose). This date is only here to help your marketing team take actions (or if you want to display the next renewal date in your app).
@@ -162,14 +169,12 @@ If you ever needed a fail safe to unsubscribe users in case an issue occurs with
 
 When called by Purchasely Cloud Platform, client backend should respond with a HTTP code :
 
-* HTTP 200 ⇒ the **Event** has been well received and processed (eg: the subscription has been activated/deactivated)\
-
+* HTTP 200 ⇒ the **Event** has been well received and processed (eg: the subscription has been activated/deactivated)\\
 * Other than HTTP 200 or no response (timeout) ⇒ an error has occurred and the **Event** could not be processed :
-  * The user is warned through the SDK that something did not work\
-
+  * The user is warned through the SDK that something did not work\\
   * Purchasely Cloud Platform will retry several times to send the **Event** (max 25 times) in the following hours.
 
-This response from the client backend to the Purchasely Console is mandatory, particularly for purchase events (e.g.  new subscriptions) coming from the SDK, to ensure that the client backend has granted the user with the entitlements corresponding to the new purchase, and unlocked the access to the premium contents or features.&#x20;
+This response from the client backend to the Purchasely Console is mandatory, particularly for purchase events (e.g. new subscriptions) coming from the SDK, to ensure that the client backend has granted the user with the entitlements corresponding to the new purchase, and unlocked the access to the premium contents or features.
 
 This response from the client backend is forwarded to the mobile SDK and an error message is displayed to the user, if it is different from HTTP 200.
 
