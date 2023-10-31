@@ -20,56 +20,33 @@ The next step is to plug your applications with the different stores you want to
 
 By clicking on the Apple App Store tab in your App Settings you can do the 3 required steps for Apple configuration
 
-1. **App bundle id**\
-   <img src="../.gitbook/assets/quickStart_consoleConfig_3.png" alt="" data-size="original">
-2. **Shared App Secret**\
-   ![](../.gitbook/assets/quickStart\_consoleConfig\_4.png)![](../.gitbook/assets/quickStart\_consoleConfig\_5.png)
-3. **Server to Server notifications**\
-   ![](../.gitbook/assets/quickStart\_consoleConfig\_6.png)
+**App bundle id**\
+<img src="../.gitbook/assets/quickStart_consoleConfig_3.png" alt="" data-size="original">
+
+
+
+**Shared App Secret**\
+![](../.gitbook/assets/quickStart\_consoleConfig\_4.png)![](../.gitbook/assets/quickStart\_consoleConfig\_5.png)
+
+**Store Kit 2**
+
+By default Purchasely SDK uses Store Kit 2, you need to grant us a specific access to your In-App Purchases for our service to work\
+Please follow [this guide](../quick-start-1/sdk-configuration/storekit-2.md) to configure Store Kit 2 with Purchasely
+
+{% hint style="info" %}
+You can use Store Kit 1 if you want, just skip this step and make sure that [Purchasely.start()](sdk-implementation.md) is configured with Store Kit 1
+{% endhint %}
+
+**Server to Server notifications**\
+![](../.gitbook/assets/quickStart\_consoleConfig\_6.png)
 
 ### Google Play Console
 
-By clicking on the Play Store tab in your App Settings you can do the 3 required steps for Google configuration
+You will need to follow those steps:
 
-#### App Bundle Id
-
-<div align="left">
-
-<figure><img src="../.gitbook/assets/quickStart_consoleConfig_7.png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
-
-#### Access Key
-
-<div align="left">
-
-<figure><img src="../.gitbook/assets/quickStart_consoleConfig_8.png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
-
-Create a dedicated Service Account under [Google Cloud Platform Console](https://console.cloud.google.com/) [https://console.cloud.google.com](https://console.cloud.google.com/)\
-_Google Cloud Platform > IAM & admin > Service Account > Create a new Service Account_
-
-* Name your account `Purchasely` to be able to easily identify it later
-* Give it the ID `purchasely`
-* On the following screen, set the role to "Owner" or "Pub/Sub Admin" or "Monitoring Viewer"&#x20;
-* On the following screen, create a key by clicking on the `+ Create a key` button
-* Choose JSON format
-* Fill the content of the field "Access key" with this json file
-
-Grant the access to the Service Account under the [Google Play Console](https://play.google.com/console/u/0/developers/api-access)\
-_Google Play Console> API Access > \[PURCHASELY SERVICE ACCOUNT] > Grant authorization_
-
-**Complete those 3 steps**
-
-1. Set "no expiration date"
-2. **Tab: App permissions -** Select the application corresponding to the app bundle id\
-   ![](../.gitbook/assets/quickStart\_consoleConfig\_9.png)
-3. **Tab: Account permissions -** Ensure the following permissions are selected :
-   * [x] View app information and download bulk reports
-   * [x] View financial data, orders, and cancellation survey responses
-   * [x] Manage orders and subscriptions\
-     ![](../.gitbook/assets/quickStart\_consoleConfig\_10.png)
+1. Set your [Android App Bundle Id](console-configuration/installation.md#android-app-bundle-id)
+2. [Create](console-configuration/installation.md#access-key-json) the Service Account
+3. [Grant Access](console-configuration/installation.md#grant-access-to-the-new-service-account) to the Service Account
 
 {% hint style="warning" %}
 Once you have completed all those steps, it can **take up from 30 minutes to 48 hours** to Google to activate those new permissions, specifically the 2nd step **App Permission** for the service account
