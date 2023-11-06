@@ -43,10 +43,25 @@ The names of events sent to MoEngage can be overriden when setting up the integr
 
 ## **Integrating Purchasely with MoEngage**
 
-The integration requires ${integration\_setup\_steps\_count} steps:
+The integration requires 2 steps:
 
-1. Associate the user to events by providing the `${integration_sdk_property}` to the Purchasely SDK
-2. Activate the MoEngage integration in the Purchasely Console
+1 - **Associate the user to events** by providing the `MoEngage Unique Id` to the Purchasely SDK
+
+Swift
+
+{% code overflow="wrap" fullWidth="true" %}
+```swift
+Purchasely.setAttribute(.moEngageUnqueId, value: "your moEngage Unique Id")
+```
+{% endcode %}
+
+Kotlin
+
+```kotlin
+Purchasely.setAttribute(Attribute.MOENGAGE_UNIQUE_ID, "Your unique id")
+```
+
+2 - **Activate the MoEngage integration** in the Purchasely Console
 
 ### 1. Associating users to events
 
