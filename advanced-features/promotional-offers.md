@@ -267,13 +267,32 @@ Purchasely.plan(
 
 {% tab title="ReactNative" %}
 ```typescript
-// Available soon
+// Purchase with the plan vendor id and promotional offer vendor id 
+// set in Purchasely Console
+try {
+  const plan = await Purchasely.purchaseWithPlanVendorId(
+    'PURCHASELY_PLUS_YEARLY',
+    'PROMOTIONAL_OFFER_ID',
+    null, // optional content id
+  );
+  console.log('Purchased plan: ' + plan);
+} catch (e) {
+  console.error(e);
+}
 ```
 {% endtab %}
 
 {% tab title="Flutter" %}
 ```dart
-// Available soon
+// Purchase with the plan vendor id and promotional offer vendor id 
+// set in Purchasely Console
+try {
+    Map<dynamic, dynamic> plan = await Purchasely.purchaseWithPlanVendorId(
+        vendorId: 'PURCHASELY_PLUS_MONTHLY', offerId: 'PROMOTIONAL_OFFER_ID');
+    print('Purchased plan is $plan');
+} catch (e) {
+    print(e);
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -281,8 +300,6 @@ Purchasely.plan(
 ## Retrieve the offer to purchase in observer mode
 
 When you are using Purchasely in [paywallObserver](../quick-start-1/sdk-configuration/paywall-observer-mode.md) mode, you can retrieve the offer from our [paywall action interceptor](paywall-action-interceptor.md), sign it (iOS only) and do the purchase with your system
-
-
 
 {% hint style="warning" %}
 On iOS, Purchasely **anonymous user in lowercase** is required as **applicationUsername** with StoreKit1 or **appAccountToken** with StoreKit2\
