@@ -485,13 +485,123 @@ Purchasely.setPaywallActionsInterceptor((info, action, parameters, listener) -> 
 
 {% tab title="ReactNative" %}
 ```typescript
-// Available soon
+Purchasely.setPaywallActionInterceptorCallback((result) => {
+    switch (result.action) {
+      case PLYPaywallAction.PURCHASE:
+        // Retrieve the store product id and offer id
+        const storeProductId = result.parameters.plan?.productId;
+        const storeOfferId = result.parameters.offer?.storeOfferId;
+
+        // -- GOOGLE ONLY --
+        // Alternatively, just for Google with v5 and v6 you can retrieve everything if it simpler for you,
+        // specially if you want the offer token
+        const productId = result.parameters.subscriptionOffer?.subscriptionId;
+        const basePlanId = result.parameters.subscriptionOffer?.basePlanId;
+        const offerId = result.parameters.subscriptionOffer?.offerId;
+        const offerToken = result.parameters.subscriptionOffer?.offerToken;
+        // -- END GOOGLE --
+
+        // -- APPLE ONLY --
+        if(storeOfferId != null) {
+          try {
+            async() => {
+              const signature = await Purchasely.signPromotionalOffer(storeProductId, storeOfferId);
+              const anonymousUserId = await Purchasely.getAnonymousUserId();
+              const appTokenUserId = anonymousUserId.toLowerCase();
+
+              // You need the signature and appTokenUserId to validate the offer
+            }
+          } catch (e) {
+            console.log("Error while signing promotional offer");
+            console.error(e);
+          }
+        }
+        // -- END APPLE --
+
+
+        // Now that you have the ids you need, you can launch your purchase flow
+
+        // Hide Purchasely paywall if you want
+        Purchasely.hidePresentation();
+
+        // TODO launch purchase flow
+
+        // When purchase is done, call this method to stop loader on Purchasely paywall
+        Purchasely.onProcessAction(false);
+
+        // if successful, close the paywall
+        Purchasely.closePresentation();
+
+        // if not successful, display the paywall again
+        Purchasely.showPresentation()
+        break;
+      default:
+        Purchasely.onProcessAction(true);
+    }
+  });
 ```
 {% endtab %}
 
 {% tab title="Flutter" %}
 ```dart
-// Available soon
+Purchasely.setPaywallActionInterceptorCallback(
+          (PaywallActionInterceptorResult result) {
+  if (result.action == PLYPaywallAction.purchase) {
+    // Retrieve the store product id and offer id
+      String? storeProductId = result.parameters.plan?.productId;
+      String? storeOfferId = result.parameters.offer?.storeOfferId;
+
+      // -- GOOGLE ONLY --
+      // Alternatively, just for Google with v5 and v6 you can retrieve everything if it simpler for you,
+      // specially if you want the offer token
+      String? productId = result.parameters.subscriptionOffer?.subscriptionId;
+      String? basePlanId = result.parameters.subscriptionOffer?.basePlanId;
+      String? offerId = result.parameters.subscriptionOffer?.offerId;
+      String? offerToken = result.parameters.subscriptionOffer?.offerToken;
+      // -- END GOOGLE --
+
+      // -- APPLE ONLY --
+      if(storeProductId != null && storeOfferId != null) {
+        try {
+          Map signature = await Purchasely.signPromotionalOffer(storeProductId, storeOfferId);
+          String? anonymousUserId = await Purchasely.anonymousUserId;
+          String? appTokenUserId = anonymousUserId.toLowerCase();
+
+            // You need the signature and appTokenUserId to validate the offer
+            // Signature contains those fields
+            /*
+              signature['identifier'] as String
+              signature['signature'] as String
+              signature['keyIdentifier'] as String
+              signature['timestamp'] as int
+            */
+        } catch (e) {
+          print("Error while signing promotional offer");
+          print(e);
+        }
+      }
+      // -- END APPLE --
+
+
+      // Now that you have the ids you need, you can launch your purchase flow
+
+      // Hide Purchasely paywall if you want
+      Purchasely.hidePresentation();
+
+      // TODO launch purchase flow
+
+      // When purchase is done, call this method to stop loader on Purchasely paywall
+      Purchasely.onProcessAction(false);
+
+      // if successful, close the paywall
+      Purchasely.closePresentation();
+
+      // if not successful, display the paywall again
+      Purchasely.showPresentation();
+  } else {
+    Purchasely.onProcessAction(true);
+  }
+});
 ```
 {% endtab %}
 {% endtabs %}
