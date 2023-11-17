@@ -94,22 +94,40 @@ Purchasely.start(isConfigured -> {
 ```javascript
 import Purchasely from 'react-native-purchasely';
 
-/**
-* @params String apiKey
-* @params StringArray stores : may be Google, Amazon and Huawei
-* @params String userId
-* @params Purchasley.LogLevel logLevel
-* @params RunningMode runningMode
-**/
-Purchasely.startWithAPIKey(
-  'API_KEY',
-  ['Google'],
-  'USER_ID',
-  Purchasely.logLevelDebug,
-  RunningMode.FULL
-);
-
+// Everything is optional except apiKey and storeKit1
+// Example with default values
+try {
+    const configured = await Purchasely.start({
+        apiKey: 'YOUR_API_KEY',
+        storeKit1: false, // set to false to use StoreKit2, true to use StoreKit1,
+        logLevel: LogLevels.ERROR, // set to debug in development mode to see logs
+        userId: null, // if you know your user id, set it here
+        runningMode: RunningMode.FULL, // select between full and paywallObserver
+        androidStores: ['Google'] // default is Google, don't forget to add the dependency to the same version
+     });
+} catch (e) {
+     console.log("Purchasely SDK not configured properly");
+}
 ```
+{% endtab %}
+
+{% tab title="Flutter" %}
+<pre class="language-dart"><code class="lang-dart">// Everything is optional except apiKey and storeKit1
+// Example with default values
+<strong>bool configured = await Purchasely.start(
+</strong>        apiKey: 'YOUR_API_KEY',
+        androidStores: ['Google'], // default is Google, don't forget to add the dependency to the same version
+        storeKit1: false, // set to false to use StoreKit2, true to use StoreKit1
+        logLevel: PLYLogLevel.error, // set to debug in development mode to see logs
+        runningMode: PLYRunningMode.full, // select between full and paywallObserver
+        userId: null, // set a user id if you have one
+      );
+    
+if (!configured) {
+        print('Purchasely SDK not configured');
+        return;
+}
+</code></pre>
 {% endtab %}
 
 {% tab title="Cordova" %}
@@ -128,30 +146,6 @@ Purchasely.startWithAPIKey(
     Purchasely.LogLevel.DEBUG, 
     Purchasely.RunningMode.full
 );
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-```dart
-/**
-* @params String apiKey
-* @params StringArray stores : may be Google, Amazon and Huawei
-* @params String userId
-* @params PLYLogLevel logLevel
-* @params PLYRunningMode runningMode
-**/
-bool configured = await Purchasely.startWithApiKey(
-        'API_KEY',
-        ['Google'],
-        null,
-        PLYLogLevel.debug,
-        PLYRunningMode.full
-    );
-    
-if (!configured) {
-        print('Purchasely SDK not configured');
-        return;
-}
 ```
 {% endtab %}
 
