@@ -24,8 +24,7 @@ Purchasely.start(withAPIKey: "API_KEY",
                          appUserId: "USER_ID",
 <strong>                         runningMode: .full,
 </strong><strong>                         paywallActionsInterceptor: PLYPaywallActionsInterceptor,
-</strong>                         storekitSettings: .storeKit2, // optional but set to StoreKit 2 by default. 
-                         // Fallsback to StoreKit 1 in case the informations are not setup correctly on Purchasely console
+</strong>                         storekitSettings: .storeKit2, // Set your StoreKit version
                          logLevel: .debug, // set to warning or error for release
                          initialized: PLYSuccessErrorClosure))
                          
@@ -134,6 +133,36 @@ Purchasely.setUiListener(
             public void onView(@NonNull View view, @NonNull PLYUIViewType type) {}
         }
 );
+```
+{% endtab %}
+
+{% tab title="ReactNative" %}
+```typescript
+// Everything is optional except apiKey and storeKit1
+// Example with default values
+await Purchasely.start({
+          apiKey: 'YOUR_API_KEY',
+          storeKit1: false, // set to false to use StoreKit2, true to use StoreKit1,
+          logLevel: LogLevels.ERROR, // set to debug in development mode to see logs
+          userId: null, // if you know your user id, set it here
+          runningMode: RunningMode.FULL, // select between full and paywallObserver
+          androidStores: ['Google'] // default is Google, don't forget to add the dependency to the same version
+        });
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+```dart
+// Everything is optional except apiKey and storeKit1
+// Example with default values
+await Purchasely.start(
+        apiKey: 'YOUR_API_KEY',
+        androidStores: ['Google'], // default is Google, don't forget to add the dependency to the same version
+        storeKit1: false, // set to false to use StoreKit2, true to use StoreKit1
+        logLevel: PLYLogLevel.error, // set to debug in development mode to see logs
+        runningMode: PLYRunningMode.full, // select between full and paywallObserver
+        userId: null, // set a user id if you have one
+      );
 ```
 {% endtab %}
 {% endtabs %}
