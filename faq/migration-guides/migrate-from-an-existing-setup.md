@@ -306,7 +306,7 @@ end
 
 ### 3. Extract your existing subscriptions into a CSV
 
-It's time to extract all you existing subscriptions (active and expired)!
+It's time to extract all you existing subscriptions (non-sandbox & active only)!
 
 As before, we'll need different fields, depending of the platform (same rules apply for mandatory/recommended fields).
 
