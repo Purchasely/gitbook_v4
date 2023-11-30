@@ -463,17 +463,16 @@ Purchasely.restoreAllProducts(
 
 {% tab title="Java" %}
 ```java
-Purchasely.restoreAllProducts((PurchaseListener) state -> {
-    if(state instanceof State.RestorationComplete) {
-        //Display success restoration
-    } else if(state instanceof State.RestorationNoProducts) {
-        //No products to restore
-    } else if(state instanceof State.RestorationFailed) {
-        //An error happened, look at state.error
-    } else {
-        //look at all possible states for the one you may want to handle
-    }
-});
+Purchasely.restoreAllProducts(
+        plan -> {
+            if(plan != null) {
+                // plan was restored
+                Log.d("Purchasely", "Plan restored: " + plan.getVendorId());
+            }
+            return null;
+        }, 
+        error -> null
+);
 ```
 {% endtab %}
 
