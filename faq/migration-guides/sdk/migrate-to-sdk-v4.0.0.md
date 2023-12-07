@@ -9,7 +9,7 @@ This new version makes it easier than ever to create and manage effective promot
 {% hint style="warning" %}
 Take note that : \
 On Android, we have adopted **Google Billing v5.2.1** and the minimum required **Kotlin** version is **1.6.0**\
-On iOS, we are using **StoreKit 2 by default** but you can force the usage of StoreKit1
+On iOS, setting a StoreKit version is mandatory
 {% endhint %}
 
 ## Initialization update

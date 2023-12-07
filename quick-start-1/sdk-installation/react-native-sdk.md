@@ -55,14 +55,16 @@ allprojects {
 
 ### Google Play Billing
 
-To add Google as a store, you can use NPM
+Google is not provided by default as you have a choice on Android\
+To add Google as a store, you can use our NPM dependency
 
 ```bash
 npm install @purchasely/react-native-purchasely-google --save
 ```
 
-{% hint style="info" %}
-Our SDK integrates Google Play Billing Client version 5.2.1, you must not use with your project another dependency with an older version.
+{% hint style="warning" %}
+This dependency version **must always match** the `react-native-purchasely` version\
+Be very careful to always update both at the same time
 {% endhint %}
 
 ### Huawei Mobile Services

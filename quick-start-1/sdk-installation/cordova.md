@@ -47,11 +47,19 @@ cordova platform add android
 
 #### 3. Add Google dependency
 
-To use Google for in-app purchases, you must install **Purchasely-Google** by running this command in your project:
+Google is not provided by default as you have a choice on Android\
+To add Google as a store, you can use our Cordova plugin
 
 ```bash
 cordova plugin add @purchasely/cordova-plugin-puchasely-google
 ```
+
+{% hint style="warning" %}
+This dependency version **must always match** @purchasely/cordova-plugin-purchasely version\
+Be very careful to always update both at the same time
+{% endhint %}
+
+### Huawei Mobile Services
 
 #### Other Stores dependencies
 
@@ -64,10 +72,10 @@ Then you add the stores dependencies you wish to use.
 ```bash
 dependencies {
     //Amazon App Store
-    implementation 'io.purchasely:amazon:3.3.2'
+    implementation 'io.purchasely:amazon:4.2.0'
     
     //Huawei Mobile Services
-    implementation 'io.purchasely:huawei-services:3.3.2'
+    implementation 'io.purchasely:huawei-services:4.2.0'
 }
 ```
 {% endtab %}

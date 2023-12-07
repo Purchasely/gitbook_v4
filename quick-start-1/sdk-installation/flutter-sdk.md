@@ -18,19 +18,21 @@ flutter pub add purchasely_flutter
 
 #### Google Play Billing
 
-To add Google as a store, you can use our plugin
+Google is not provided by default as you have a choice on Android\
+To add Google as a store, you can use our flutter plugin
 
 ```bash
 flutter pub add purchasely_google
 ```
 
-{% hint style="info" %}
-Our SDK integrates Google Play Billing Client version 4.1.0, you must not use with your project another dependency with an older version.
+{% hint style="warning" %}
+This dependency version **must always match** purchasely\_flutter version\
+Be very careful to always update both at the same time
 {% endhint %}
 
 #### Video Player
 
-On Android devices we use [Google Exoplayer](https://github.com/google/ExoPlayer) to display videos but you may be also using a video sdk in your project that will have a dependency conflict with our version of Exoplayer. To avoid this, we do not provide a video player for Android in our core dependency. \
+On Android devices we use [Google Exoplayer](https://github.com/google/ExoPlayer) to display videos but you may be also using a video sdk in your project that will have a dependency conflict with our version of Exoplayer. To avoid this, we do not provide a video player for Android in our core dependency.\
 \
 If you are concerned about a potential conflict, please refer to this [article](https://help.purchasely.io/en/articles/5963004-displaying-a-video-on-android-devices)\
 If you are not concerned about such conflict, the simplest way to display videos on paywalls is to use our plugin

@@ -20,6 +20,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
                          appUserId: nil,
 			 runningMode: .full,
 			 eventDelegate: nil,
+			 storekitSettings: .storeKit1, // Set your StoreKit version
 			 logLevel: .debug) { (success, error) in
 		print(success)
         }
@@ -40,6 +41,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 			runningMode: PLYRunningModeFull
 	              eventDelegate:nil
 			 uiDelegate:nil
+			storekitSettings: [StorekitSettings .storekit1]
 	  paywallActionsInterceptor:nil
 		           logLevel: LogLevelInfo
 			initialized: nil];
@@ -141,7 +143,8 @@ if (!configured) {
 **/
 Purchasely.startWithAPIKey(
     'API_KEY', 
-    ['Google'], 
+    ['Google'],
+    true, // true for StoreKit 1, false for StoreKit 2
     null, 
     Purchasely.LogLevel.DEBUG, 
     Purchasely.RunningMode.full
@@ -155,7 +158,7 @@ Purchasely.startWithAPIKey(
 private PurchaselyRuntime.Purchasely _purchasely;
 
 _purchasely = new PurchaselyRuntime.Purchasely("USER_ID",
-			false,
+			false, // true for StoreKit 1, false for StoreKit 2
 			LogLevel.Debug,
 			RunningMode.Full,
 			OnPurchaselyStart,
@@ -165,6 +168,10 @@ _purchasely = new PurchaselyRuntime.Purchasely("USER_ID",
 {% endtabs %}
 
 The `userID` parameter is optional and allows you to associate the purchase to a user instead of a device.
+
+{% hint style="warning" %}
+If you want to use StoreKit 2, please make sure that you have followed [all required steps](../quick-start-1/sdk-configuration/storekit-2.md) first
+{% endhint %}
 
 ### Display a placement
 

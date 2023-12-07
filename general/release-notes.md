@@ -10,12 +10,47 @@ You can also find changelog specific to SDK technology in their GitHub repositor
 * [Android](https://github.com/Purchasely/Purchasely-Android/releases)
 * [React Native](https://github.com/Purchasely/Purchasely-ReactNative/releases)
 * [Flutter](https://github.com/Purchasely/Purchasely-Flutter/releases)
+* [Unity](https://github.com/Purchasely/Unity-Package)
+* [Cordova](https://github.com/Purchasely/Purchasely-Cordova/releases)
+
+## 4.2.0
+
+:warning: Important: To avoid issues specially in paywallObserver mode, we now require to set explicitely the StoreKit version you want to use\
+[Purchasely.start(storekitSettings: .storeKit1)](https://docs.purchasely.com/faq/migration-guides/sdk/migrate-to-sdk-v4.0.0#initialization-update)
+
+🌙 Native Dark Mode Support for Presentations
+
+Dark mode support has been implemented for screens & paywalls, automatically adapting to the user’s system settings for an improved viewing comfort. In the Console, you can now define 2 color sets (light & dark) for the same paywall.
+
+Developers can override the default setting with `Purchasely.setThemeMode(.dark)` or `Purchasely.setThemeMode(.light)`, enabling more control over the app’s appearance and accommodating user preferences
+
+#### 🔍 Augmented Session User Attributes
+
+Additional attributes have been added to track user session activity.
+
+These attributes provide detailed insights into user engagement with the app, like session frequency, interaction with paywalls, and purchase activities.
+
+This level of detail aids in fine-tuning user engagement strategies and understanding user behavior patterns more accurately
+
+#### 🏷 Tags System Extended to All Labels
+
+The tags system has been expanded to include all label types, allowing for dynamic display of pricing, introductory offers or promotional offers for any plan any where in the paywalls (an not only in the buttons). This update gives more flexibility in UI customization and dynamic content presentation.
+
+### Improvements and Optimizations
+
+**🔄 New `BATCH_CUSTOM_USER_ID` Attribute for External Integrations**: Enhances data syncing with external systems.
+
+### iOS
+
+🔧 **Setting a StoreKit version is now mandatory** You must know explicitly set a StoreKit setting on SDK initialization `Purchasely.start(withAPIKey: "API_KEY", storekitSettings: .storeKit2)` or `Purchasely.start(withAPIKey: "API_KEY", storekitSettings: .storeKit1)`
+
+### Android
+
+* **🛠️ Refined Purchasely View Lifecycle**: Optimized for use in tabbed Fragment navigation, ensuring smoother transitions and better user experience.-
+* **🖋️ Custom Font Error Handling**: Eliminated error messages related to missing custom fonts in the `res/resources` folder, streamlining the setup process.
+* **👁 Enhanced `UIListener` Interface**: The addition of `getActivity()` method facilitates easier view creation by providing the necessary activity context.
 
 ## 4.1.0
-
-{% hint style="info" %}
-React Native and Flutter update coming soon
-{% endhint %}
 
 🚨 Important: This SDK version uses StoreKit 2 by default. [Read the documentation](https://docs.purchasely.com/quick-start-1/sdk-configuration/storekit-2) for more information. You can still use StoreKit 1 by changing the configuration with [Purchasely.start(storekitSettings: .storeKit1)](https://docs.purchasely.com/faq/migration-guides/sdk/migrate-to-sdk-v4.0.0#initialization-update)
 
