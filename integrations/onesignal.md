@@ -76,7 +76,7 @@ See the [OneSignal Documentation](https://documentation.onesignal.com/docs/sdk-r
 {% tab title="Swift" %}
 ```swift
 if let oneSignalPlayerId = OneSignal.getDeviceState()?.userId {
-	Purchasely.setAttribute(.oneSignalPlayerId, value: oneSignalPlayerId)
+	Purchasely.setAttribute(.oneSignalExternalId, value: oneSignalPlayerId)
 }
 ```
 {% endtab %}
@@ -84,26 +84,24 @@ if let oneSignalPlayerId = OneSignal.getDeviceState()?.userId {
 {% tab title="Kotlin" %}
 ```kotlin
 OneSignal.getDeviceState()?.userId?.let {
-	Purchasely.setAttribute(Attribute.ONESIGNAL_PLAYER_ID, it)
+	Purchasely.setAttribute(Attribute.ONESIGNAL_EXTERNAL_ID, it)
 }
 ```
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
-Purchasely.setAttribute(Attribute.ONESIGNAL_PLAYER_ID, OneSignal.getDeviceState().getUserId());
+Purchasely.setAttribute(Attribute.ONESIGNAL_EXTERNAL_ID, OneSignal.getDeviceState().getUserId());
 ```
 {% endtab %}
 
 {% tab title="React Native" %}
 ```jsx
 var adid = OneSignal.getAdid();
-Purchasely.setAttribute(Attributes.ONESIGNAL_PLAYER_ID, (await OneSignal.getDeviceState()).getUserId());
+Purchasely.setAttribute(Attributes.ONESIGNAL_EXTERNAL_ID, (await OneSignal.getDeviceState()).getUserId());
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ### 2. Activating the OneSignal integration
 
