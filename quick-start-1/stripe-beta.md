@@ -104,7 +104,7 @@ From the Stripe console, copy the API ID (price) ...
 
 Then paste this ID into the corresponding plan:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Purchasely allows you to associate more than one Stripe Price to one given Purchasely plan, to handle cases where there exists several Stripe Prices tied to the same "plan" but with a different currency.

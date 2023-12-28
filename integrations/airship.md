@@ -213,9 +213,9 @@ UAirship.getChannelID(function (channelID) {
 
 Go in the "External integrations" section, and open the edition form for Airship:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 You'll find your "**Airship API key**" in your Airship console, section "_Settings » APIs & Integrations_":
 

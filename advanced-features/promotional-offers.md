@@ -132,16 +132,13 @@ Set a name, an identifier for Purchasely and the identifiers you have set in App
 <figure><img src="https://downloads.intercomcdn.com/i/o/823200166/e84fa163bca8add4596779d9/SCR-20230905-mifj.png" alt=""><figcaption></figcaption></figure>
 
 \
-Then you can create a paywall for your offer, we have created a new action button for that: **Purchase with promo**\
+Then you can create a paywall for your offer, we have created a new action button for that: **Winback/retention offer**\
 You need to select your plan and offer to be applied as the action for this button\
-You can use the field "Offer" of the different labels to set offers [tags](https://help.purchasely.io/en/articles/6312888-different-types-of-paywall-tags-and-their-uses) like `OFFER_PRICE` and `OFFER_DURATION` (same principle than trial offer)\
+You can use the field "Offer" of the different labels to set offers [tags](https://help.purchasely.io/en/articles/6312888-different-types-of-paywall-tags-and-their-uses) like `OFFER_PRICE` and `OFFER_DURATION` (same principle than trial offer)
 
 
-<figure><img src="https://downloads.intercomcdn.com/i/o/823200888/3bb47be9ae92b294212e39f2/SCR-20230905-moqq.png" alt=""><figcaption></figcaption></figure>
 
-\
-\
-
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 You are responsible for displaying this paywall to users you want to target, so you should create a specific [placement](https://help.purchasely.io/en/articles/6344651) for them. You can also target them using [Audience](https://help.purchasely.io/en/articles/6502579)
 
