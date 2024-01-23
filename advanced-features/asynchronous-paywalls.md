@@ -66,29 +66,47 @@ Purchasely.fetchPresentation(with: "presentationId", fetchCompletion: { presenta
 })
 
 // fetch presentation for placement
-Purchasely.fetchPresentation(for: "onboarding", fetchCompletion: { presentation, error in
-    guard let presentation = presentation, error == nil else {
-        print("Error while fetching presentation: \(error?.localizedDescription ?? "unknown")")
-        return
-    }
-    
-    if presentation.type == .normal || presentation.type == .fallback {
-        let paywallController = presentation.controller
-        
-        // display paywall controller.
-        
-    } else if presentation.type == .deactivated {
-        
-        // nothing to display
-        
-    } else if presentation.type == .client {
-        let presentationId = presentation.id
-        let planIds = presentation.plans
-        
-        // display your own paywall
-        
-    }
-})
+Purchasely.fetchPresentation(
+    for: "onboarding",
+    fetchCompletion: { presentation, error in
+         // closure to get presentation and display it
+         guard let presentation = presentation, error == nil else {
+             print("Error while fetching presentation: \(error?.localizedDescription ?? "unknown")")
+             return
+         }
+         
+         if presentation.type == .normal || presentation.type == .fallback {
+             let paywallController = presentation.controller
+             
+             // display paywall controller.
+             
+         } else if presentation.type == .deactivated {
+             
+             // nothing to display
+             
+         } else if presentation.type == .client {
+             let presentationId = presentation.id
+             let planIds = presentation.plans
+             
+             // display your own paywall
+             
+         }
+    },
+    completion: { result, plan in
+        // closure when presentation controller is closed to get result
+        switch result {
+            case .purchased:
+                print("User purchased: \(plan?.name)")
+                break
+            case .restored:
+                print("User restored: \(plan?.name)")
+                break
+            case .cancelled:
+                break
+            @unknown default:
+                break
+        }
+    })
 ```
 {% endtab %}
 
