@@ -137,17 +137,26 @@ if (!configured) {
 /**
 * @params String apiKey
 * @params StringArray stores : may be Google, Amazon and Huawei
+* @params Boolean storekit1
 * @params String userId
 * @params Purchasley.LogLevel logLevel
 * @params Purchasely.RunningMode runningMode
 **/
-Purchasely.startWithAPIKey(
-    'API_KEY', 
-    ['Google'],
-    true, // true for StoreKit 1, false for StoreKit 2
-    null, 
-    Purchasely.LogLevel.DEBUG, 
-    Purchasely.RunningMode.full
+Purchasely.start(
+    'API_KEY',                     // set your own api key
+    ['Google'],                    // list of stores for Android, accepted values: Google, Huawei and Amazon
+    false,                         // set to false to use StoreKit2, true to use StoreKit1
+    null,                          // set your user id
+    Purchasely.LogLevel.DEBUG,     // log level, should be warning or error in production
+    Purchasely.RunningMode.full,   // running mode, can be paywallObserver or full
+    (isConfigured) => {
+        if(isConfigured) {
+            // Purchasely is ready, you can display paywalls, set user attributes, start a purchase flow etc.
+        }
+    },
+    (error) => {
+        console.log(error);
+    }
 );
 ```
 {% endtab %}
