@@ -19,7 +19,7 @@ By adopting Purchasely on top of the existing payment infrastructure, you can ac
 Please note that the article provides a step-by-step guide to integrating Purchasely with RevenueCat, but the same process can apply to any third-party payment platform.
 {% endhint %}
 
-**Prerequisite**: You must implement Purchasely SDK in your application and configure Server to Server notifications (S2S) to collect the RevenuCat generated subscription data in real-time.
+**Prerequisite**: You must implement Purchasely SDK in your application and configure Server to Server notifications (S2S) to collect the RevenueCat generated subscription data in real-time.
 
 ## Console configuration
 
