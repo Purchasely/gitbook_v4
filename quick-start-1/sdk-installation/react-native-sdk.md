@@ -67,6 +67,19 @@ This dependency version **must always match** the `react-native-purchasely` vers
 Be very careful to always update both at the same time
 {% endhint %}
 
+### Android Video Player
+
+If you have videos in your paywall, you must provide a video player to play them.\
+Since version 3.1.0, Purchasely core dependency does not include a video player **for Android** to avoid dependency conflicts.\
+\
+We provide a new player dependency which will be detected automatically by our SDK.
+
+```batch
+npm install @purchasely/react-native-purchasely-android-player --save
+```
+
+You can also provide your own player view, more information in our [help center](https://help.purchasely.com/en/articles/5963004-display-a-video-on-android-devices)
+
 ### Huawei Mobile Services
 
 To add Huawei as a store, you can use NPM
