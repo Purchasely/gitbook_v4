@@ -51,7 +51,7 @@
     * [Present paywalls](quick-start-1/sdk-configuration/config-appendices/present-paywalls.md)
     * [Unlock content / service](quick-start-1/sdk-configuration/config-appendices/unlock-content-service.md)
     * [Close SDK (Android only)](quick-start-1/sdk-configuration/config-appendices/close-sdk-android-only.md)
-* [Stripe (beta)](quick-start-1/stripe-beta.md)
+* [Stripe](quick-start-1/stripe-beta.md)
 * [Purchasely with RevenueCat](quick-start-1/purchasely-with-revenuecat.md)
 
 ## S2S notifications <a href="#stores-configuration" id="stores-configuration"></a>
