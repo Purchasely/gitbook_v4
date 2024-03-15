@@ -405,6 +405,28 @@ Purchasely.setPaywallActionInterceptorCallback(
 In `oberver` and `paywallObserver` modes, when a purchase or a restoration is made with your current flow, call the `synchronize()` method of our SDK to send the receipt to our backend. This allow us to save the receipts on our server to prepare for your migration.
 
 {% tabs %}
+{% tab title="Swift" %}
+```swift
+// synchronize all purchases
+Purchasely.synchronize()
+
+// or you can synchronize for the specific apple product id bought
+try await Purchasely.syncPurchase(for: "apple product id")
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+// synchronize all purchases
+[Purchasely synchronize];
+
+// or you can synchronize for the specific apple product id bought
+[Purchasely syncPurchaseFor:@"apple-product-id" completionHandler:^(NSError * _Nullable error) {
+    // Handle Error.    
+}];
+```
+{% endtab %}
+
 {% tab title="Kotlin" %}
 ```kotlin
 Purchasely.synchronize()
