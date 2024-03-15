@@ -400,7 +400,7 @@ Purchasely.setPaywallActionInterceptorCallback(
 {% endtab %}
 {% endtabs %}
 
-### 4- Sync your purchases (Android only)
+### 4- Sync your purchases
 
 In `oberver` and `paywallObserver` modes, when a purchase or a restoration is made with your current flow, call the `synchronize()` method of our SDK to send the receipt to our backend. This allow us to save the receipts on our server to prepare for your migration.
 
