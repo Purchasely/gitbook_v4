@@ -13,7 +13,49 @@ You can also find changelog specific to SDK technology in their GitHub repositor
 * [Unity](https://github.com/Purchasely/Unity-Package)
 * [Cordova](https://github.com/Purchasely/Purchasely-Cordova/releases)
 
-## 4.2.0
+## 4.4
+
+:warning: Only available with our iOS and Android SDK.\
+React Native, Flutter, Cordova and Unity will be updated by the end of June 2024
+
+**Use** [**version 4.4.1**](https://github.com/Purchasely/Purchasely-iOS/releases/tag/4.4.1) **with iOS** for a fix with the new close button
+
+## Audience Targeting
+
+Enhanced audience segmentation capabilities with the addition of purchase history-based targeting.
+
+## UI Enhancements
+
+* Introduced a customizable header button, offering an alternative to the standard close button.
+* Replaced the outdated PLYUIListener with the new PLYUIHandler for improved UI event management.
+
+## Subscription Management
+
+Introduced the `userSubscriptionsHistory` method to enable access to users' expired subscription data.\
+**Note**: This feature relies on the Purchasely platform and will provide accurate results only if Purchasely has records of the user account's subscription history.
+
+## Android Specific Updates
+
+### Google Play Billing v6
+
+Updated to Google Play Billing version 6.2.1. This version is mandatory to release your Android application on Google Play Store starting September 1st for new apps and November 1st for existing applications.
+
+### Google Store Country
+
+The upgrade to version 6 now allows the inclusion of the Google account store country as a selectable attribute for audience targeting. The `Store Country` attribute now works seamlessly with both Apple and Google accounts as long as your application includes this version of Purchasely SDK.
+
+## 4.3
+
+### 🕒 User Centric Countdowns
+
+Countdowns tailored to individual users have been implemented, enabling personalized timers based on user attributes.\
+Example: users may have 24 hours to subscribe to an offer following their initial subscription.
+
+### Improvements and Optimizations
+
+Numerous enhancements and optimizations are being implemented to elevate the user experience.
+
+## 4.2
 
 :warning: Important: To avoid issues specially in paywallObserver mode, we now require to set explicitely the StoreKit version you want to use\
 [Purchasely.start(storekitSettings: .storeKit1)](https://docs.purchasely.com/faq/migration-guides/sdk/migrate-to-sdk-v4.0.0#initialization-update)
